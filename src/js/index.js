@@ -1,21 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from "./pages/Header";
-import Content from "./pages/Content";
-import Footer from "./pages/Footer";
-import './sass/main.scss';
+import { BrowserRouter, Route } from "react-router-dom";
 
+import Home from "./pages/Home";
+import Search from "./components/Search";
 
-class Index extends React.Component {
-    render() {
-        return (
-            <div>
-                <Header />
-                <Content />
-                <Footer />
-            </div>
-        );
-    }
-};
+import './../sass/main.scss';
 
-ReactDOM.render(<Index />, document.getElementById("index"));
+const app = document.getElementById("app");
+
+ReactDOM.render(
+    <BrowserRouter>
+        <Route exact path="/" component={Home} />
+    </BrowserRouter>,
+    app);

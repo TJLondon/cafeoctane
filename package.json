@@ -1,8 +1,8 @@
 {
-  "name": "cafe_octane",
+  "name": "cafeoctane",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "js/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
@@ -25,7 +25,12 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "history": "^1.17.0",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-google-location": "^1.0.5",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-hash-history": "^0.2.3"
   }
 }

@@ -5,9 +5,6 @@ export default class Header extends React.Component {
         return (
             <header>
                 <h1>a header</h1>
-                <ul>
-                    <li className="link">hello</li>
-                </ul>
             </header>
         )
     }
