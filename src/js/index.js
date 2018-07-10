@@ -1,16 +1,28 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Home from "./pages/Home";
-import Search from "./components/Search";
+import Home from './pages/Home';
 
 import './../sass/main.scss';
+import SearchResults from './pages/SearchResults';
 
-const app = document.getElementById("app");
+const app = document.getElementById('app');
+
+const Routing = () => (
+    <main>
+        <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/events' component={SearchResults} />
+            <Route path='/events/:id' component={SearchResults} />
+        </Switch>
+    </main>
+)
+
+
 
 ReactDOM.render(
     <BrowserRouter>
-        <Route exact path="/" component={Home} />
+        <Routing />
     </BrowserRouter>,
     app);

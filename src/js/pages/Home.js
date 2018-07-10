@@ -1,16 +1,16 @@
-import React from "react";
+import Layout from '../pages/Layout';
+import React from 'react';
+import Search from '../components/Search';
 
-import Layout from "../pages/Layout";
-import Search from "../components/Search";
 
 export default class Home extends React.Component {
     render() {
         return (
-            <div>
+            <div className='home'>
             <Layout>
-                <div className="hero">
-                    <h1>Boom</h1>
+                <div className='hero'>
                     <Search />
+                    <h2>hello</h2>
                 </div>
             </Layout>
             </div>

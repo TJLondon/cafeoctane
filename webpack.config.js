@@ -5,9 +5,15 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
     filename: "./index.html"
 });
 
+
+
 module.exports = {
     entry: {
         main: './src/js/index.js'
+    },
+    output: {
+        path:  __dirname + '/public',
+        filename: 'bundle.js'
     },
     module: {
         rules: [
@@ -19,11 +25,16 @@ module.exports = {
                 }
             },
             {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
+            {
                         test:/\.(s*)css$/,
                         use:['style-loader','css-loader', 'sass-loader']
 
             }
         ]
     },
+
     plugins: [htmlWebpackPlugin]
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeComponent from '../components/GoogleLocation';
+import LocationSearch from '../components/GoogleLocation';
 
 class EventTypeSelect extends React.Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class EventTypeSelect extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="eventtypeselect">
             <label>I'm looking for</label>
             <select value={this.state.value} onChange={this.onChange.bind(this)}>
                 <option value={1}>All events</option>
@@ -34,7 +34,7 @@ export default class Search extends React.Component {
         return (
             <form>
             <EventTypeSelect />
-                <HomeComponent />
+                <LocationSearch />
             </form>
         )
     }

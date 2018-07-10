@@ -1,9 +1,9 @@
 import { GoogleComponent } from 'react-google-location'
 import React, { Component } from 'react';
 
-const API_KEY = 'AIzaSyCBQPdAc6XhD7cHv_HKopDeT1tMdJhAaCM';
+const API_KEY = "AIzaSyCBQPdAc6XhD7cHv_HKopDeT1tMdJhAaCM";
 
-class HomeComponent extends Component {
+class LocationSearch extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -18,7 +18,7 @@ class HomeComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div className="LocationSearch">
                 <label>Events near</label>
                 <GoogleComponent
                     apiKey={API_KEY}
@@ -33,4 +33,4 @@ class HomeComponent extends Component {
 }
 
 
-export default HomeComponent;
+export default LocationSearch;

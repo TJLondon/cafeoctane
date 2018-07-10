@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "categoryName": "Cars and Coffee",
+      "eventName": "My first event",
+      "eventDesc": "My event description"
+    },
+    {
+      "id": 2,
+      "categoryName": "Car show",
+      "eventName": "My second event",
+      "eventDesc": "My event description"
+    },
+    {
+      "id": 3,
+      "categoryName": "Race meeting",
+      "eventName": "My third event",
+      "eventDesc": "My event description"
+    },
+    {
+      "id": 4,
+      "categoryName": "Cars and Coffee",
+      "eventName": "My fourth event",
+      "eventDesc": "My event description"
+    }
+  ]
+}
