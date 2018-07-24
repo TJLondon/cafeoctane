@@ -31,7 +31,7 @@ class EventDetails extends React.Component {
                     {this.state.event.eventDesc}
                 </p>
 
-                <p>Id: {this.state.event.id}</p>
+                <p>Id: {this.state.event._id}</p>
             </div>
 
         )

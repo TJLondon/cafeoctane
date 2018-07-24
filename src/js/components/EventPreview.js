@@ -11,7 +11,7 @@ class EventPreview extends React.Component {
         return (
                 <li>
                     My event: { this.props.event.eventName }
-                    More details: <Link to={'/events/' + this.props.event.id }>Link</Link>
+                    More details: <Link to={'/events/' + this.props.event._id }>Link</Link>
 
                 </li>
                 )

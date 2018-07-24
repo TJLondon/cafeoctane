@@ -11,7 +11,7 @@ export default class SearchResults extends React.Component {
     componentDidMount() {
         axios.get(`/api/events`)
             .then(res => {
-                const events = res.data.events;
+                const events = res.data;
                 this.setState({ events });
             })
     }

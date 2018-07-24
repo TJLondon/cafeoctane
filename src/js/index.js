@@ -19,8 +19,6 @@ const Routing = () => (
     </main>
 )
 
-
-
 ReactDOM.render(
     <BrowserRouter>
         <Routing />
