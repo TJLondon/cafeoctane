@@ -11,4 +11,11 @@ router.get('/events', (req, res) => {
     });
 });
 
+router.get('/events/:eventid', (req, res) => {
+    let event = data.events[req.params.eventid];
+    res.send(
+        event
+    )
+});
+
 export default router;

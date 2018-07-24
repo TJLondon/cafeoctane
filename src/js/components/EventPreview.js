@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 class EventPreview extends React.Component {
 
@@ -8,10 +9,11 @@ class EventPreview extends React.Component {
 
     render() {
         return (
-            <div>
-                My event: { this.props.event.eventName }
-                { this.props.event.id }
-                </div>
+                <li>
+                    My event: { this.props.event.eventName }
+                    More details: <Link to={'/events/' + this.props.event.id }>Link</Link>
+
+                </li>
                 )
     }
 }

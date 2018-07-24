@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import SearchResults from './src/js/pages/SearchResults';
+import Home from './src/js/pages/Home';
+
 
 import axios from 'axios';
 import config from './config';
 
-axios.get(`${config.serverUrl}/api/events`)
-.then(resp => {
-    ReactDOMServer.renderToString(<SearchResults />)
-})
+
+// const serverRender = () =>
+//     axios.get(`${config.serverUrl}/api/events`)
+//         .then(resp => {
+//             return (
+//             ReactDOMServer.renderToString(<Home />)
+//         )
+//         })
+//
+// export default serverRender;

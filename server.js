@@ -6,14 +6,22 @@ const server = express();
 
 server.set('view engine', 'ejs');
 
-import './serverRender';
+// import serverRender from './serverRender';
 
 server.get(['/', '/events', '/events/:id'], (req,res) => {
-    //serverRender();
+    // serverRender()
+    //     .then(content => {
+    //         res.render('index', {
+    //             content
+    //         });
+    //     })
+    //     .catch(console.error)
+
     res.render('index', {
-        content: 'my string'
+        content: ''
     });
-})
+
+});
 
 server.use('/api', apiRouter);
 server.use(express.static('public'));
