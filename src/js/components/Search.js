@@ -1,41 +1,46 @@
 import React from 'react';
-import LocationSearch from '../components/GoogleLocation';
+import { withRouter } from "react-router-dom";
+import LocationSearch from '../components/search/GoogleLocation';
+import EventTypeSelect from '../components/search/EventTypeSelect';
 
-class EventTypeSelect extends React.Component {
+class Search extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: 'Select an option'}
+        this.state = {
+            location: '',
+            eventType: ''
+        }
+    }
+    locationHandler = (coords) => {
+        if (coords) {
+            this.setState({location: coords})
+        }
     }
 
-    onChange(e) {
-        this.setState({
-            value: e.target.value
-        });
-        console.log(e.target.value);
+    typeSelectHandler = (val) => {
+        this.setState({eventType: val})
+    }
+
+    submitSearch = (e) => {
+        console.log(this.state);
+        e.preventDefault();
+        let query =
+            "?lng=" + this.state.location.coordinates.lng +
+            "&lat=" + this.state.location.coordinates.lat +
+            "&distance=" + this.state.location.distance +
+            "&type=" + this.state.eventType;
+        this.props.history.push("/events" + query);
     }
 
     render() {
         return (
-            <div className="eventtypeselect">
-            <label>I'm looking for</label>
-            <select value={this.state.value} onChange={this.onChange.bind(this)}>
-                <option value={1}>All events</option>
-                <option value={2}>Car shows</option>
-                <option value={3}>Cars and coffee</option>
-                <option value={4}>Racing events</option>
-            </select>
-            </div>
-        )
-    }
-}
-
-export default class Search extends React.Component {
-    render() {
-        return (
-            <form>
-            <EventTypeSelect />
-                <LocationSearch />
+            <form className="search" onSubmit={this.submitSearch} >
+                <EventTypeSelect onTypeSelect={this.typeSelectHandler} />
+                <LocationSearch onLocationSearch={ this.locationHandler }  />
+                <button disabled={!this.state.location.coordinates} value="Search">Search</button>
             </form>
         )
     }
 }
+
+export default withRouter(Search);

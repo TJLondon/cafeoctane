@@ -1,4 +1,4 @@
-import Layout from '../pages/Layout';
+import Layout from '../layout/Layout';
 import React from 'react';
 import Search from '../components/Search';
 
@@ -10,7 +10,6 @@ export default class Home extends React.Component {
             <Layout>
                 <div className='hero'>
                     <Search />
-                    <h2>hello</h2>
                 </div>
             </Layout>
             </div>

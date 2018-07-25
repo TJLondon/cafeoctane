@@ -1,14 +1,27 @@
+import Layout from '../layout/Layout';
 import React from 'react';
 import axios from 'axios';
-import EventPreview from '../components/EventPreview';
-import EventDetails from '../components/EventDetails';
+import EventPreview from '../components/searchresults/EventPreview';
+import EventDetails from '../components/searchresults/EventDetails';
+import querySearch from "stringquery";
 
 export default class SearchResults extends React.Component {
+
+
     state = {
-        events: Object
+        events: Object,
     };
 
+
+
     componentDidMount() {
+        let obj = querySearch(this.props.location.search),
+            url;
+
+        if (obj) {
+            url =
+        }
+
         axios.get(`/api/events`)
             .then(res => {
                 const events = res.data;
@@ -35,13 +48,11 @@ export default class SearchResults extends React.Component {
 
     render() {
         return (
-            <div>
-                <h2>Results</h2>
+            <Layout>
                 <div>
                     {this.currentEvent()}
                 </div>
-            </div>
-
+            </Layout>
         )
     }
 }
