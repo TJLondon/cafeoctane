@@ -16,13 +16,16 @@ export default class SearchResults extends React.Component {
 
     componentDidMount() {
         let obj = querySearch(this.props.location.search),
-            url;
+            url = '/api/events/geo';
 
         if (obj) {
-            url =
+           url = url
+               + '?lng=' + obj.lng
+               + '&lat=' + obj.lat
+               + '&radius=' + obj.radius;
         }
-
-        axios.get(`/api/events`)
+        console.log(url);
+        axios.get(url)
             .then(res => {
                 const events = res.data;
                 this.setState({ events });

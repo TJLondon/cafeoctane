@@ -14,12 +14,13 @@ class Search extends React.Component {
     locationHandler = (coords) => {
         if (coords) {
             this.setState({location: coords})
+            console.log(coords);
         }
-    }
+    };
 
     typeSelectHandler = (val) => {
         this.setState({eventType: val})
-    }
+    };
 
     submitSearch = (e) => {
         console.log(this.state);
@@ -27,10 +28,10 @@ class Search extends React.Component {
         let query =
             "?lng=" + this.state.location.coordinates.lng +
             "&lat=" + this.state.location.coordinates.lat +
-            "&distance=" + this.state.location.distance +
+            "&radius=" + this.state.location.distance +
             "&type=" + this.state.eventType;
         this.props.history.push("/events" + query);
-    }
+    };
 
     render() {
         return (
@@ -42,5 +43,4 @@ class Search extends React.Component {
         )
     }
 }
-
 export default withRouter(Search);

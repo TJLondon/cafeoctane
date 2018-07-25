@@ -3,12 +3,12 @@ import React from "react";
 class EventTypeSelect extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: '1'}
+        this.state = { value: 1}
     }
 
     onChange(val) {
         this.setState({ value: val.target.value });
-        this.props.onTypeSelect(val.target.value);
+        this.props.onTypeSelect(this.state.value);
     }
 
     render() {
