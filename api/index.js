@@ -2,12 +2,12 @@ import express from 'express';
 import { ObjectId } from 'mongodb';
 import { MongoClient } from 'mongodb';
 import assert from 'assert';
+import config from '../config';
 
-const url = 'mongodb://localhost:27017/cafeoctane';
 const router = express.Router();
 let mdb;
 
-MongoClient.connect(url, function(err, db) {
+MongoClient.connect(config.dbendpoint, function(err, db) {
     if (err) return console.log(err);
     assert.equal(null, err);
     console.log("Connected successfully to server");
