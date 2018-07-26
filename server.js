@@ -1,6 +1,7 @@
 import config from './config';
 import express from 'express';
 import apiRouter from './api';
+import FacebookRouter from './auth';
 
 const server = express();
 
@@ -24,6 +25,7 @@ server.get(['/', '/events', '/events/:id'], (req,res) => {
 });
 
 server.use('/api', apiRouter);
+server.use('/auth', FacebookRouter);
 server.use(express.static('public'));
 
 
