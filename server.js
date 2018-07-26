@@ -27,6 +27,7 @@ server.get(['/', '/events', '/events/:id'], (req,res) => {
 server.use('/api', apiRouter);
 server.use('/auth', FacebookRouter);
 server.use(express.static('public'));
+server.use(express.static('assets'));
 
 
 server.listen(config.port, config.host, () => {

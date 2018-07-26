@@ -29,7 +29,7 @@ class LocationSearch extends Component {
         return (
             <div className="LocationSearch">
                 <label>Within</label>
-                <select value={this.state.distance} onChange={this.onDistance.bind(this)}>
+                <select className="form-control" value={this.state.distance} onChange={this.onDistance.bind(this)}>
                     <option value={10}>10 miles</option>
                     <option value={25}>25 miles</option>
                     <option value={50}>50 miles</option>
@@ -41,6 +41,7 @@ class LocationSearch extends Component {
                 <GoogleComponent
                     apiKey={API_KEY}
                     language={'en'}
+                    className="form-control"
                     country={'country:in|country:uk'}
                     coordinates={true}
                     onChange={this.onChange.bind(this)} />

@@ -10,7 +10,7 @@ export default {
     facebook: {
         appid: '240560926764008',
         secret: 'f2d92cb4e5439abf9ca30fe71a60458c',
-        callback: 'http://localhost:8080/auth/callback/facebook'
+        callback: 'http://localhost:8080/auth/facebook/callback'
     },
     get serverUrl() {
         return `http://${this.host}:${this.port}`;

@@ -1,0 +1,264 @@
+/*
+/* 0. IMPORT FONTS AND FONT VARIABLES */
+/* IMPORT FONTS AND FONT VARIABLES */
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700|Poppins:300,300i,400,700,800&subset=latin-ext');
+/* 1. IMPORT STYLE FILES */
+/* 2. THEME COLORS */
+/* 3. DEFAULT STYLES */
+.primary-light {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+.primary-ilight {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-style: italic;
+}
+.primary-normal {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.primary-bold {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.primary-ebold {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+}
+.default-normal {
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.default-bold {
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.default-medium {
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+/* 1. IMPORT RESET STYLES */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-weight: normal;
+}
+b,
+strong {
+  font-weight: bold;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* 2. THEME COLORS */
+/* THEME COLORS */
+/* 3. DEFAULT STYLES */
+body {
+  height: 100%;
+  color: #000;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+body *:focus {
+  outline: none;
+}
+input:hover,
+button:hover,
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+p,
+span,
+h2,
+a {
+  display: block;
+  transition: .3s;
+}
+p,
+span,
+h2,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  transition: .3s;
+  outline: 0;
+}
+img {
+  max-width: 100%;
+}
+.wow {
+  visibility: hidden;
+}
+.tc {
+  text-align: center;
+}
+.tl {
+  text-align: left;
+}
+.tr {
+  text-align: right;
+}
+.body-pnf {
+  background: #1e1e1e;
+}
+.body-uc {
+  background: #1e1e1e;
+}
+.wrapper {
+  background: #ffffff;
+}

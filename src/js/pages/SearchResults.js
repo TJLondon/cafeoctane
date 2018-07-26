@@ -6,13 +6,9 @@ import EventDetails from '../components/searchresults/EventDetails';
 import querySearch from "stringquery";
 
 export default class SearchResults extends React.Component {
-
-
     state = {
         events: Object,
     };
-
-
 
     componentDidMount() {
         let obj = querySearch(this.props.location.search),
@@ -24,7 +20,6 @@ export default class SearchResults extends React.Component {
                + '&lat=' + obj.lat
                + '&radius=' + obj.radius;
         }
-        console.log(url);
         axios.get(url)
             .then(res => {
                 const events = res.data;
