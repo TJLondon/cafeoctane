@@ -1,14 +1,55 @@
 import passport from 'passport';
 import {Strategy as FacebookStrategy} from 'passport-facebook';
 import config from '../../config';
+import funct from '../users/functions';
 
 passport.use(new FacebookStrategy({
         clientID: config.facebook.appid,
         clientSecret: config.facebook.secret,
-        callbackURL: config.facebook.callback
+        callbackURL: config.facebook.callback,
+        profileFields: ['id', 'emails', 'name']
     },
-    function(accessToken, refreshToken, profile, done) {
-       console.log(profile);
-       console.log(accessToken);
+    (req, accessToken, refreshToken, profile, done) => {
+        console.log(profile);
+        funct.localReg(profile._json.email, profile._json.id)
+            .then(function (user) {
+                if (user) {
+                    console.log("LOGGED IN AS: " + user.email);
+                    req.session.success = 'You are successfully logged in ' + user.email + '!';
+                    done(null, user);
+                }
+                if (!user) {
+                    console.log("COULD NOT LOG IN");
+                    req.session.error = 'Could not log user in. Please try again.'; //inform user could not log them in
+                    done(null, user);
+                }
+            })
+            .fail(function (err){
+                console.log(err.body);
+            });
+
+        done(null, profile.id);
     }
-));
+    )
+);
+
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+    done(null, user);
+});
+
+let FacebookRoutes = {
+    authenticate: () => {
+        return passport.authenticate('facebook', { scope : ['email'] } );
+    },
+    callback: () => {
+        return passport.authenticate('facebook', {
+            failureRedirect: '/auth/failed'
+        });
+    }
+};
+
+export default FacebookRoutes;

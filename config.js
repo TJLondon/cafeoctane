@@ -8,8 +8,8 @@ export default {
     mLabendpoint: 'mongodb://cafeoctane:BlackB3ard!@ds247001.mlab.com:47001/cafeoctane',
     localendpoint: 'mongodb://localhost:27017/cafeoctane',
     facebook: {
-        appid: '240560926764008',
-        secret: 'f2d92cb4e5439abf9ca30fe71a60458c',
+        appid: 240560926764008,
+        secret: '2d61967ec1eaa82bb13ed6cfa60fe45c',
         callback: 'http://localhost:8080/auth/facebook/callback'
     },
     get serverUrl() {

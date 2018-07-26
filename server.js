@@ -1,7 +1,7 @@
 import config from './config';
 import express from 'express';
 import apiRouter from './api';
-import FacebookRouter from './auth';
+import FacebookRouter from './auth/social/FacebookRouter';
 
 const server = express();
 
