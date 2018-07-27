@@ -2,6 +2,7 @@ import config from './config';
 import express from 'express';
 import apiRouter from './api';
 import FacebookRouter from './auth/social/FacebookRouter';
+import session from 'express-session';
 
 const server = express();
 
@@ -23,12 +24,11 @@ server.get(['/', '/events', '/events/:id'], (req,res) => {
     });
 
 });
-
+server.use(session({secret: "secret"}));
 server.use('/api', apiRouter);
 server.use('/auth', FacebookRouter);
 server.use(express.static('public'));
 server.use(express.static('assets'));
-
 
 server.listen(config.port, config.host, () => {
     console.info('Express is listening on port' + config.port);

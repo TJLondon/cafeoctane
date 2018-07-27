@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-
 import './../sass/main.scss';
 import SearchResults from './pages/SearchResults';
 

@@ -16,7 +16,6 @@ MongoClient.connect(config.mLabendpoint, function(err, db) {
     mdb = db;
 });
 
-
 //converts latitude and longitude to geohash
 router.get('/geo/encode', (req, res) => {
    let lng = req.query.lng,
@@ -38,7 +37,6 @@ router.get('/geo/encode', (req, res) => {
            lng : Geohash.decode_int(ghash).longitude.toString()
        }
    };
-
    res.send(response);
 });
 

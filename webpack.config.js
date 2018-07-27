@@ -9,7 +9,7 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 
 module.exports = {
     entry: {
-        main: './src/js/FacebookRouter.js'
+        main: './src/js/index.js'
     },
     output: {
         path:  __dirname + '/public',
