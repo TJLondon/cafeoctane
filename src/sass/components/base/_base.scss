@@ -1,4 +1,115 @@
-@import 'reset',
-        'socials',
-        'buttons',
-        'extend';
+$primary-color: #d76a28;
+@import 'navigation';
+
+
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
+}
+
+body {
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  padding: 0;
+}
+
+div.home {
+  background: url('/assets/img/home_hero.jpg') no-repeat center top;
+  background-size: cover;
+  min-height: 50%;
+
+  nav {
+    background: transparent;
+  }
+}
+
+h1 {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 220px;
+  margin: 2rem;
+}
+
+
+
+
+.LocationSearch {
+  margin: 0 auto;
+
+  .google-covert {
+    position:relative;
+    margin: 0 auto;
+    width: 22rem;
+    ul {
+      background-color: white;
+      margin: 0 auto;
+      position: absolute;
+      left: auto;
+      right: auto;
+      width: 30rem;
+      border: 1px solid black;
+      top: 0rem;
+    }
+  }
+}
+
+
+
+.billboard {
+  margin: 10rem 0 0 0;
+  text-align: center;
+  h1, h2 {
+    color: white;
+  }
+
+  form {
+    margin: 0 auto 10rem auto;
+    width: 50%;
+    padding: 2rem 0;
+    @include alpha-background-color(rgba(black, 0.3), white);
+    .row {
+      margin: 2rem 0;
+    }
+    label {
+      color: $primary-color;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    input, select {
+      color: black;
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+
+    button {
+      background: $primary-color;
+      color: white;
+      border:0;
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+    }
+
+  }
+}
+
+.content {
+  min-height: calc(100vh - 4.375rem)
+}
+
+footer {
+  text-align: center;
+  background: black;
+  min-height: 200px;
+}

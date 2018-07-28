@@ -34,6 +34,8 @@ exports.facebookReg = (profile) => {
                 //If user doesn't exist, register them
                 else {
                     let user = {
+                        "first_name" : profile.first_name,
+                        "last_name" : profile.last_name,
                         "email": profile.email,
                         "token": profile.id,
                         "avatar": profile.picture.data.url

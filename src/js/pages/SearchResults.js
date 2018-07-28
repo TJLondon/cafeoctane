@@ -47,8 +47,10 @@ export default class SearchResults extends React.Component {
     render() {
         return (
             <Layout>
-                <div>
-                    {this.currentEvent()}
+                <div className="content">
+                    <div className="container">
+                        {this.currentEvent()}
+                    </div>
                 </div>
             </Layout>
         )

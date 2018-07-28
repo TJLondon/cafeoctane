@@ -1,0 +1,45 @@
+nav.navbar {
+  position: absolute;
+  top: 0;
+  background: black;
+  width: 100%;
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  ul {
+    list-style-type: none;
+    float: right;
+
+    li {
+      a {
+        color: azure;
+      }
+    }
+  }
+
+  .navigation {
+    list-style-type: none;
+    margin: 0 5rem 0 0;
+
+
+
+    li {
+      float: left;
+      padding: 3rem 1rem;
+      a {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .avatar {
+        margin-left: 2rem;
+        img {
+          border-radius: 50%;
+          margin-top: -15px;
+        }
+      }
+    }
+  }
+}

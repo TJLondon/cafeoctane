@@ -24,11 +24,12 @@ server.get(['/', '/events', '/events/:id'], (req,res) => {
     });
 
 });
+server.use(express.static('public'));
+server.use("/assets", express.static(__dirname + '/assets'));
 server.use(session({secret: "secret"}));
 server.use('/api', apiRouter);
 server.use('/auth', FacebookRouter);
-server.use(express.static('public'));
-server.use(express.static('assets'));
+
 
 server.listen(config.port, config.host, () => {
     console.info('Express is listening on port' + config.port);

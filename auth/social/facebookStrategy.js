@@ -11,6 +11,7 @@ passport.use(new FacebookStrategy({
     },
 
     (req, accessToken, refreshToken, profile, done) => {
+    console.log(profile._json);
         funct.facebookReg(profile._json)
             .then(function (user) {
                 if (user) {

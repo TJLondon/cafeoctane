@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 export default class Header extends React.Component {
     state = {
         user: null
-    }
-
+    };
 
     componentDidMount() {
         axios.get('/auth/user')
@@ -18,32 +17,46 @@ export default class Header extends React.Component {
             })
     }
 
-
     isLoggedIn() {
         if (this.state.user) {
-                    return (
-                        <p>
-                            Logged In as {this.state.user.email}
-                            <img width="50" src={this.state.user.avatar} />
-                        </p>
-                    )
-                }
-                else {
-                    return (
-                        <div>
-                        <p>not logged in</p>
-                        <Link onClick={window.open('/auth/login/facebook')}> Login with Facebook</Link>
-                        </div>
-                    )
-                        }
+            return (
+                <div className="avatar">
+                    <Link to="/user"><img width="50" src={this.state.user.avatar} /></Link>
+                </div>
+            )
         }
+        else {
+            return (
+                <div>
+                    <a href="/auth/login/facebook"> Sign up</a>
+                </div>
+            )
+        }
+    }
+
+
 
     render() {
         return (
-            <header>
-                <h1>Header</h1>
-                {this.isLoggedIn()}
-            </header>
+            <div>
+                <nav className="navbar">
+                    <img className="logo" src="/assets/img/cafe_octane.png" />
+
+                    <ul className="navigation">
+                        <li>
+                            <Link to={'/events/'}>Event Search</Link>
+                        </li>
+                        <li>
+                            <Link to={'/events/'}>Event organisers</Link>
+                        </li>
+                        <li>
+                            {this.isLoggedIn()}
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
         )
     }
 }
+

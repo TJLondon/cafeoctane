@@ -37,22 +37,11 @@ class Search extends React.Component {
         return (
             <div className="section-welcome">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <form className="search" onSubmit={this.submitSearch} >
-                <div className="row">
-                    <div className="col-sm-3">
-                        <EventTypeSelect onTypeSelect={this.typeSelectHandler} />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-sm-3">
-                        <LocationSearch onLocationSearch={ this.locationHandler }  />
-                    </div>
-                </div>
-                <button className="btn btn-lg btn-r" disabled={!this.state.location.coordinates} value="Search">Search</button>
-            </form>
-                        </div>
+                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <form className="search" onSubmit={this.submitSearch} >
+                             <LocationSearch onLocationSearch={ this.locationHandler }  />
+                            <button disabled={!this.state.location.coordinates}>SEARCH</button>
+                        </form>
                     </div>
                 </div>
             </div>
