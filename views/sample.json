@@ -1,0 +1,28 @@
+{
+  "_id": {
+    "$oid": "5b58b671e7179a0dd5857811"
+  },
+  "eventCategory": "1",
+  "eventTitle": "First event",
+  "eventSummary": "My event description",
+  "eventStart": "30/07/2018",
+  "eventEnd": "30/07/2018",
+  "eventOrganiser": "Silverstone",
+  "eventPrice": "£15.00",
+  "eventURL": "http://www.bbc.co.uk",
+  "lng": "0.4690888",
+  "lat": "51.7343313",
+  "g": 3663671551184215,
+  "trending": true
+}
+
+{
+  "_id": {
+    "$oid": "5b5c97aaf2e540254827f079"
+  },
+  "first_name": "Tom",
+  "last_name": "Jordan",
+  "email": "tomjordanblackberry@googlemail.com",
+  "token": "10156577937937774",
+  "avatar": "https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10156577937937774&height=200&width=200&ext=1535386791&hash=AeQA4VJWY4-YKuq8"
+}
