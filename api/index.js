@@ -49,7 +49,7 @@ router.get('/events/geo', (req, res) => {
         lng: Number(req.query.lng),
         radius: Number((req.query.radius*1000) * 1.60934) // miles to metres
     };
-    console.log(loc);
+
     octanedb.collection('events').find({})
         .toArray((err,result) => {
             const geo = new Geo(result);
@@ -58,6 +58,22 @@ router.get('/events/geo', (req, res) => {
                                 loc.radius));
         })
 });
+
+//Serves up trending events
+router.get('/events/trending', (req, res) => {
+    let events = {};
+    let octanedb = mdb.db('cafeoctane');
+    octanedb.collection('events').find({ trending: true })
+        .each((err, event) => {
+            assert.equal(null, err);
+            if (!event) {
+                res.send(events);
+                return;
+            }
+            events[event._id] = event;
+        });
+});
+
 
 //Serves up all events
 router.get('/events', (req, res) => {

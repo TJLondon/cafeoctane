@@ -1,8 +1,18 @@
+.logo {
+  width: 220px;
+  margin: 2rem;
+}
+
 nav.navbar {
-  position: absolute;
+  z-index: 2;
+  position: fixed;
   top: 0;
   background: black;
   width: 100%;
+
+  &.home {
+    background: transparent;
+  }
 
   .navbar-toggler {
     display: none;
@@ -27,7 +37,7 @@ nav.navbar {
 
     li {
       float: left;
-      padding: 3rem 1rem;
+      padding: 3rem 1rem 0 1rem;
       a {
         font-size: 1.5rem;
         font-weight: 600;

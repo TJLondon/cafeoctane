@@ -1,0 +1,32 @@
+footer {
+  border-top: 3px $primary-color solid;
+  text-align: center;
+  background: black;
+  min-height: 200px;
+  color: white;
+
+  .copyright {
+    float: left;
+    left:0;
+    bottom: 10px;
+  }
+
+  .logo {
+    float: left;
+    width: 200px;
+    margin-left: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 2rem 0;
+    font-size: 1.4rem;
+    li {
+      margin: 0.6rem 0;
+      a {
+        color: gray;
+
+      }
+    }
+  }
+}

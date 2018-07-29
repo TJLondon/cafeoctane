@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import axios from 'axios';
 
-export default class Header extends React.Component {
+class Header extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
     state = {
         user: null
     };
@@ -14,7 +18,7 @@ export default class Header extends React.Component {
                 if (data.email) {
                     this.setState({user: data})
                 }
-            })
+            });
     }
 
     isLoggedIn() {
@@ -28,19 +32,19 @@ export default class Header extends React.Component {
         else {
             return (
                 <div>
-                    <a href="/auth/login/facebook"> Sign up</a>
+                    <a href="/auth/login/facebook">Sign up</a>
                 </div>
             )
         }
     }
 
-
-
     render() {
         return (
             <div>
-                <nav className="navbar">
-                    <img className="logo" src="/assets/img/cafe_octane.png" />
+                <nav className={'navbar ' + (location.pathname === '/' ? 'home' : 'content')}>
+                    <Link to={'/'}>
+                        <img className="logo" src="/assets/img/cafe_octane.png" />
+                    </Link>
 
                     <ul className="navigation">
                         <li>
@@ -60,3 +64,4 @@ export default class Header extends React.Component {
     }
 }
 
+export default Header

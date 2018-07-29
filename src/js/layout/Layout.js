@@ -1,8 +1,9 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { withRouter } from "react-router-dom";
 
-export default class Layout extends React.Component {
+class Layout extends React.Component {
     render() {
         return (
             <div className="layout">
@@ -13,3 +14,5 @@ export default class Layout extends React.Component {
         )
     }
 }
+
+export default withRouter(Layout)

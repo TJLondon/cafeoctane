@@ -3,3 +3,23 @@
   height: auto;
   padding: 0;
 }
+
+.LocationSearch {
+  margin: 0 auto;
+
+  .google-covert {
+    position:relative;
+    margin: 0 auto;
+    width: 22rem;
+    ul {
+      background-color: white;
+      margin: 0 auto;
+      position: absolute;
+      left: auto;
+      right: auto;
+      width: 30rem;
+      border: 1px solid black;
+      top: 0rem;
+    }
+  }
+}
