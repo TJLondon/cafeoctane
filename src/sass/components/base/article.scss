@@ -50,3 +50,17 @@ div.article-list, div.article-home {
 div.article-home {
   margin-top: 0;
 }
+
+@include breakpoint(tablet) {
+  .container {
+    width: 100%
+  }
+
+  div.article-list {
+    display: inline;
+    article {
+      max-width: 100%;
+      width: 100%
+    }
+  }
+}
