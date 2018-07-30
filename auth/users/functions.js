@@ -4,7 +4,7 @@ import Q from 'q';
 
 
 // MongoDB connection information
-const mongodbUrl = config.mLabendpoint;
+const mongodbUrl = config.dbendpoint;
 
 //used in Facebook Signup strategy
 //profile._json.email, profile._json.id

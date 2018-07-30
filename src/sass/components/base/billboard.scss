@@ -5,15 +5,13 @@
     color: white;
   }
 
-  h1 {
-    font-size: 7rem;
-  }
-
   form {
-    margin: 0 auto 250px auto;
-    width: 50%;
+    width: 100%;
     padding: 2rem 0;
-    @include alpha-background-color(rgba(black, 0.3), white);
+    margin: 0 0 5rem 0;
+    @include breakpoint(tablet) {
+      @include alpha-background-color(rgba(black, 0.3), white);
+    }
     .row {
       margin: 2rem 0;
     }
@@ -28,6 +26,7 @@
       color: black;
       font-size: 1.5rem;
       padding: 1rem;
+      width: 100%;
     }
 
     button {
@@ -38,5 +37,25 @@
       padding: 1rem 2rem;
     }
 
+
+    @include breakpoint(tablet) {
+      width: 50%;
+      margin: 0 auto 250px auto;
+
+      input, select, button {
+        width: 75%;
+      }
+    }
+
   }
+
+  h1 {
+    font-size: 7rem;
+  }
+
+  @include breakpoint(mobileonly) {
+    h1 {font-size: 3rem}
+  }
+
+
 }

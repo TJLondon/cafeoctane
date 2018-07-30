@@ -10,16 +10,36 @@
   .google-covert {
     position:relative;
     margin: 0 auto;
-    width: 22rem;
+    width: 75%;
     ul {
       background-color: white;
       margin: 0 auto;
       position: absolute;
       left: auto;
       right: auto;
-      width: 30rem;
+      width: 100%;
       border: 1px solid black;
       top: 0rem;
+      li {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@include breakpoint(phoneonly) {
+  .LocationSearch {
+    margin: 0 auto;
+
+    .google-covert {
+      width: 100%;
+      ul {
+        width: 100%;
+
+        li {
+          padding-left: 0;
+        }
+      }
     }
   }
 }

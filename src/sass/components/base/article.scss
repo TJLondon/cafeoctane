@@ -1,11 +1,18 @@
 div.content {
-  min-height: calc(100vh - 4.375rem);
+  height: auto;
   background-color: $background-color;
   margin-top: 80px;
   &.billboard {
     margin-top: 0;
   }
+
+  @include breakpoint(tablet) {
+    min-height: calc(100vh - 4.375rem);
+  }
 }
+
+
+
 
 div.article-list, div.article-home {
   display: flex;
@@ -51,7 +58,7 @@ div.article-home {
   margin-top: 0;
 }
 
-@include breakpoint(tablet) {
+@include breakpoint(mobileonly) {
   .container {
     width: 100%
   }

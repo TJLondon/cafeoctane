@@ -25,6 +25,19 @@
   }
 }
 
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 $primary-color: #d76a28;
 $background-color: #efefef;
 $grey-border: #dfe1e3;
+$dark-grey: #7f7f7f;
+$darker-grey: #454545;

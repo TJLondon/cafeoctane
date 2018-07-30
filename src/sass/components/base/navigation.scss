@@ -1,17 +1,23 @@
-.logo {
-  width: 220px;
-  margin: 2rem;
-}
-
 nav.navbar {
   z-index: 2;
   position: fixed;
   top: 0;
   background: black;
   width: 100%;
+  transition: all .50s;
+  height: 75px;
+  border-radius: 0;
 
   &.home {
     background: transparent;
+  }
+
+  &.move {
+    @include alpha-background-color(rgba(black, 0.6), white);
+    .logo {
+      width: 180px;
+      margin-top: 2rem;
+    }
   }
 
   .navbar-toggler {
@@ -28,26 +34,117 @@ nav.navbar {
       }
     }
   }
-
   .navigation {
-    list-style-type: none;
-    margin: 0 5rem 0 0;
+    display: none;
+    @include breakpoint(laptop) {
+      display: block;
+      list-style-type: none;
+      margin: 0 5rem 0 0;
+      li {
+        float: left;
+        padding: 3rem 1rem 0 1rem;
+        transition: all .50s;
+        a {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
 
+        .avatar {
+          margin-left: 2rem;
+          img {
+            border-radius: 50%;
+            margin-top: -15px;
+          }
+        }
+      }
+    }
+  }
+}
 
+.logo {
+  width: 180px;
+  margin: 2rem;
+  transition: all .50s;
+}
 
-    li {
-      float: left;
-      padding: 3rem 1rem 0 1rem;
-      a {
-        font-size: 1.5rem;
-        font-weight: 600;
+@include breakpoint(laptop) {
+  .logo {
+    width: 220px;
+    margin: 2rem;
+  }
+
+  nav.navbar {
+    height: 85px;
+    &.move {
+      height: 75px;
+      ul {
+        li {
+          padding-top: 2.5rem;
+        }
       }
 
-      .avatar {
-        margin-left: 2rem;
-        img {
-          border-radius: 50%;
-          margin-top: -15px;
+    }
+  }
+
+  .burgerWrap {
+    display: none;
+  }
+}
+
+.bm-burger-button {
+  button {
+    background: red;
+  }
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 22px;
+  top: 22px;
+}
+
+.bm-burger-bars {
+  background: $primary-color;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-menu {
+  background: #616161;
+  h2 {
+    margin: 5rem 1.625rem 1.625rem 1.625rem;
+    color: white;
+    font-size: 3rem;
+    font-weight: 300;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      border-bottom: 1px $dark-grey solid;
+      margin: 0;
+
+      a {
+        color: white;
+        display: inline-block;
+        font-size: 2.1rem;
+        padding: 1.5625rem 1.5625rem 1.5625rem 1.625rem;
+        font-weight: 300;
+        width: 100%;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: $primary-color;
+        }
+
+        .material-icons {
+          float: right;
+          margin: 4px 0 0 0;
         }
       }
     }

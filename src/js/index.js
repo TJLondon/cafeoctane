@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import './../sass/main.scss';
 import SearchResults from './pages/SearchResults';
+import About from './pages/About';
 
 const app = document.getElementById('app');
 
@@ -15,6 +16,8 @@ const Routing = () => (
             <Route exact path='/events/' component={SearchResults} />
             <Route exact path='/events/trending' component={SearchResults} />
             <Route path='/events/:id' component={SearchResults} />
+
+            <Route exact path='/about' component={About} />
         </Switch>
     </main>
 )

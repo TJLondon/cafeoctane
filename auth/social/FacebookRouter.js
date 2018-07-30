@@ -1,13 +1,11 @@
 import express from 'express';
 import FacebookRoutes from './facebookStrategy';
 import passport from "passport/lib/index";
-import funct from '../users/functions';
 import {MongoClient} from "mongodb";
 import config from "../../config";
 import cookieParser from 'cookie-parser';
 
-
-const mongodbUrl = config.mLabendpoint;
+const mongodbUrl = config.dbendpoint;
 
 const FacebookRouter = express.Router();
 
@@ -25,9 +23,9 @@ FacebookRouter.get('/user',(req, res) => {
 
     if (!req.cookies.usertoken && req.user) {
         let options = {
-            maxAge: 7776000000, // would expire after 15 minutes
-            httpOnly: true, // The cookie only accessible by the web server
-            signed: true // Indicates if the cookie should be signed
+            maxAge: 7776000000, // 90 day expiry
+            httpOnly: true,
+            signed: true
         };
         res.cookie('usertoken', req.user, options); // options is optional
     }

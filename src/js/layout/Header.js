@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from 'axios';
+import BurgerNav from '../components/navigation/BurgerNav';
 
 class Header extends React.Component {
     constructor(props) {
@@ -8,10 +9,13 @@ class Header extends React.Component {
     }
 
     state = {
-        user: null
+        user: null,
+        activeClass: 'top'
     };
 
     componentDidMount() {
+        let cssClass;
+
         axios.get('/auth/user')
             .then(res => {
                 const data = res.data;
@@ -19,6 +23,19 @@ class Header extends React.Component {
                     this.setState({user: data})
                 }
             });
+
+        window.addEventListener('scroll', (event) => {
+            if(window.scrollY > 20){
+                cssClass = 'move';
+            }
+            else
+            {
+                cssClass = 'top';
+            }
+            this.setState({
+                activeClass: cssClass
+            })
+        });
     }
 
     isLoggedIn() {
@@ -41,7 +58,8 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <nav className={'navbar ' + (location.pathname === '/' ? 'home' : 'content')}>
+                <BurgerNav/>
+                <nav className={'navbar ' + this.state.activeClass + ' ' + (location.pathname === '/' ? 'home' : 'content') }>
                     <Link to={'/'}>
                         <img className="logo" src="/assets/img/cafe_octane.png" />
                     </Link>

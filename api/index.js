@@ -9,7 +9,7 @@ import Geohash from 'ngeohash';
 const router = express.Router();
 let mdb;
 
-MongoClient.connect(config.mLabendpoint, function(err, db) {
+MongoClient.connect(config.dbendpoint, function(err, db) {
     if (err) return console.log(err);
     assert.equal(null, err);
     console.log("Connected successfully to server");
