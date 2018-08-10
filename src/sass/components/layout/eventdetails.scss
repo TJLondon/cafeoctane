@@ -1,0 +1,47 @@
+.eventDetailsWrapper {
+  position: relative;
+  color: black;
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    max-width: calc(720px - .625rem);
+  }
+}
+
+
+.moreDetailsPane {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 360px;
+  border: 1px #ccc solid;
+  padding: 2rem;
+  background: white;
+
+  a {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    background: $primary-color;
+    color: white;
+    float: left;
+
+    &:hover {
+      text-decoration: none;
+      background: #7f7f7f;
+    }
+  }
+
+  .googleMap {
+    margin: 2rem 0 0 0;
+    float: left;
+    width: 100%;
+    a {
+      background: transparent;
+    }
+  }
+}

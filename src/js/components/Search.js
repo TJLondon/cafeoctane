@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
 import LocationSearch from '../components/search/GoogleLocation';
-import EventTypeSelect from '../components/search/EventTypeSelect';
 
 class Search extends React.Component {
     constructor(props) {
@@ -16,10 +15,6 @@ class Search extends React.Component {
             this.setState({location: coords})
             console.log(coords);
         }
-    };
-
-    typeSelectHandler = (val) => {
-        this.setState({eventType: val})
     };
 
     submitSearch = (e) => {

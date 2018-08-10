@@ -1,6 +1,16 @@
 import axios from 'axios';
 import React from 'react';
+import {GoogleMap, Marker, withGoogleMap, withScriptjs} from "react-google-maps";
 
+
+const MapComponent = withScriptjs(withGoogleMap((props) =>
+    <GoogleMap
+        defaultZoom={10}
+        defaultCenter={{ lat: parseFloat(props.latitude), lng: parseFloat(props.longitude) }}
+    >
+        {props.isMarkerShown && <Marker position={{ lat: parseFloat(props.latitude), lng: parseFloat(props.longitude) }} />}
+    </GoogleMap>
+));
 
 class EventDetails extends React.Component {
     constructor(props) {
@@ -8,39 +18,63 @@ class EventDetails extends React.Component {
     }
 
     state = {
-        event: Object
+        event: Object,
+        lat: '-34.397',
+        lng: '150.644',
+        isMarkerShown: false
     };
 
     componentDidMount() {
-
-        console.log(`/api/events/` + this.props.eventid);
-
         axios.get(`/api/events/` + this.props.eventid)
             .then(res => {
                 const event = res.data;
-                this.setState({ event });
+                this.setState({ event: event, lat: event.lat, lng: event.lng, isMarkerShown: true });
+                console.log(this.state);
             })
+
     }
 
     render() {
         return (
             <div>
-                <h2>{this.state.event.eventTitle}</h2>
+                <div className="eventDetailsWrapper">
+                    <div className="content">
+                        <h2>{this.state.event.eventTitle}</h2>
+                        <p>{this.state.event.eventStart} to {this.state.event.eventEnd}</p>
+                        <p>
+                            {this.state.event.eventSummary}
+                        </p>
 
-                <p>
-                    {this.state.event.eventSummary}
-                </p>
+                        <p>Organiser: {this.state.event.eventOrganiser}</p>
 
-                <p>{this.state.event.eventStart} to {this.state.event.eventEnd}</p>
+                        <p><strong>Price:</strong> {this.state.event.eventPrice}</p>
 
-                <p>Organiser: {this.state.event.eventOrganiser}</p>
+                        <p>Id: {this.state.event._id}</p>
+                    </div>
 
-                <p><strong>Price:</strong> {this.state.event.eventPrice}</p>
+                    <div className="moreDetailsPane">
+                        <p>Organised by <strong>{this.state.event.eventOrganiser}</strong></p>
+                        <a href="#">Find out more</a>
 
-                <p>Find out more: <a href={this.state.event.eventURL}>Website</a></p>
 
-                <p>Id: {this.state.event._id}</p>
+                        <div className="googleMap">
+                            <MapComponent
+                                isMarkerShown={this.state.isMarkerShown}
+                                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAq3Qk8Cni9iyrwM36azQCnXBWmL1sAm8s&v=3.exp"
+                                loadingElement={<div style={{ height: `100%` }} />}
+                                containerElement={<div style={{ height: `300px` }} />}
+                                mapElement={<div style={{ height: `100%` }} />}
+                                latitude={this.state.lat}
+                                longitude={this.state.lng}
+                            />
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
+
+
 
         )
     }

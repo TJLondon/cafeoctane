@@ -10,7 +10,7 @@ server.set('view engine', 'ejs');
 
 // import serverRender from './serverRender';
 
-server.get(['/', '/events', '/events/:id'], (req,res) => {
+server.get(['/', '/events', '/events/:id', '/admin'], (req,res) => {
     // serverRender()
     //     .then(content => {
     //         res.render('index', {
@@ -24,6 +24,7 @@ server.get(['/', '/events', '/events/:id'], (req,res) => {
     });
 
 });
+
 server.use(express.static('public'));
 server.use("/assets", express.static(__dirname + '/assets'));
 server.use(session({secret: "secret"}));

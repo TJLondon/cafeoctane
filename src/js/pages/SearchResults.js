@@ -21,7 +21,6 @@ export default class SearchResults extends React.Component {
                + '&lat=' + obj.lat
                + '&radius=' + obj.radius;
         }
-        console.log(url);
         axios.get(url)
             .then(res => {
                 const events = res.data;
@@ -39,7 +38,7 @@ export default class SearchResults extends React.Component {
         else {
             return (
                 <div>
-                <h2>{this.state.events.length} events found</h2>
+                <h2 className="resultsCount">{this.state.events.length} events found</h2>
                 <div className="article-list">
                     {Object.keys(this.state.events).map(eventId =>
                     <EventPreview key={eventId} event={this.state.events[eventId]} />
