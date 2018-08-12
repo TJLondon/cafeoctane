@@ -3,7 +3,6 @@ import { slide as Menu } from 'react-burger-menu';
 import { Link } from "react-router-dom";
 
 class BurgerNav extends React.Component {
-
     constructor (props) {
         super(props);
         this.state = {
@@ -19,7 +18,6 @@ class BurgerNav extends React.Component {
 
 
     toggleMenu() {
-        console.log('clicked');
         if (this.state.isOpen === false) {
             this.state.isOpen= true;
         }
@@ -43,7 +41,7 @@ class BurgerNav extends React.Component {
 
                 <h2>Contact</h2>
                 <ul className="contactInfo">
-                    <li><a href="mailti:contact@cafeoctane.com">contact@cafeoctane.com <i className="material-icons">email</i></a></li>
+                    <li><a href="mailto:contact@cafeoctane.com">contact@cafeoctane.com <i className="material-icons">email</i></a></li>
                     <li><a href="tel:0800 808 808">0800 808 808 <i className="material-icons">call</i></a></li>
                 </ul>
 

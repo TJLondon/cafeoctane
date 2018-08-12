@@ -6,9 +6,14 @@ import EventDetails from '../components/searchresults/EventDetails';
 import querySearch from "stringquery";
 
 export default class SearchResults extends React.Component {
-    state = {
-        events: Object,
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            events: Object
     };
+        //this.currentEvent = this.currentEvent.bind(this);
+    }
 
     componentDidMount() {
         let obj = querySearch(this.props.location.search),
@@ -24,12 +29,12 @@ export default class SearchResults extends React.Component {
         axios.get(url)
             .then(res => {
                 const events = res.data;
-                this.setState({ events });
-            })
-           window.scrollTo(0, 0)
+                this.setState({ events: events });
+            });
+           window.scrollTo(0, 0);
     }
 
-    currentEvent() {
+    CurrentView() {
         if (this.props.match.params.id) {
             return (
                 <EventDetails events eventid={this.props.match.params.id} />
@@ -38,12 +43,12 @@ export default class SearchResults extends React.Component {
         else {
             return (
                 <div>
-                <h2 className="resultsCount">{this.state.events.length} events found</h2>
-                <div className="article-list">
-                    {Object.keys(this.state.events).map(eventId =>
-                    <EventPreview key={eventId} event={this.state.events[eventId]} />
-                )}
-                </div>
+                    <h2 className="resultsCount">{Object.keys(this.state.events).length} events found</h2>
+                    <div className="article-list">
+                        {Object.keys(this.state.events).map(eventId =>
+                            <EventPreview key={eventId} event={this.state.events[eventId]} />
+                        )}
+                    </div>
                 </div>
             )
         }
@@ -54,7 +59,7 @@ export default class SearchResults extends React.Component {
             <Layout>
                 <div className="content">
                     <div className="container">
-                        {this.currentEvent()}
+                        {this.CurrentView()}
                     </div>
                 </div>
             </Layout>

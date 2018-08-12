@@ -49,7 +49,7 @@ class Header extends React.Component {
         else {
             return (
                 <div>
-                    <a href="/auth/login/facebook">Sign up</a>
+                    <a href="/register">Sign up</a>
                 </div>
             )
         }

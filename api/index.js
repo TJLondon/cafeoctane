@@ -63,7 +63,7 @@ router.get('/events/geo', (req, res) => {
 router.get('/events/trending', (req, res) => {
     let events = {};
     let octanedb = mdb.db('cafeoctane');
-    octanedb.collection('events').find({ trending: true })
+    octanedb.collection('events').find({ trending: true }).sort({eventStart: 1})
         .each((err, event) => {
             assert.equal(null, err);
             if (!event) {
@@ -79,7 +79,7 @@ router.get('/events/trending', (req, res) => {
 router.get('/events', (req, res) => {
     let events = {};
     let octanedb = mdb.db('cafeoctane');
-    octanedb.collection('events').find({})
+    octanedb.collection('events').find({}).sort({eventStart: 1})
         .each((err, event) => {
             assert.equal(null, err);
             if (!event) {
@@ -99,7 +99,18 @@ router.get('/events/:eventid', (req, res) => {
             res.send(document);
             }
         )
-
 });
+
+//Organisers
+router.get('/organisers/:organiserid', (req, res) => {
+    let octanedb = mdb.db('cafeoctane');
+    let oid = new ObjectId(req.params.organiserid);
+    octanedb.collection('organisers')
+        .findOne({ _id : oid }, (err, document) => {
+                res.send(document);
+            }
+        )
+});
+
 
 export default router;

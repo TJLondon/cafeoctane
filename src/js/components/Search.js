@@ -13,12 +13,10 @@ class Search extends React.Component {
     locationHandler = (coords) => {
         if (coords) {
             this.setState({location: coords})
-            console.log(coords);
         }
     };
 
     submitSearch = (e) => {
-        console.log(this.state);
         e.preventDefault();
         let query =
             "?lng=" + this.state.location.coordinates.lng +

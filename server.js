@@ -10,7 +10,13 @@ server.set('view engine', 'ejs');
 
 // import serverRender from './serverRender';
 
-server.get(['/', '/events', '/events/:id', '/admin'], (req,res) => {
+server.get([
+    '/',
+    '/events',
+    '/events/:id',
+    '/register',
+    '/about'
+], (req,res) => {
     // serverRender()
     //     .then(content => {
     //         res.render('index', {

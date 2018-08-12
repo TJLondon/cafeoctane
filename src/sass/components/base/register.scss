@@ -1,0 +1,33 @@
+.register {
+  background-size: cover;
+  background: url('/assets/img/register_hero.jpg') no-repeat center center;
+  min-height: 100%;
+  .container {
+        .box {
+          width: 40%;
+          margin: 15rem auto;
+          @include alpha-background-color(rgba(black, 0.9), white);
+          height: 250px;
+          text-align: center;
+          padding: 1.5rem;
+          h3 {
+            color: white;
+            font-weight: 300;
+          }
+
+          .facebookButton, .googleButton {
+            background: #3b5998;
+            text-align: center;
+            width: 60%;
+            padding: 1rem;
+            color: #f7f7f7;
+            display: block;
+            margin: 3rem auto 0 auto;
+          }
+
+          .googleButton {
+            background: #d62d20;
+          }
+        }
+  }
+}

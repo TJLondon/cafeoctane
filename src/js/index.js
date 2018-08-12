@@ -7,6 +7,7 @@ import './../sass/main.scss';
 import SearchResults from './pages/SearchResults';
 import About from './pages/About';
 import Admin from './admin/index';
+import Register from './pages/Register';
 
 const app = document.getElementById('app');
 
@@ -17,6 +18,7 @@ const Routing = () => (
             <Route exact path='/events/' component={SearchResults} />
             <Route exact path='/events/trending' component={SearchResults} />
             <Route path='/events/:id' component={SearchResults} />
+            <Route exact path='/register' component={Register} />
             <Route exact path='/admin' component={Admin} />
             <Route exact path='/about' component={About} />
         </Switch>

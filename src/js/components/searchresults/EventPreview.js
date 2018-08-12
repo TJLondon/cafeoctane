@@ -1,6 +1,5 @@
 import React from 'react';
-import { Redirect, Router } from 'react-router';
-import { Link  } from "react-router-dom";
+import Redirect from 'react-router';
 
 class EventPreview extends React.Component {
     constructor(props) {
@@ -8,7 +7,6 @@ class EventPreview extends React.Component {
         this.state = {
             redirect: false
         };
-
         this.handleOnClick = this.handleOnClick.bind(this);
     }
 
@@ -31,7 +29,7 @@ class EventPreview extends React.Component {
                 <article onClick={this.handleOnClick}>
                     <div className="thumb" style={this.imageStyle}>
                     </div>
-                    <div className="grad"></div>
+                    <div className="grad" />
                     <div className="article-copy">
                         <h3>
                             { this.props.event.eventTitle }

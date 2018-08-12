@@ -9,20 +9,23 @@ class LocationSearch extends Component {
         this.state = {
             place: null,
             coordinates: null,
-            distance: 50,
+            distance: "25",
         };
+        //this.handleChange = this.handleChange.bind(this);
     }
-
-    onDistance = (val) => {
-        this.setState({distance : val.target.value})
-    }
-
 
     onChange(loc) {
         if (loc.place) {
-            this.setState({place: loc.place, coordinates: loc.coordinates});
-            this.props.onLocationSearch(this.state);
+            this.setState({place: loc.place, coordinates: loc.coordinates}, () => {
+                this.props.onLocationSearch(this.state);
+            });
         }
+    }
+
+    handleChange(event) {
+        this.setState({distance: event.target.value}, () => {
+            this.props.onLocationSearch(this.state);
+        });
     }
 
     render() {
@@ -42,7 +45,7 @@ class LocationSearch extends Component {
                 <div className="row">
                     <label>Within</label>
                     <div>
-                            <select value={this.state.distance} onChange={this.onDistance.bind(this)}>
+                            <select value={this.state.distance} onChange={this.handleChange.bind(this)}>
                                 <option value={10}>10 miles</option>
                                 <option value={25}>25 miles</option>
                                 <option value={50}>50 miles</option>

@@ -19,19 +19,22 @@ class EventDetails extends React.Component {
 
     state = {
         event: Object,
-        lat: '-34.397',
-        lng: '150.644',
+        lat: '51.507351',
+        lng: '-0.127758',
         isMarkerShown: false
     };
 
     componentDidMount() {
+        //fetch event
         axios.get(`/api/events/` + this.props.eventid)
             .then(res => {
                 const event = res.data;
-                this.setState({ event: event, lat: event.lat, lng: event.lng, isMarkerShown: true });
-                console.log(this.state);
-            })
-
+                this.setState({
+                    event: event,
+                    lat: event.lat,
+                    lng: event.lng,
+                    isMarkerShown: true });
+            });
     }
 
     render() {
@@ -41,10 +44,8 @@ class EventDetails extends React.Component {
                     <div className="content">
                         <h2>{this.state.event.eventTitle}</h2>
                         <p>{this.state.event.eventStart} to {this.state.event.eventEnd}</p>
-                        <p>
-                            {this.state.event.eventSummary}
-                        </p>
 
+                        <div dangerouslySetInnerHTML={{ __html: this.state.event.eventSummary }} />
                         <p>Organiser: {this.state.event.eventOrganiser}</p>
 
                         <p><strong>Price:</strong> {this.state.event.eventPrice}</p>
@@ -54,9 +55,8 @@ class EventDetails extends React.Component {
 
                     <div className="moreDetailsPane">
                         <p>Organised by <strong>{this.state.event.eventOrganiser}</strong></p>
-                        <a href="#">Find out more</a>
-
-
+                        <p>Location <strong>{this.state.event.eventAddress}</strong></p>
+                        <a href={this.state.event.eventURL} target="_blank">Find out more</a>
                         <div className="googleMap">
                             <MapComponent
                                 isMarkerShown={this.state.isMarkerShown}

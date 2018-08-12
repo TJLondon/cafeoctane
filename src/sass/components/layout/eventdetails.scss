@@ -6,20 +6,31 @@
     font-size: 1.5rem;
   }
 
-  .content {
-    max-width: calc(720px - .625rem);
+  div.content {
+    max-width: 100%;
+    margin-top: 20px;
+    @include breakpoint(tablet) {
+      margin-top: 80px;
+      max-width: 55%;
+    }
   }
 }
 
 
 .moreDetailsPane {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 360px;
-  border: 1px #ccc solid;
-  padding: 2rem;
   background: white;
+  width: 100%;
+  padding: 2rem;
+  float: left;
+
+  @include breakpoint(tablet) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 360px;
+    border: 1px #ccc solid;
+    padding: 2rem;
+  }
 
   a {
     width: 100%;
