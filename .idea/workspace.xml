@@ -3,19 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8c26507e-84c7-4078-8f1e-cf618ffb43cb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/config.js" afterPath="$PROJECT_DIR$/config.js" />
-      <change beforePath="$PROJECT_DIR$/src/js/admin/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/searchresults/EventDetails.js" afterPath="$PROJECT_DIR$/src/js/components/searchresults/EventDetails.js" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/searchresults/EventPreview.js" afterPath="$PROJECT_DIR$/src/js/components/searchresults/EventPreview.js" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/searchresults/TrendingEvents.js" afterPath="$PROJECT_DIR$/src/js/components/searchresults/TrendingEvents.js" />
-      <change beforePath="$PROJECT_DIR$/src/js/index.js" afterPath="$PROJECT_DIR$/src/js/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/js/layout/Footer.js" afterPath="$PROJECT_DIR$/src/js/layout/Footer.js" />
-      <change beforePath="$PROJECT_DIR$/src/js/layout/Header.js" afterPath="$PROJECT_DIR$/src/js/layout/Header.js" />
-      <change beforePath="$PROJECT_DIR$/src/js/layout/Layout.js" afterPath="$PROJECT_DIR$/src/js/layout/Layout.js" />
-      <change beforePath="$PROJECT_DIR$/src/js/pages/SearchResults.js" afterPath="$PROJECT_DIR$/src/js/pages/SearchResults.js" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/base/_base.scss" afterPath="$PROJECT_DIR$/src/sass/components/base/_base.scss" />
       <change beforePath="$PROJECT_DIR$/src/sass/components/base/article.scss" afterPath="$PROJECT_DIR$/src/sass/components/base/article.scss" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/base/type.scss" afterPath="$PROJECT_DIR$/src/sass/components/base/type.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/components/base/register.scss" afterPath="$PROJECT_DIR$/src/sass/components/base/register.scss" />
+      <change beforePath="$PROJECT_DIR$/views/header.ejs" afterPath="$PROJECT_DIR$/views/header.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -143,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/src/sass/components/base/navigation.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="427">
-              <caret line="141" column="32" lean-forward="false" selection-start-line="141" selection-start-column="32" selection-end-line="141" selection-end-column="32" />
+              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -152,8 +142,8 @@
       <file leaf-file-name="register.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sass/components/base/register.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="30" selection-end-column="9" />
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,21 +164,9 @@
       <file leaf-file-name="article.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sass/components/base/article.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="72" column="23" lean-forward="true" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+            <state relative-caret-position="391">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/pages/Home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -216,7 +194,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>indexroute</find>
       <find>placeHolder</find>
       <find>class</find>
       <find>coor</find>
@@ -246,6 +223,7 @@
       <find>h3</find>
       <find>count</find>
       <find>icon</find>
+      <find>content</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -260,9 +238,9 @@
       <dir>C:\Users\Tom Jordan\WebstormProjects\cafeoctane</dir>
       <dir>C:\Users\Tom Jordan\WebstormProjects\cafeoctane\src\sass\components</dir>
       <dir>C:\Users\Tom Jordan\WebstormProjects\cafeoctane\src\sass</dir>
-      <dir>C:\git_tom\cafe_octane\cafeoctane\src\sass\components</dir>
       <dir>C:\git_tom\cafe_octane\cafeoctane\src</dir>
       <dir>C:\git_tom\cafe_octane\cafeoctane\src\sass</dir>
+      <dir>C:\git_tom\cafe_octane\cafeoctane\src\sass\components</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -286,7 +264,6 @@
         <option value="$PROJECT_DIR$/views/sample.json" />
         <option value="$PROJECT_DIR$/auth/users/functions.js" />
         <option value="$PROJECT_DIR$/auth/social/FacebookRouter.js" />
-        <option value="$PROJECT_DIR$/views/header.ejs" />
         <option value="$PROJECT_DIR$/src/sass/components/base/mixins.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/components.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/base/navigation.scss" />
@@ -303,7 +280,6 @@
         <option value="$PROJECT_DIR$/src/sass/components/base/billboard.scss" />
         <option value="$PROJECT_DIR$/src/js/pages/register.js" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/src/sass/components/base/register.scss" />
         <option value="$PROJECT_DIR$/src/js/pages/Register.js" />
         <option value="$PROJECT_DIR$/src/sass/components/layout/eventdetails.scss" />
         <option value="$PROJECT_DIR$/src/js/components/navigation/BurgerNav.js" />
@@ -321,6 +297,8 @@
         <option value="$PROJECT_DIR$/src/js/pages/SearchResults.js" />
         <option value="$PROJECT_DIR$/src/sass/components/base/type.scss" />
         <option value="$PROJECT_DIR$/src/js/components/searchresults/EventPreview.js" />
+        <option value="$PROJECT_DIR$/views/header.ejs" />
+        <option value="$PROJECT_DIR$/src/sass/components/base/register.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/base/article.scss" />
       </list>
     </option>
@@ -487,12 +465,12 @@
       <workItem from="1533820550782" duration="17982000" />
       <workItem from="1533943322319" duration="4644000" />
       <workItem from="1534003846722" duration="16548000" />
-      <workItem from="1534149828941" duration="18616000" />
+      <workItem from="1534149828941" duration="19567000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219169000" />
+    <option name="totallyTimeSpent" value="220120000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -808,7 +786,7 @@
         <state relative-caret-position="340">
           <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="47" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -869,14 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/components/base/register.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="30" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/pages/SearchResults.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -895,26 +865,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/header.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="56" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/components/base/type.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/components/base/navigation.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="141" column="32" lean-forward="false" selection-start-line="141" selection-start-column="32" selection-end-line="141" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -929,10 +883,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/header.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/components/base/navigation.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/components/base/register.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/components/base/article.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="72" column="23" lean-forward="true" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -1,7 +1,7 @@
 div.content {
   height: auto;
   background-color: $background-color;
-  margin-top: 80px;
+  margin-top: 75px;
   &.billboard {
     margin-top: 0;
   }
@@ -26,7 +26,6 @@ div.content {
       color: white;
       margin: 0 0 3rem 0;
     }
-
 
     .cta {
       background: $primary-color;

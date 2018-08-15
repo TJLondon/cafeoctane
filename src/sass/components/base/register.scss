@@ -4,7 +4,11 @@
   min-height: 100%;
   .container {
         .box {
-          width: 40%;
+          @include breakpoint(laptop) {
+            width: 40%;
+          }
+
+          width: 90%;
           margin: 15rem auto;
           @include alpha-background-color(rgba(black, 0.9), white);
           height: 250px;
