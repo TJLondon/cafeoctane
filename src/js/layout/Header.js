@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from "react-router-dom";
 import axios from 'axios';
 import BurgerNav from '../components/navigation/BurgerNav';
+import { Link } from "react-router-dom";
+import React from 'react';
 
 class Header extends React.Component {
     constructor(props) {
@@ -36,6 +36,8 @@ class Header extends React.Component {
                 activeClass: cssClass
             })
         });
+
+        window.scrollTo(0, 0);
     }
 
     isLoggedIn() {

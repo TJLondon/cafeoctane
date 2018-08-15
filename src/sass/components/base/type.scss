@@ -12,11 +12,22 @@ h1 {
 h2 {
   &.resultsCount {
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin:2rem;
   }
 }
 
 a, a:hover, a:visited {
   color: $primary-color;
+}
+
+a.cta {
+  background: $primary-color;
+  color: white;
+  padding: 1rem;
+  display: block;
+}
+
+p {
+  font-size: 1.6rem;
 }

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Helpers from '../Helpers';
 import React from 'react';
 import {GoogleMap, Marker, withGoogleMap, withScriptjs} from "react-google-maps";
 
@@ -37,13 +38,18 @@ class EventDetails extends React.Component {
             });
     }
 
+    transformDate = (date) => {
+        let input = new Date(Date.parse(date));
+        return input.toLocaleString('en-gb', {day: "numeric", month: "short", year: "numeric" });
+    };
+
     render() {
         return (
             <div>
                 <div className="eventDetailsWrapper">
                     <div className="content">
                         <h2>{this.state.event.eventTitle}</h2>
-                        <p>{this.state.event.eventStart} to {this.state.event.eventEnd}</p>
+                        <p>{Helpers.transformDate(this.state.event.eventStart)} to {Helpers.transformDate(this.state.event.eventEnd)}</p>
 
                         <div dangerouslySetInnerHTML={{ __html: this.state.event.eventSummary }} />
                         <p>Organiser: {this.state.event.eventOrganiser}</p>

@@ -4,15 +4,14 @@ import axios from 'axios';
 import EventPreview from '../components/searchresults/EventPreview';
 import EventDetails from '../components/searchresults/EventDetails';
 import querySearch from "stringquery";
+import Helpers from '../components/Helpers';
 
 export default class SearchResults extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
             events: Object
-    };
-        //this.currentEvent = this.currentEvent.bind(this);
+        };
     }
 
     componentDidMount() {
@@ -31,8 +30,10 @@ export default class SearchResults extends React.Component {
                 const events = res.data;
                 this.setState({ events: events });
             });
-           window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     }
+
+
 
     CurrentView() {
         if (this.props.match.params.id) {
@@ -40,15 +41,31 @@ export default class SearchResults extends React.Component {
                 <EventDetails events eventid={this.props.match.params.id} />
             )
         }
-        else {
+        if (Object.keys(this.state.events).length > 0) {
             return (
                 <div>
                     <h2 className="resultsCount">{Object.keys(this.state.events).length} events found</h2>
                     <div className="article-list">
-                        {Object.keys(this.state.events).map(eventId =>
-                            <EventPreview key={eventId} event={this.state.events[eventId]} />
+                        {Object.keys(this.state.events).map((eventId) =>
+                                    <EventPreview
+                                        key={eventId}
+                                        id={eventId}
+                                        eventTitle={this.state.events[eventId].eventTitle}
+                                        eventStart={Helpers.transformDate( this.state.events[eventId].eventStart) }
+                                    />
                         )}
                     </div>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className="box">
+                    <h2>Dang it! We don't have <br />any events in that area</h2>
+
+                    <p><a className="cta" href="">Suggest an event to us</a></p>
+                    <p>or</p>
+                    <p><a className="cta" href="/">Search again</a></p>
                 </div>
             )
         }

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import EventPreview from '../searchresults/EventPreview';
+import Helpers from '../Helpers';
 import React from 'react';
 
 export default class TrendingEvents extends React.Component {
@@ -18,8 +19,13 @@ export default class TrendingEvents extends React.Component {
     render() {
         return (
             <div className="article-home">
-                {Object.keys(this.state.events).map(eventId =>
-                    <EventPreview key={eventId} event={this.state.events[eventId]} />
+                {Object.keys(this.state.events).slice(0, 3).map(eventId =>
+                    <EventPreview
+                        key={eventId}
+                        id={eventId}
+                        eventTitle={this.state.events[eventId].eventTitle}
+                        eventStart={Helpers.transformDate(this.state.events[eventId].eventStart)}
+                    />
                 )}
             </div>
         )

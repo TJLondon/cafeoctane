@@ -9,16 +9,44 @@ div.content {
   @include breakpoint(tablet) {
     min-height: calc(100vh - 4.375rem);
   }
+
+  .box {
+    width: 40%;
+    margin: 15rem auto;
+    @include alpha-background-color(rgba(black, 0.9), white);
+    height: auto;
+    text-align: center;
+    padding: 1.5rem;
+    h2 {
+      color: white;
+      font-weight: 300;
+    }
+
+    p {
+      color: white;
+      margin: 0 0 3rem 0;
+    }
+
+
+    .cta {
+      background: $primary-color;
+      text-align: center;
+      width: 60%;
+      padding: 1rem;
+      color: #f7f7f7;
+      display: block;
+      margin: 3rem auto 0 auto;
+      text-decoration: none;
+
+      &:hover {
+        background: #454545;
+      }
+    }
+  }
+
 }
 
-
-
-
 div.article-list, div.article-home {
-
-  @include breakpoint(tablet) {
-    display: flex;
-  }
   position: relative;
   .thumb {
     background-size: cover;
@@ -26,30 +54,56 @@ div.article-list, div.article-home {
     min-height: 100%;
   }
   article {
+
+      h3 {
+        margin-left:0;
+      }
+
+      a.bookmark {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: white;
+        padding: 3px 3px 0 3px;
+        font-size: 1.4rem;
+        z-index: 5;
+
+        &:hover {
+          background: $primary-color;
+          color: white;
+        }
+      }
+
       height: 200px;
       position: relative;
       background-color: white;
-      margin: 2rem 2rem;
+      margin: 0 2rem 3rem 2rem;
       transition: all .25s;
       border: 1px $grey-border solid;
 
     @include breakpoint(tablet) {
       height: 250px;
       cursor: pointer;
-      width: calc(33.3% - 1.25rem);
-      max-width: calc(33.3% - 1.25rem);
+      width: calc(50% - 4rem);
+      max-width: calc(50% - 4rem);
       float: left;
 
     }
+
+    @include breakpoint(laptop) {
+      width: calc(33.3% - 4rem);
+      max-width: calc(33.3% - 4rem);
+    }
+
     &:hover {
-      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,1);
 
     }
 
     .grad {
-      background: linear-gradient(180deg,transparent 0,rgba(0,0,0,.7));
+      background: linear-gradient(180deg,transparent 0,rgba(0,0,0,.9));
       width:100%;
-      height: 80%;
+      height: 100%;
       position: absolute;
       bottom: 0;
     }
