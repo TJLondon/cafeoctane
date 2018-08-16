@@ -13,7 +13,7 @@ export default class Home extends React.Component {
                 <div className='home'>
                     <div className="container">
                         <div className="billboard">
-                            <h1>Let's get you a fix</h1>
+                            <h1>Find your next hit</h1>
                             <h2>The best car events, near you</h2>
                              <Search />
                         </div>

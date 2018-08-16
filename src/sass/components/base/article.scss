@@ -78,7 +78,6 @@ div.article-list, div.article-home {
       background-color: white;
       margin: 0 2rem 3rem 2rem;
       transition: all .25s;
-      border: 1px $grey-border solid;
 
     @include breakpoint(tablet) {
       height: 250px;

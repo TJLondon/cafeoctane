@@ -10,7 +10,8 @@ export default class SearchResults extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            events: Object
+            events: Object,
+            loading: true
         };
     }
 
@@ -28,9 +29,9 @@ export default class SearchResults extends React.Component {
         axios.get(url)
             .then(res => {
                 const events = res.data;
-                this.setState({ events: events });
+                this.setState({ events: events, loading: false });
             });
-        window.scrollTo(0, 0);
+
     }
 
 
@@ -58,7 +59,16 @@ export default class SearchResults extends React.Component {
                 </div>
             )
         }
-        else {
+
+        if (this.state.loading === true) {
+            return (
+                <div className="loading">
+                    <i className="material-icons loading">local_car_wash</i>
+                </div>
+            )
+        }
+
+        else if (Object.keys(this.state.events).length === 0 && this.state.loading === false) {
             return (
                 <div className="box">
                     <h2>Dang it! We don't have <br />any events in that area</h2>
