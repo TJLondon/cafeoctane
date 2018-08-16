@@ -1,6 +1,6 @@
 import axios from 'axios';
-import EventPreview from '../searchresults/EventPreview';
-import Helpers from '../Helpers';
+import EventPreview from './EventPreview';
+import Helpers from '../common/Helpers';
 import React from 'react';
 
 export default class TrendingEvents extends React.Component {
@@ -22,7 +22,7 @@ export default class TrendingEvents extends React.Component {
                 {Object.keys(this.state.events).slice(0, 3).map(eventId =>
                     <EventPreview
                         key={eventId}
-                        id={eventId}
+                        eventId={this.state.events[eventId]._id}
                         eventTitle={this.state.events[eventId].eventTitle}
                         eventStart={Helpers.transformDate(this.state.events[eventId].eventStart)}
                     />

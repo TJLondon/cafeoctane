@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import Home from './src/js/pages/Home';
+import Home from './src/js/home/Home';
 
 
 import axios from 'axios';

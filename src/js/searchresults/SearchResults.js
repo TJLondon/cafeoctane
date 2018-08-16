@@ -1,10 +1,10 @@
-import Layout from '../layout/Layout';
-import React from 'react';
 import axios from 'axios';
-import EventPreview from '../components/searchresults/EventPreview';
-import EventDetails from '../components/searchresults/EventDetails';
+import EventDetails from './EventDetails';
+import EventPreview from './EventPreview';
+import Helpers from '../common/Helpers';
+import Layout from '../common/layout/Layout';
 import querySearch from "stringquery";
-import Helpers from '../components/Helpers';
+import React from 'react';
 
 export default class SearchResults extends React.Component {
     constructor(props) {
@@ -31,7 +31,6 @@ export default class SearchResults extends React.Component {
                 const events = res.data;
                 this.setState({ events: events, loading: false });
             });
-
     }
 
 
@@ -50,7 +49,7 @@ export default class SearchResults extends React.Component {
                         {Object.keys(this.state.events).map((eventId) =>
                                     <EventPreview
                                         key={eventId}
-                                        id={eventId}
+                                        eventId={this.state.events[eventId]._id}
                                         eventTitle={this.state.events[eventId].eventTitle}
                                         eventStart={Helpers.transformDate( this.state.events[eventId].eventStart) }
                                     />

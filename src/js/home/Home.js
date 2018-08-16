@@ -1,13 +1,9 @@
-import Layout from '../layout/Layout';
+import HomeHeroSearch from './HomeHeroSearch';
+import Layout from '../common/layout/Layout';
 import React from 'react';
-import TrendingEvents from '../components/searchresults/TrendingEvents';
-import ReactDOM from 'react-dom';
+import TrendingEvents from '../searchresults/TrendingEvents';
 
-import Search from '../components/Search';
-
-
-export default class Home extends React.Component {
-    render() {
+const Home = () => {
         return (
             <Layout>
                 <div className='home'>
@@ -15,9 +11,8 @@ export default class Home extends React.Component {
                         <div className="billboard">
                             <h1>Find your next hit</h1>
                             <h2>The best car events, near you</h2>
-                             <Search />
+                             <HomeHeroSearch />
                         </div>
-
                     </div>
                 </div>
                 <div className="content billboard">
@@ -44,5 +39,6 @@ export default class Home extends React.Component {
                 </div>
             </Layout>
         )
-    }
 }
+
+export default Home

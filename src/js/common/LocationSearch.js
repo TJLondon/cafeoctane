@@ -1,9 +1,9 @@
 import { GoogleComponent } from 'react-google-location'
-import React, { Component } from 'react';
+import React from 'react';
 
 const API_KEY = 'AIzaSyCBQPdAc6XhD7cHv_HKopDeT1tMdJhAaCM';
 
-class LocationSearch extends Component {
+class LocationSearch extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -30,8 +30,8 @@ class LocationSearch extends Component {
 
     render() {
         return (
-            <div className="LocationSearch">
-                <div className="row">
+            <div className="locationSearch">
+                <div className="inputWrap">
                         <label>Location</label>
                             <GoogleComponent
                                 apiKey={API_KEY}
@@ -42,7 +42,8 @@ class LocationSearch extends Component {
                                 onChange={this.onChange.bind(this)} />
 
                 </div>
-                <div className="row">
+
+                <div className="inputWrap">
                     <label>Within</label>
                     <div>
                             <select value={this.state.distance} onChange={this.handleChange.bind(this)}>
@@ -53,8 +54,8 @@ class LocationSearch extends Component {
                                 <option value={250}>250 miles</option>
                             </select>
                     </div>
-                    </div>
                 </div>
+            </div>
         )
     }
 }

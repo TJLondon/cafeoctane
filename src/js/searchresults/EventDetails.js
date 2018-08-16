@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Helpers from '../Helpers';
+import Helpers from '../common/Helpers';
 import React from 'react';
 import {GoogleMap, Marker, withGoogleMap, withScriptjs} from "react-google-maps";
 

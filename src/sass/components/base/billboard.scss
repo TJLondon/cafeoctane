@@ -13,7 +13,7 @@
     @include breakpoint(tablet) {
       @include alpha-background-color(rgba(black, 0.3), white);
     }
-    .row {
+    .inputWrap {
       margin: 2rem 0;
     }
     label {

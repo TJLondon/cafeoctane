@@ -14,7 +14,7 @@ const EventPreview = (props) => {
                         <i className="material-icons">bookmark_border</i>
                     </a>
 
-                    <Link to={'/events/' + props.id}>
+                    <Link to={'/events/' + props.eventId}>
 
                         <div className="thumb" style={imageStyle}></div>
                         <div className="grad" />

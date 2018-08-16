@@ -9,7 +9,7 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 
 module.exports = {
     entry: {
-        main: './src/js/index.js'
+        main: './src/js/app.js'
     },
     output: {
         path:  __dirname + '/public',

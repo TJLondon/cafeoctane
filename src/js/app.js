@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Home from './pages/Home';
+import Home from './home/Home';
 import './../sass/main.scss';
-import SearchResults from './pages/SearchResults';
+import SearchResults from './searchresults/SearchResults';
 import About from './pages/About';
 import Register from './pages/Register';
 

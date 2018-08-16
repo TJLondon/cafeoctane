@@ -1,13 +1,12 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
-import LocationSearch from '../components/search/GoogleLocation';
+import LocationSearch from '../common/LocationSearch';
 
-class Search extends React.Component {
+class HomeHeroSearch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            location: '',
-            eventType: ''
+            location: ''
         }
     }
     locationHandler = (coords) => {
@@ -21,8 +20,7 @@ class Search extends React.Component {
         let query =
             "?lng=" + this.state.location.coordinates.lng +
             "&lat=" + this.state.location.coordinates.lat +
-            "&radius=" + this.state.location.distance +
-            "&type=" + this.state.eventType;
+            "&radius=" + this.state.location.distance;
         this.props.history.push("/events" + query);
     };
 
@@ -32,7 +30,7 @@ class Search extends React.Component {
                 <div className="container">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <form className="search" onSubmit={this.submitSearch} >
-                             <LocationSearch onLocationSearch={ this.locationHandler }  />
+                                <LocationSearch onLocationSearch={ this.locationHandler }  />
                             <button disabled={!this.state.location.coordinates}>SEARCH</button>
                         </form>
                     </div>
@@ -41,4 +39,4 @@ class Search extends React.Component {
         )
     }
 }
-export default withRouter(Search);
+export default withRouter(HomeHeroSearch);

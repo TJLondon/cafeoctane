@@ -1,21 +1,23 @@
 import axios from 'axios';
-import BurgerNav from '../components/navigation/BurgerNav';
+import BurgerNav from '../navigation/BurgerNav';
 import { Link } from "react-router-dom";
 import React from 'react';
+import SearchWidget from '../../common/SearchWidget';
 
 class Header extends React.Component {
     constructor(props) {
         super(props)
-    }
+        this.showSearch = this.showSearch.bind(this);
 
-    state = {
-        user: null,
-        activeClass: 'top'
-    };
+        this.state = {
+            user: null,
+            activeClass: 'top',
+            searchWidget: false
+        };
+    }
 
     componentDidMount() {
         let cssClass;
-
         axios.get('/auth/user')
             .then(res => {
                 const data = res.data;
@@ -25,13 +27,8 @@ class Header extends React.Component {
             });
 
         window.addEventListener('scroll', (event) => {
-            if(window.scrollY > 20){
-                cssClass = 'move';
-            }
-            else
-            {
-                cssClass = 'top';
-            }
+            event.preventDefault();
+            window.scrollY > 20 ? cssClass = 'move' : cssClass = 'top';
             this.setState({
                 activeClass: cssClass
             })
@@ -39,6 +36,16 @@ class Header extends React.Component {
 
         window.scrollTo(0, 0);
     }
+
+    showSearch = (e) => {
+        e.preventDefault();
+        if (this.state.searchWidget) {
+            this.setState({searchWidget: false})
+        }
+        else {
+            this.setState({searchWidget: true})
+        }
+    };
 
     isLoggedIn() {
         if (this.state.user) {
@@ -60,15 +67,17 @@ class Header extends React.Component {
     render() {
         return (
             <div>
+                {this.state.searchWidget ? <SearchWidget handler={this.showSearch} /> : null }
+
                 <BurgerNav/>
+
                 <nav className={'navbar ' + this.state.activeClass + ' ' + (location.pathname === '/' ? 'home' : 'content') }>
                     <Link to={'/'}>
                         <img className="logo" src="/assets/img/cafe_octane.png" />
                     </Link>
-
                     <ul className="navigation">
                         <li>
-                            <Link to={'/events/'}>Event Search</Link>
+                            <a href="#" onClick={this.showSearch}>Event Search</a>
                         </li>
                         <li>
                             <Link to={'/events/'}>Event organisers</Link>
@@ -77,7 +86,6 @@ class Header extends React.Component {
                             {this.isLoggedIn()}
                         </li>
                     </ul>
-
                 </nav>
             </div>
         )
