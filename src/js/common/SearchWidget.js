@@ -45,12 +45,10 @@ class SearchWidget extends React.Component {
             <div className="searchWidget">
                 <form onSubmit={this.submitSearch}>
                 <div className="container">
-
-
                     <LocationSearch onLocationSearch={ this.locationHandler }  />
 
                     <div className="inputWrap">
-                        {this.state.showDatePicker ? <DateRange onInit={this.handleSelect} onChange={this.handleSelect} /> : null }
+                        {this.state.showDatePicker ? <DateRange calendars={1} onInit={this.handleSelect} onChange={this.handleSelect} /> : null }
                         <label>From</label>
                         <input onClick={this.dateSelect} value={this.state.datePickerStart} type="text"  />
                     </div>

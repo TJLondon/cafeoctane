@@ -3,13 +3,15 @@ import EventPreview from './EventPreview';
 import Helpers from '../common/Helpers';
 import React from 'react';
 
-export default class TrendingEvents extends React.Component {
-    state = {
-        events: Object
-    };
-
+export default class CarouselWidget extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            events: Object
+        }
+    }
     componentDidMount() {
-        axios.get('api/events/trending')
+        axios.get('api/events/' + this.props.category + '/' + this.props.limit)
             .then(res => {
                 const events = res.data;
                 this.setState({ events });
@@ -19,7 +21,7 @@ export default class TrendingEvents extends React.Component {
     render() {
         return (
             <div className="article-home">
-                {Object.keys(this.state.events).slice(0, 3).map(eventId =>
+                {Object.keys(this.state.events).map(eventId =>
                     <EventPreview
                         key={eventId}
                         eventId={this.state.events[eventId]._id}

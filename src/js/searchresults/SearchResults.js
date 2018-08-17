@@ -6,11 +6,55 @@ import Layout from '../common/layout/Layout';
 import querySearch from "stringquery";
 import React from 'react';
 
+
+
+const Pagination = (props) => {
+
+    return (
+        <span>{props.page}</span>
+    )
+
+};
+
+
+export default class Pager extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            pages: Object
+        };
+    }
+
+    componentDidMount() {
+        let arr = [];
+
+        for (let x=0;x < this.props.totalPages; x++) {
+            arr.push(<Pagination page={x} />)
+        }
+
+        this.setState({pages:arr})
+
+    }
+
+
+    render() {
+
+    }
+
+
+}
+
+
+
+
+
 export default class SearchResults extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             events: Object,
+            pages: 1,
+            results: 0,
             loading: true
         };
     }
@@ -19,21 +63,23 @@ export default class SearchResults extends React.Component {
         let obj = querySearch(this.props.location.search),
             url = '/api/events';
 
+        if (obj.page == null) {
+            obj.page = 1
+        }
+
         if (obj.lng && obj.lat) {
            url = url
-               + '/geo'
+               + '/geo/7/' + obj.page
                + '?lng=' + obj.lng
                + '&lat=' + obj.lat
                + '&radius=' + obj.radius;
         }
         axios.get(url)
             .then(res => {
-                const events = res.data;
-                this.setState({ events: events, loading: false });
+                const events = res.data[0];
+                this.setState({ events: events, pages: res.data[1].pages, results: res.data[1].results, loading: false });
             });
     }
-
-
 
     CurrentView() {
         if (this.props.match.params.id) {
@@ -44,7 +90,7 @@ export default class SearchResults extends React.Component {
         if (Object.keys(this.state.events).length > 0) {
             return (
                 <div>
-                    <h2 className="resultsCount">{Object.keys(this.state.events).length} events found</h2>
+                    <h2 className="resultsCount">{this.state.results} events found</h2>
                     <div className="article-list">
                         {Object.keys(this.state.events).map((eventId) =>
                                     <EventPreview
@@ -55,6 +101,7 @@ export default class SearchResults extends React.Component {
                                     />
                         )}
                     </div>
+                    <Pagination pages={this.state.pages} />
                 </div>
             )
         }

@@ -2,9 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const EventPreview = (props) => {
-    // d1 = this.props.event.eventStart.split("/");
-    // date = new Date(this.d1[0], this.d1[1], this.d1[2]);
-
     let imageStyle = {
         backgroundImage: 'url(/assets/img/event_thumb.jpg)'
     };

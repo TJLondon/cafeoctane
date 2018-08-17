@@ -16,6 +16,25 @@ MongoClient.connect(config.dbendpoint, function(err, db) {
     mdb = db;
 });
 
+
+router.get('/', (req, res) => {
+    let options = {
+        root: __dirname,
+        dotfiles: 'allow',
+        headers: {
+            'x-timestamp': Date.now(),
+            'x-sent': true
+        }
+    };
+    res.sendFile('readme.txt', options, function (err) {
+        if (err) {
+            next(err);
+        } else {
+            console.log('Sent:');
+        }
+    });
+});
+
 //converts latitude and longitude to geohash
 router.get('/geo/encode', (req, res) => {
    let lng = req.query.lng,
@@ -41,8 +60,12 @@ router.get('/geo/encode', (req, res) => {
 });
 
 //serves up events based on radius from location
-router.get('/events/geo', (req, res) => {
-    let octanedb = mdb.db('cafeoctane');
+router.get('/events/geo/:limit/:page', (req, res) => {
+    let octanedb = mdb.db('cafeoctane'),
+        limit = req.params.limit,
+        page = --req.params.page
+
+
 
     const loc = {
         lat: Number(req.query.lat),
@@ -50,20 +73,46 @@ router.get('/events/geo', (req, res) => {
         radius: Number((req.query.radius*1000) * 1.60934) // miles to metres
     };
 
+    let resultsArray = [],
+        tempArray = [];
+
     octanedb.collection('events').find({})
         .toArray((err,result) => {
             const geo = new Geo(result);
-            res.send(geo.nearBy(loc.lat,
-                                loc.lng,
-                                loc.radius));
+
+            tempArray.push(geo.nearBy(loc.lat,loc.lng,loc.radius));
+            resultsArray.push(tempArray[0].slice(page * limit, (page + 1) * limit));
+            resultsArray.push({ pages: Math.ceil((tempArray[0].length)  / limit), results: tempArray[0].length});
+            res.send(resultsArray);
         })
 });
 
 //Serves up trending events
-router.get('/events/trending', (req, res) => {
+router.get('/events/trending/:limit', (req, res) => {
     let events = {};
     let octanedb = mdb.db('cafeoctane');
-    octanedb.collection('events').find({ trending: true }).sort({eventStart: 1})
+    octanedb.collection('events')
+        .find({ trending: true })
+        .sort({eventStart: 1})
+        .limit(parseInt(req.params.limit))
+        .each((err, event) => {
+            assert.equal(null, err);
+            if (!event) {
+                res.send(events);
+                return;
+            }
+            events[event._id] = event;
+        });
+});
+
+//Serves up upcoming events
+router.get('/events/upcoming/:limit', (req, res) => {
+    let events = {};
+    let octanedb = mdb.db('cafeoctane');
+    octanedb.collection('events')
+        .find({})
+        .sort({eventStart: 1})
+        .limit(parseInt(req.params.limit))
         .each((err, event) => {
             assert.equal(null, err);
             if (!event) {

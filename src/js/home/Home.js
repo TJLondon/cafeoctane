@@ -1,7 +1,7 @@
 import HomeHeroSearch from './HomeHeroSearch';
 import Layout from '../common/layout/Layout';
 import React from 'react';
-import TrendingEvents from '../searchresults/TrendingEvents';
+import CarouselWidget from '../searchresults/CarouselWidget';
 
 const Home = () => {
         return (
@@ -19,22 +19,17 @@ const Home = () => {
                     <div className="container">
                         <div className="row text-left">
                             <h3>Trending</h3>
-                                <TrendingEvents />
+                                <CarouselWidget limit={3} category="trending" />
                         </div>
                             <div className="row text-left">
                                 <h3>Upcoming</h3>
-                                <div className="col-md-4">
-
-                                </div>
+                                    <CarouselWidget limit={3} category="upcoming" />
                             </div>
 
                             <div className="row text-left">
                                 <h3>Recently viewed</h3>
-                                <div className="col-md-4">
-
-                                </div>
+                                    <CarouselWidget limit={3} category="trending" />
                             </div>
-
                     </div>
                 </div>
             </Layout>
