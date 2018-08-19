@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c26507e-84c7-4078-8f1e-cf618ffb43cb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/social/FacebookRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/auth/social/FacebookRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/social/facebookStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/auth/social/facebookStrategy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/users/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/auth/users/functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/common/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/common/layout/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/searchresults/EventDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/EventDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/searchresults/EventPreview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/EventPreview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/searchresults/SearchResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/SearchResults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/base/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/base/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/base/article.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/base/article.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/base/billboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/base/billboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/base/navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/base/navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/base/register.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/base/userprofile.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/base/searchresults.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/base/searchresults.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/base/type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/base/type.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/google-search/google-search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/google-search/google-search.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -59,7 +38,7 @@
           <entry key="ejs" value="9" />
           <entry key="gitignore" value="3" />
           <entry key="html" value="6" />
-          <entry key="js" value="156" />
+          <entry key="js" value="158" />
           <entry key="json" value="9" />
           <entry key="jsx" value="4" />
           <entry key="log" value="1" />
@@ -73,7 +52,7 @@
           <entry key="HTML" value="6" />
           <entry key="JSON" value="11" />
           <entry key="JSX Harmony" value="4" />
-          <entry key="JavaScript" value="156" />
+          <entry key="JavaScript" value="158" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="SCSS" value="62" />
         </counts>
@@ -83,7 +62,7 @@
           <entry key="ejs" value="150" />
           <entry key="gitignore" value="31" />
           <entry key="html" value="9" />
-          <entry key="js" value="23252" />
+          <entry key="js" value="23276" />
           <entry key="json" value="6" />
           <entry key="jsx" value="1" />
           <entry key="scss" value="5446" />
@@ -95,7 +74,7 @@
           <entry key="HTML" value="9" />
           <entry key="JSON" value="6" />
           <entry key="JSX Harmony" value="1" />
-          <entry key="JavaScript" value="23252" />
+          <entry key="JavaScript" value="23276" />
           <entry key="PLAIN_TEXT" value="31" />
           <entry key="SCSS" value="5446" />
         </counts>
@@ -113,11 +92,23 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/searchresults/SearchResults.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="115" column="47" selection-start-line="115" selection-start-column="40" selection-end-line="115" selection-end-column="47" />
+            <state relative-caret-position="368">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -171,19 +162,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/common/Helpers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/auth/users/UserRouter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="74" column="13" lean-forward="true" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+            <state relative-caret-position="450">
+              <caret line="79" column="6" lean-forward="true" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -293,7 +275,6 @@
         <option value="$PROJECT_DIR$/src/js/home/HomeHeroSearch.js" />
         <option value="$PROJECT_DIR$/src/js/common/SearchWidget.js" />
         <option value="$PROJECT_DIR$/src/js/searchresults/TrendingEvents.js" />
-        <option value="$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js" />
         <option value="$PROJECT_DIR$/api/readme.txt" />
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/api/index.js" />
@@ -318,10 +299,11 @@
         <option value="$PROJECT_DIR$/src/js/pages/UserProfile.js" />
         <option value="$PROJECT_DIR$/src/js/searchresults/EventPreview.js" />
         <option value="$PROJECT_DIR$/src/sass/components/base/article.scss" />
-        <option value="$PROJECT_DIR$/src/js/searchresults/SearchResults.js" />
         <option value="$PROJECT_DIR$/auth/social/FacebookRouter.js" />
         <option value="$PROJECT_DIR$/src/js/searchresults/Bookmark.js" />
         <option value="$PROJECT_DIR$/auth/users/UserRouter.js" />
+        <option value="$PROJECT_DIR$/src/js/searchresults/SearchResults.js" />
+        <option value="$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js" />
       </list>
     </option>
   </component>
@@ -368,23 +350,6 @@
             <path>
               <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
               <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="social" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -392,56 +357,6 @@
               <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="searchresults" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -516,12 +431,12 @@
       <workItem from="1534410774384" duration="14547000" />
       <workItem from="1534430896719" duration="1726000" />
       <workItem from="1534506173812" duration="11864000" />
-      <workItem from="1534531127375" duration="54321000" />
+      <workItem from="1534531127375" duration="54756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304006000" />
+    <option name="totallyTimeSpent" value="304441000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -662,16 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/home/HomeHeroSearch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -798,16 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
           <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/home/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -946,16 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/searchresults/SearchResults.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="115" column="47" selection-start-line="115" selection-start-column="40" selection-end-line="115" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/searchresults/Bookmark.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -968,10 +853,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/auth/users/UserRouter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="74" column="13" lean-forward="true" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+        <state relative-caret-position="450">
+          <caret line="79" column="6" lean-forward="true" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/home/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/searchresults/SearchResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

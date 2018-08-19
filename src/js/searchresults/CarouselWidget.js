@@ -10,6 +10,7 @@ export default class CarouselWidget extends React.Component {
             events: Object
         }
     }
+
     componentDidMount() {
         axios.get('api/events/' + this.props.category + '/' + this.props.limit)
             .then(res => {

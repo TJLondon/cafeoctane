@@ -86,16 +86,6 @@ export default class SearchResults extends React.Component {
 
     loadMore() {
             this.setState({page: this.state.page + 1}, () => {
-                let obj = querySearch(this.props.location.search),
-                    url = '/api/events';
-                if (obj.lng && obj.lat) {
-                    url = url
-                        + '/geo/3/' + this.state.page
-                        + '?lng=' + obj.lng
-                        + '&lat=' + obj.lat
-                        + '&radius=' + obj.radius;
-                }
-
                 this.getEvents()
                     .then(res => this.handleEventsSuccess(res.data))
                     .catch(error => this.handleEventsError(error));
