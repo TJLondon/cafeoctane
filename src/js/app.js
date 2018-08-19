@@ -5,8 +5,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './home/Home';
 import './../sass/main.scss';
 import SearchResults from './searchresults/SearchResults';
+import EventDetails from './searchresults/EventDetails';
 import About from './pages/About';
 import Register from './pages/Register';
+import UserProfile from './pages/UserProfile';
 
 const app = document.getElementById('app');
 
@@ -16,8 +18,9 @@ const Routing = () => (
             <Route exact path='/' component={Home} />
             <Route exact path='/events/' component={SearchResults} />
             <Route exact path='/events/trending' component={SearchResults} />
-            <Route path='/events/:id' component={SearchResults} />
+            <Route path='/events/:id' component={EventDetails} />
             <Route exact path='/register' component={Register} />
+            <Route exact path='/profile' component={UserProfile} />
             <Route exact path='/about' component={About} />
         </Switch>
     </main>

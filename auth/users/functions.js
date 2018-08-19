@@ -38,8 +38,8 @@ exports.facebookReg = (profile) => {
                         "last_name" : profile.last_name,
                         "email": profile.email,
                         "token": profile.id,
-                        "avatar": profile.picture.data.url
-                        //"avatar":profile.avatar
+                        "avatar": profile.picture.data.url,
+                        "optinSuggested": false
                     };
 
                     console.log("CREATING USER:", profile.email);

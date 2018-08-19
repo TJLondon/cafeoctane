@@ -25,11 +25,16 @@ const Home = () => {
                                 <h3>Upcoming</h3>
                                     <CarouselWidget limit={3} category="upcoming" />
                             </div>
-
                             <div className="row text-left">
                                 <h3>Recently viewed</h3>
                                     <CarouselWidget limit={3} category="trending" />
                             </div>
+                    </div>
+
+                    <div className="stripe dark">
+                    </div>
+
+                    <div className="stripe">
                     </div>
                 </div>
             </Layout>

@@ -1,0 +1,102 @@
+.register {
+  background-size: cover;
+  background: url('/assets/img/register_hero.jpg') no-repeat center center;
+  min-height: 100%;
+  .container {
+        .box {
+          @include breakpoint(laptop) {
+            width: 40%;
+          }
+
+          width: 90%;
+          margin: 15rem auto;
+          @include alpha-background-color(rgba(black, 0.9), white);
+          height: 250px;
+          text-align: center;
+          padding: 1.5rem;
+          h3 {
+            color: white;
+            font-weight: 300;
+          }
+
+          .facebookButton, .googleButton {
+            background: #3b5998;
+            text-align: center;
+            width: 60%;
+            padding: 1rem;
+            color: #f7f7f7;
+            display: block;
+            margin: 3rem auto 0 auto;
+          }
+
+          .googleButton {
+            background: #d62d20;
+          }
+        }
+  }
+}
+
+.userprofile {
+  .container {
+    .box {
+      background: white;
+
+      img {
+        border-radius: 50%;
+      }
+
+      h2 {
+        color: black;
+      }
+
+      .success {
+        i {
+          color: green;
+          font-size: 4rem;
+        }
+        p {
+          color: green;
+        }
+      }
+
+      .errorPanel {
+        i {
+          color: $primary-color;
+          font-size: 4rem;
+        }
+        p{
+          color: $primary-color;
+        }
+      }
+
+      p {
+        &.standard {
+          color: black;
+        }
+      }
+
+      form {
+        div {
+          margin: 2rem 0;
+          text-align: left;
+        }
+        label {
+          display:block
+        }
+        input {
+          width: 100%;
+          border: 1px $grey-border solid;
+          padding: 1rem;
+        }
+
+        button {
+          width: 100%;
+          &:hover {
+            background: $darker-grey;
+          }
+        }
+      }
+
+    }
+  }
+}

@@ -30,20 +30,6 @@
       width: 100%;
     }
 
-    button {
-      background: $primary-color;
-      color: white;
-      border:0;
-      font-size: 1.5rem;
-      padding: 1rem 2rem;
-
-      &:disabled {
-        background: gray;
-        visibility: hidden;
-      }
-    }
-
-
     @include breakpoint(tablet) {
       width: 50%;
       margin: 0 auto 250px auto;
@@ -53,7 +39,20 @@
       }
     }
 
+
   }
+
+  .stripe {
+    width: 100%;
+    background: white;
+    height: 200px;
+
+    &.dark {
+      background: #0f1721;
+    }
+  }
+
+
 
   h1 {
     font-size: 7rem;

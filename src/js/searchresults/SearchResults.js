@@ -1,92 +1,108 @@
 import axios from 'axios';
-import EventDetails from './EventDetails';
 import EventPreview from './EventPreview';
 import Helpers from '../common/Helpers';
 import Layout from '../common/layout/Layout';
 import querySearch from "stringquery";
 import React from 'react';
 
-
-
-const Pagination = (props) => {
-
-    return (
-        <span>{props.page}</span>
-    )
-
-};
-
-
-export default class Pager extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            pages: Object
-        };
-    }
-
-    componentDidMount() {
-        let arr = [];
-
-        for (let x=0;x < this.props.totalPages; x++) {
-            arr.push(<Pagination page={x} />)
-        }
-
-        this.setState({pages:arr})
-
-    }
-
-
-    render() {
-
-    }
-
-
-}
-
-
-
-
-
+const noop = () => {};
 export default class SearchResults extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            events: Object,
+            events: [],
             pages: 1,
+            page: 1,
+            user: null,
+            bookmarks: null,
             results: 0,
+            error: null,
             loading: true
         };
+
+        this.loadMore = this.loadMore.bind(this);
+        this.handleUserSuccess = this.handleUserSuccess.bind(this);
+        this.handleEventsSuccess = this.handleEventsSuccess.bind(this);
     }
 
-    componentDidMount() {
+    getUser = () => {
+        return (axios.get('/auth/user'))
+    };
+
+    getEvents = () => {
         let obj = querySearch(this.props.location.search),
-            url = '/api/events';
+            url = '/api/events'
+                + '/geo/3/' + this.state.page
+                + '?lng=' + obj.lng
+                + '&lat=' + obj.lat
+                + '&radius=' + obj.radius;
+        return (
+            axios.get(url)
+        )
+    };
 
-        if (obj.page == null) {
-            obj.page = 1
-        }
+    componentDidMount() {
+        let handleUserSuccess = this.handleUserSuccess,
+            handleEventsSuccess = this.handleEventsSuccess;
 
-        if (obj.lng && obj.lat) {
-           url = url
-               + '/geo/7/' + obj.page
-               + '?lng=' + obj.lng
-               + '&lat=' + obj.lat
-               + '&radius=' + obj.radius;
-        }
-        axios.get(url)
-            .then(res => {
-                const events = res.data[0];
-                this.setState({ events: events, pages: res.data[1].pages, results: res.data[1].results, loading: false });
+        axios.all([this.getUser(), this.getEvents()])
+            .then(axios.spread(function (user, events) {
+                handleUserSuccess(user.data);
+                handleEventsSuccess(events.data);
+            }))
+            .catch(error => {
+                this.handleEventsError(error);
             });
     }
 
-    CurrentView() {
-        if (this.props.match.params.id) {
-            return (
-                <EventDetails events eventid={this.props.match.params.id} />
-            )
+    componentWillUnmount() {
+        this.handleUserSuccess = noop;
+        this.handleUserError = noop;
+        this.handleEventsSuccess = noop;
+        this.handleEventsError = noop;
+    }
+
+    handleUserSuccess(data) {
+        if (data[0].email) {
+            this.setState({user: data[0], bookmarks: data[1]})
         }
+    }
+
+    handleUserError = error => {
+        this.setState({error })
+    };
+
+    handleEventsSuccess(events) {
+        this.setState({
+            events: this.state.events.concat(events[0]),
+            pages: events[1].pages,
+            results: events[1].results,
+            loading: false });
+    }
+
+    handleEventsError = error => {
+        this.setState({error })
+    };
+
+    loadMore() {
+            this.setState({page: this.state.page + 1}, () => {
+                let obj = querySearch(this.props.location.search),
+                    url = '/api/events';
+                if (obj.lng && obj.lat) {
+                    url = url
+                        + '/geo/3/' + this.state.page
+                        + '?lng=' + obj.lng
+                        + '&lat=' + obj.lat
+                        + '&radius=' + obj.radius;
+                }
+
+                this.getEvents()
+                    .then(res => this.handleEventsSuccess(res.data))
+                    .catch(error => this.handleEventsError(error));
+            })
+    }
+
+    CurrentView() {
         if (Object.keys(this.state.events).length > 0) {
             return (
                 <div>
@@ -95,13 +111,15 @@ export default class SearchResults extends React.Component {
                         {Object.keys(this.state.events).map((eventId) =>
                                     <EventPreview
                                         key={eventId}
+                                        user={this.state.user}
+                                        bookmarks={this.state.bookmarks}
                                         eventId={this.state.events[eventId]._id}
                                         eventTitle={this.state.events[eventId].eventTitle}
                                         eventStart={Helpers.transformDate( this.state.events[eventId].eventStart) }
                                     />
                         )}
                     </div>
-                    <Pagination pages={this.state.pages} />
+                    {this.state.pages > 1 && this.state.pages !== this.state.page ?<div className="moreContainer"> <button onClick={this.loadMore}>Show More</button> </div>: null }
                 </div>
             )
         }

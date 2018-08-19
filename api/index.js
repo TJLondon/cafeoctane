@@ -76,7 +76,7 @@ router.get('/events/geo/:limit/:page', (req, res) => {
     let resultsArray = [],
         tempArray = [];
 
-    octanedb.collection('events').find({})
+    octanedb.collection('events').find({}).sort({eventStart: 1})
         .toArray((err,result) => {
             const geo = new Geo(result);
 

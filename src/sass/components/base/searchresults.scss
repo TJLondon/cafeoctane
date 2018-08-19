@@ -3,6 +3,21 @@
   clear: both;
 }
 
+.moreContainer {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin: 3rem 0;
+
+  button {
+    background: $primary-color;
+    color: white;
+    border:0;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
+}
+
 .loading {
   text-align: center;
   margin: 5rem 0 0 0;

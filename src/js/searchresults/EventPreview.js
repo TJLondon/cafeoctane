@@ -1,30 +1,45 @@
+import axios from "axios";
+import {Link, withRouter} from 'react-router-dom';
 import React from 'react';
-import {Link} from 'react-router-dom';
+import Bookmark from "./Bookmark";
 
-const EventPreview = (props) => {
-    let imageStyle = {
+class EventPreview extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null
+        };
+    }
+
+    imageStyle = {
         backgroundImage: 'url(/assets/img/event_thumb.jpg)'
     };
+
+    componentDidMount() {
+
+    }
+    render() {
+
         return (
-                <article>
-                    <a href="/register" className="bookmark">
-                        <i className="material-icons">bookmark_border</i>
-                    </a>
-
-                    <Link to={'/events/' + props.eventId}>
-
-                        <div className="thumb" style={imageStyle}></div>
-                        <div className="grad" />
-                        <div className="article-copy">
-                            <h3>
-                                { props.eventTitle }
-                            </h3>
-                            <p>
-                                {props.eventStart}
-                            </p>
-                        </div>
-                    </Link>
-                </article>
-                )
+            <article>
+                <Bookmark
+                    user={this.props.user}
+                    bookmarks={this.props.bookmarks}
+                    eventId={this.props.eventId} />
+                <Link to={'/events/' + this.props.eventId}>
+                    <div className="thumb" style={this.imageStyle}></div>
+                    <div className="grad"/>
+                    <div className="article-copy">
+                        <h3>
+                            {this.props.eventTitle}
+                        </h3>
+                        <p>
+                            {this.props.eventStart}
+                        </p>
+                    </div>
+                </Link>
+            </article>
+        )
+    }
 };
-export default EventPreview
+export default withRouter(EventPreview)

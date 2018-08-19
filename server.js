@@ -2,6 +2,7 @@ import config from './config';
 import express from 'express';
 import apiRouter from './api';
 import FacebookRouter from './auth/social/FacebookRouter';
+import UserRouter from './auth/users/UserRouter';
 import session from 'express-session';
 
 const server = express();
@@ -15,6 +16,7 @@ server.get([
     '/events',
     '/events/:id',
     '/register',
+    '/profile',
     '/about'
 ], (req,res) => {
     // serverRender()
@@ -34,8 +36,10 @@ server.get([
 server.use(express.static('public'));
 server.use("/assets", express.static(__dirname + '/assets'));
 server.use(session({secret: "secret"}));
-server.use('/api', apiRouter);
-server.use('/auth', FacebookRouter);
+//api
+server.use('/api', apiRouter); //events api
+server.use('/auth', FacebookRouter); //user authentication
+server.use('/user', UserRouter); //user actions
 
 
 server.listen(config.port, config.host, () => {

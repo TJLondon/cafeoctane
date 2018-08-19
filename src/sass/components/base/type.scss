@@ -31,3 +31,16 @@ a.cta {
 p {
   font-size: 1.6rem;
 }
+
+button {
+  background: $primary-color;
+  color: white;
+  border:0;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+
+  &:disabled {
+    background: gray;
+    visibility: hidden;
+  }
+}

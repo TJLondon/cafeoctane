@@ -51,10 +51,40 @@ nav.navbar {
 
         .avatar {
           margin-left: 2rem;
+          position: relative;
           img {
             border-radius: 50%;
             margin-top: -15px;
           }
+
+          ul {
+            background: white;
+            position: absolute;
+            right: 0;
+            width: 150px;
+            text-align: center;
+            padding:0;
+            top: 53px;
+            border: 1px black solid;
+            li {
+              width: 100%;
+              padding:0;
+              margin:1rem 0;
+              a {
+                color: black;
+                font-wight: normal;
+
+                &.logout {
+                  color: $primary-color;
+                }
+              }
+
+
+            }
+
+
+          }
+
         }
       }
     }

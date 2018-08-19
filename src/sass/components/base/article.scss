@@ -47,6 +47,10 @@ div.content {
 
 div.article-list, div.article-home {
   position: relative;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+
   .thumb {
     background-size: cover;
     background-position: center center;
@@ -67,7 +71,7 @@ div.article-list, div.article-home {
         font-size: 1.4rem;
         z-index: 5;
 
-        &:hover {
+        &:hover, &.active {
           background: $primary-color;
           color: white;
         }

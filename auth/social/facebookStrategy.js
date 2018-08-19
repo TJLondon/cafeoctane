@@ -48,7 +48,7 @@ let FacebookRoutes = {
     callback: () => {
         return passport.authenticate('facebook', {
             successRedirect: '/',
-            failureRedirect: '/login',
+            failureRedirect: '/register',
             failureFlash: true
     });
     }
