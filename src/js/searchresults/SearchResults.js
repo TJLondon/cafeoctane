@@ -26,7 +26,12 @@ export default class SearchResults extends React.Component {
     }
 
     getUser = () => {
-        return (axios.get('/auth/user'))
+        if (document.cookie.indexOf("usertoken") > 0) {
+            return (axios.get('/auth/user'))
+        }
+        else {
+            return null
+        }
     };
 
     getEvents = () => {
@@ -42,17 +47,18 @@ export default class SearchResults extends React.Component {
     };
 
     componentDidMount() {
-        let handleUserSuccess = this.handleUserSuccess,
-            handleEventsSuccess = this.handleEventsSuccess;
+            let handleUserSuccess = this.handleUserSuccess,
+                handleEventsSuccess = this.handleEventsSuccess;
 
-        axios.all([this.getUser(), this.getEvents()])
-            .then(axios.spread(function (user, events) {
-                handleUserSuccess(user.data);
-                handleEventsSuccess(events.data);
-            }))
-            .catch(error => {
-                this.handleEventsError(error);
-            });
+            axios.all([this.getUser(), this.getEvents()])
+                .then(axios.spread(function (user, events) {
+                    handleEventsSuccess(events.data);
+                    handleUserSuccess(user.data);
+
+                }))
+                .catch(error => {
+                    this.handleEventsError(error);
+                });
     }
 
     componentWillUnmount() {

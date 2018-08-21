@@ -47,7 +47,7 @@ let FacebookRoutes = {
     },
     callback: () => {
         return passport.authenticate('facebook', {
-            successRedirect: '/',
+            successRedirect: '/auth/verified',
             failureRedirect: '/register',
             failureFlash: true
     });

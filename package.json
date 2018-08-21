@@ -63,6 +63,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-hash-history": "^0.2.3",
-    "stringquery": "^1.0.8"
+    "stringquery": "^1.0.8",
+    "universal-cookie": "^3.0.3"
   }
 }

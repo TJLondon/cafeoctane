@@ -27,9 +27,12 @@ server.get([
     //     })
     //     .catch(console.error)
 
+
     res.render('index', {
         content: ''
     });
+
+
 
 });
 

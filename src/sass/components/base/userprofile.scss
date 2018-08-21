@@ -6,10 +6,11 @@
         .box {
           @include breakpoint(laptop) {
             width: 40%;
+            margin: 15rem auto;
           }
 
           width: 90%;
-          margin: 15rem auto;
+          margin: 5rem auto;
           @include alpha-background-color(rgba(black, 0.9), white);
           height: 250px;
           text-align: center;
@@ -40,6 +41,12 @@
   .container {
     .box {
       background: white;
+      @include breakpoint(laptop) {
+        width: 40%;
+        margin: 10rem auto;
+      }
+      margin: 5rem auto;
+      width: 90%;
 
       img {
         border-radius: 50%;
@@ -81,7 +88,7 @@
           text-align: left;
         }
         label {
-          display:block
+          display:block;
         }
         input {
           width: 100%;

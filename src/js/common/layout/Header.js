@@ -1,11 +1,14 @@
 import axios from 'axios';
 import BurgerNav from '../navigation/BurgerNav';
+import Cookies from 'universal-cookie';
 import Helpers from '../../common/Helpers';
 import { Link } from "react-router-dom";
 import React from 'react';
 import SearchWidget from '../../common/SearchWidget';
 import UserNav from '../navigation/UserNav';
 
+const noop = () => {};
+const cookies = new Cookies();
 class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -20,11 +23,11 @@ class Header extends React.Component {
         this.userNavToggle = this.userNavToggle.bind(this);
         this.isLoggedIn = this.isLoggedIn.bind(this);
         this.handleUserSuccess = this.handleUserSuccess.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
     }
 
 
     handleUserSuccess(data) {
-        console.log(data);
         if (data[0].email) {
             this.setState({user: data[0]})
         }
@@ -34,21 +37,33 @@ class Header extends React.Component {
         this.setState(error)
     }
 
-    componentDidMount() {
+    handleScroll() {
         let cssClass;
-        axios.get('/auth/user')
+        window.addEventListener('scroll', (event) => {
+            event.preventDefault();
+            window.scrollY > 20 ? cssClass = 'move' : cssClass = 'top';
+            this.setState({
+                activeClass: cssClass
+            })
+        });
+        window.scrollTo(0, 0);
+    }
+
+    componentDidMount() {
+        if (document.cookie.indexOf("usertoken") > 0) {
+            axios.get('/auth/user')
             .then(res => this.handleUserSuccess(res.data))
             .catch(error => this.handleUserError(error));
+        }
+        this.handleScroll();
+    }
 
-        // window.addEventListener('scroll', (event) => {
-        //     event.preventDefault();
-        //     window.scrollY > 20 ? cssClass = 'move' : cssClass = 'top';
-        //     this.setState({
-        //         activeClass: cssClass
-        //     })
-        // });
-
-        window.scrollTo(0, 0);
+    componentWillUnmount() {
+        this.showSearch = noop;
+        this.userNavToggle = noop;
+        this.isLoggedIn = noop;
+        this.handleUserSuccess = noop;
+        this.handleScroll = noop;
     }
 
     showSearch = (e) => {
@@ -89,7 +104,7 @@ class Header extends React.Component {
             <div>
                 {this.state.searchWidget ? <SearchWidget handler={this.showSearch} /> : null }
 
-                <BurgerNav/>
+                <BurgerNav user={this.state.user}/>
 
                 <nav className={'navbar ' + this.state.activeClass + ' ' + (location.pathname === '/' ? 'home' : 'content') }>
                     <Link to={'/'}>

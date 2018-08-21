@@ -1,8 +1,10 @@
+import axios from "axios";
 import Layout from '../common/layout/Layout';
 import React from 'react';
-import axios from "axios";
+import {withRouter} from 'react-router-dom';
 
-export default class UserProfile extends React.Component {
+const noop = () => {}
+class UserProfile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,26 +19,40 @@ export default class UserProfile extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidMount() {
-        axios.get('/auth/user')
-            .then(res => {
-                const data = res.data[0];
-                if (data.email) {
-                    this.setState({
-                        first_name: data.first_name,
-                        last_name: data.last_name,
-                        email: data.email,
-                        avatar: data.avatar,
-                        optinSuggested: data.optinSuggested,
-                        view: 'user'
-                    })
-                }
+
+    handleUserSuccess = (data) => {
+        if (data.email) {
+            this.setState({
+                first_name: data.first_name,
+                last_name: data.last_name,
+                email: data.email,
+                avatar: data.avatar,
+                optinSuggested: data.optinSuggested,
+                view: 'user'
             })
-            .catch(error => {
-                this.setState({view: 'error'}, () => {
-                    console.log(error);
-                });
-            });
+        }
+    };
+
+    handUserError = (error) => {
+        this.setState({view: 'error'}, () => {
+            console.log(error);
+        });
+    };
+
+    componentDidMount() {
+        if (document.cookie.indexOf("usertoken") > 0) {
+            axios.get('/auth/user')
+                .then(res => this.handleUserSuccess(res.data[0]))
+                .catch(error => this.handUserError(error));
+        }
+        else {
+            this.props.history.push('/register')
+        }
+    }
+
+    componentWillUnmount() {
+        this.handleUserSuccess = noop;
+        this.handUserError = noop;
     }
 
     handleChange (event) {
@@ -143,3 +159,5 @@ export default class UserProfile extends React.Component {
 
 
 }
+
+export default withRouter(UserProfile)

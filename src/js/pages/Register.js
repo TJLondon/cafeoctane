@@ -2,10 +2,6 @@ import Layout from '../common/layout/Layout';
 import React from 'react';
 
 export default class Register extends React.Component {
-    state = {
-        events: Object,
-    };
-
     render() {
         return (
         <Layout>

@@ -5,7 +5,6 @@ import axios from "axios";
 class Bookmark extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             bookmarks: null,
             user: null,
@@ -23,7 +22,6 @@ class Bookmark extends React.Component {
 
     remove = (arr) => {
         const index = arr.indexOf(this.props.eventId);
-        console.log(index);
         if (index !== -1) {
             arr.splice(index, 1);
         }
@@ -37,7 +35,8 @@ class Bookmark extends React.Component {
             this.setState({active: ''}, () => {
                 axios.post('user/bookmark/remove', {
                     bookmarks: updatedBookmarks
-                }).then(res => {console.log(res)})
+                }).then()
+                    .catch(error => {console.log(error)})
             })
 
         }

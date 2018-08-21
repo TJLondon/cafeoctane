@@ -60,6 +60,7 @@ div.article-list, div.article-home {
 
       h3 {
         margin-left:0;
+        font-weight: bold;
       }
 
       a.bookmark {
@@ -69,7 +70,8 @@ div.article-list, div.article-home {
         background: white;
         padding: 3px 3px 0 3px;
         font-size: 1.4rem;
-        z-index: 5;
+        z-index: 1;
+        color: $primary-red;
 
         &:hover, &.active {
           background: $primary-color;
@@ -128,22 +130,6 @@ div.article-home {
   margin-top: 0;
 }
 
-.article-header {
-  height: auto;
-  overflow: hidden;
-
-  p {
-    margin-bottom: 0;
-    color: #616161;
-  }
-
-  h2 {
-    margin-top: 5px;
-  }
-}
-
-
-
 @include breakpoint(mobileonly) {
   .container {
     width: 100%
@@ -164,6 +150,7 @@ div.article-home {
 
 @include breakpoint(tablet) {
   .dateDisplay {
+    z-index: 1;
     color: black;
     display: inline;
     text-decoration: none;
@@ -177,6 +164,7 @@ div.article-home {
     padding: 5px 0;
     float: left;
     margin-right: 15px;
+    font-size: 1.3rem;
     span {
       color: #f13a59;
       font-size: 2.4rem;

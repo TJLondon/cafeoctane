@@ -1,6 +1,7 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { Link } from "react-router-dom";
+import UserNav from '../navigation/UserNav';
 
 class BurgerNav extends React.Component {
     constructor (props) {
@@ -35,7 +36,12 @@ class BurgerNav extends React.Component {
                     <li><Link to={'/'}>Home <i className="material-icons">keyboard_arrow_right</i></Link></li>
                     <li><Link to={'/events'}>Event Search <i className="material-icons">keyboard_arrow_right</i></Link></li>
                     <li><Link to={'/organisers'}>Event Organisers <i className="material-icons">keyboard_arrow_right</i></Link></li>
-                    <li><Link to={'/login'}>Login or Signup <i className="material-icons">keyboard_arrow_right</i></Link></li>
+
+                    {this.props.user ? <li><a href="/profile">Profile <i className="material-icons">keyboard_arrow_right</i></a></li> : null}
+                    {this.props.user ? <li><a href="/user/signout" className="logout">Logout</a></li> : null}
+                    {!this.props.user ? <li><Link to={'/register'}>Login or Signup <i className="material-icons">keyboard_arrow_right</i></Link></li> : null}
+
+
                     <li><Link to={'/about'}>About <i className="material-icons">keyboard_arrow_right</i></Link></li>
                 </ul>
 

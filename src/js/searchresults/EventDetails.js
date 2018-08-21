@@ -81,17 +81,24 @@ class EventDetails extends React.Component {
 
     EventView() {
         return (
-            <div className="eventDetailsWrapper">
-                <div className="content">
+            <div>
+            <div className="eventTitleWrapper">
+                <div className="container">
                     <div className="article-header">
                         <div className={'dateDisplay'}>
                             {this.dateDisplayCalendar(this.state.event.eventStart)}
                         </div>
-                        <div class="copy-wrap">
+                        <div className="copy-wrap">
                             <p>{this.dateDisplayLong(this.state.event.eventStart)} to {this.dateDisplayLong(this.state.event.eventEnd)}</p>
                             <h2>{this.state.event.eventTitle}</h2>
                         </div>
                     </div>
+                </div>
+            </div>
+                <div className="container">
+            <div className="eventDetailsWrapper">
+                <div className="content">
+
 
                     <div dangerouslySetInnerHTML={{ __html: this.state.event.eventSummary }} />
                     <p>Organiser: {this.state.event.eventOrganiser}</p>
@@ -120,18 +127,19 @@ class EventDetails extends React.Component {
                 </div>
 
             </div>
+                </div>
+            </div>
         )
     }
 
     render() {
         return (
             <Layout>
-                <div className="content">
-                    <div className="container">
-                {this.state.event && !this.state.error ? this.EventView() : null}
-                {this.state.error ? this.NotFound() : null}
+                    <div className="content">
+                        {this.state.event && !this.state.error ? this.EventView() : null}
+                        {this.state.error ? this.NotFound() : null}
                     </div>
-                </div>
+
             </Layout>
 
         )

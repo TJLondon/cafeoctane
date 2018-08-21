@@ -5,7 +5,6 @@ import {MongoClient} from "mongodb";
 import config from "../../config";
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import userRouter from "../users/UserRouter";
 
 const mongodbUrl = config.dbendpoint,
       FacebookRouter = express.Router();
@@ -19,15 +18,31 @@ FacebookRouter.use(bodyParser.urlencoded({ extended: true }));
 FacebookRouter.get('/login/facebook', FacebookRoutes.authenticate());
 FacebookRouter.get('/facebook/callback', FacebookRoutes.callback());
 
+FacebookRouter.get('/verified',(req, res) => {
+    console.log('user',req.user);
+    if (!req.cookies.usertoken && req.user) {
+        let options = {
+            maxAge: 7776000000, // 90 day expiry
+            httpOnly: false,
+            signed: true
+        };
+
+        res.cookie('usertoken', req.user, options);
+    }
+    res.redirect('/');
+})
+
+
 FacebookRouter.get('/user',(req, res) => {
     //Set them both to int to avoid undefined strings
     let user = Number(req.user) || Number(req.signedCookies['usertoken']);
     if (!req.cookies.usertoken && req.user) {
         let options = {
             maxAge: 7776000000, // 90 day expiry
-            httpOnly: true,
+            httpOnly: false,
             signed: true
         };
+
         res.cookie('usertoken', req.user, options);
     }
 
