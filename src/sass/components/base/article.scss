@@ -77,6 +77,12 @@ div.article-list, div.article-home {
         }
       }
 
+    .dateDisplay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
       height: 200px;
       position: relative;
       background-color: white;
@@ -113,7 +119,7 @@ div.article-list, div.article-home {
       position: absolute;
       bottom: 0;
       color: white;
-      padding: 15px;
+      padding: 10px;
     }
   }
 }
@@ -121,6 +127,22 @@ div.article-list, div.article-home {
 div.article-home {
   margin-top: 0;
 }
+
+.article-header {
+  height: auto;
+  overflow: hidden;
+
+  p {
+    margin-bottom: 0;
+    color: #616161;
+  }
+
+  h2 {
+    margin-top: 5px;
+  }
+}
+
+
 
 @include breakpoint(mobileonly) {
   .container {
@@ -132,6 +154,34 @@ div.article-home {
     article {
       max-width: 100%;
       width: 100%
+    }
+  }
+}
+
+.dateDisplay {
+  display: none;
+}
+
+@include breakpoint(tablet) {
+  .dateDisplay {
+    color: black;
+    display: inline;
+    text-decoration: none;
+    background: white;
+    min-width: 46px;
+    min-height: 36px;
+    width: 36px;
+    text-align: center;
+    border: 1px $grey-border solid;
+    border-radius: 10%;
+    padding: 5px 0;
+    float: left;
+    margin-right: 15px;
+    span {
+      color: #f13a59;
+      font-size: 2.4rem;
+      display: block;
+      line-height: 2rem;
     }
   }
 }

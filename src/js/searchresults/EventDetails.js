@@ -13,35 +13,43 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
     </GoogleMap>
 ));
 
+const noop = () => {};
 class EventDetails extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            event: Object,
+            lat: '51.507351',
+            lng: '-0.127758',
+            isMarkerShown: false,
+            error: false
+        };
     }
 
-    state = {
-        event: Object,
-        lat: '51.507351',
-        lng: '-0.127758',
-        isMarkerShown: false,
-        error: false
-    };
+    handleEventSuccess(event) {
+        this.setState({
+            event: event,
+            lat: event.lat,
+            lng: event.lng,
+            isMarkerShown: true });
+    }
+
+    handleEventError(error) {
+        this.setState({error})
+    }
 
     componentDidMount() {
         axios.get(`/api/events/` +this.props.match.params.id)
-            .then(res => {
-                const event = res.data;
-                this.setState({
-                    event: event,
-                    lat: event.lat,
-                    lng: event.lng,
-                    isMarkerShown: true });
-            })
-            .catch(error => {
-                this.setState({error: true})
-            });
+            .then(res => this.handleEventSuccess(res.data))
+            .catch(error => this.handleEventError(error))
+    };
+
+    componentWillUnmount() {
+        this.handleEventSuccess = noop();
+        this.handleEventError = noop();
     }
 
-    NotFound() {
+    static NotFound() {
         return (
         <div className="eventDetailsWrapper">
             <div className="content">
@@ -53,12 +61,37 @@ class EventDetails extends React.Component {
         )
     }
 
+
+    dateDisplayCalendar = (date) =>  {
+            let dateArr = Helpers.transformDate(date);
+            return (
+                <div>
+                    <span>{dateArr[0]}</span>
+                    {dateArr[1]}
+                </div>
+            )
+    };
+
+    dateDisplayLong = (date) => {
+        let dateArr = Helpers.transformDate(date);
+        return (
+            <span>{dateArr[3]} {dateArr[0]} {dateArr[1]} {dateArr[2]}</span>
+        )
+    };
+
     EventView() {
         return (
             <div className="eventDetailsWrapper">
                 <div className="content">
-                    <h2>{this.state.event.eventTitle}</h2>
-                    <p>{Helpers.transformDate(this.state.event.eventStart)} to {Helpers.transformDate(this.state.event.eventEnd)}</p>
+                    <div className="article-header">
+                        <div className={'dateDisplay'}>
+                            {this.dateDisplayCalendar(this.state.event.eventStart)}
+                        </div>
+                        <div class="copy-wrap">
+                            <p>{this.dateDisplayLong(this.state.event.eventStart)} to {this.dateDisplayLong(this.state.event.eventEnd)}</p>
+                            <h2>{this.state.event.eventTitle}</h2>
+                        </div>
+                    </div>
 
                     <div dangerouslySetInnerHTML={{ __html: this.state.event.eventSummary }} />
                     <p>Organiser: {this.state.event.eventOrganiser}</p>
@@ -71,6 +104,7 @@ class EventDetails extends React.Component {
                 <div className="moreDetailsPane">
                     <p>Organised by <strong>{this.state.event.eventOrganiser}</strong></p>
                     <p>Location <strong>{this.state.event.eventAddress}</strong></p>
+
                     <a href={this.state.event.eventURL} target="_blank">Find out more</a>
                     <div className="googleMap">
                         <MapComponent

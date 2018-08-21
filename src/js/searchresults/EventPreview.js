@@ -27,6 +27,10 @@ class EventPreview extends React.Component {
                     bookmarks={this.props.bookmarks}
                     eventId={this.props.eventId} />
                 <Link to={'/events/' + this.props.eventId}>
+                    <div className={'dateDisplay'}>
+                        <span>{this.props.eventStart[0]}</span>
+                        {this.props.eventStart[1]}
+                    </div>
                     <div className="thumb" style={this.imageStyle}></div>
                     <div className="grad"/>
                     <div className="article-copy">
@@ -34,7 +38,7 @@ class EventPreview extends React.Component {
                             {this.props.eventTitle}
                         </h3>
                         <p>
-                            {this.props.eventStart}
+                            {this.props.eventStart[0]} {this.props.eventStart[1]} {this.props.eventStart[2]}
                         </p>
                     </div>
                 </Link>
