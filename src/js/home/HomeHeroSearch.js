@@ -20,7 +20,8 @@ class HomeHeroSearch extends React.Component {
         let query =
             "?lng=" + this.state.location.coordinates.lng +
             "&lat=" + this.state.location.coordinates.lat +
-            "&radius=" + this.state.location.distance;
+            "&radius=" + this.state.location.distance +
+            "&place=" + this.state.location.place;
         this.props.history.push("/events" + query);
     };
 

@@ -2,7 +2,6 @@ import axios from 'axios';
 import BurgerNav from '../navigation/BurgerNav';
 import { Link } from "react-router-dom";
 import React from 'react';
-import SearchWidget from '../../common/SearchWidget';
 import UserNav from '../navigation/UserNav';
 
 const noop = () => {};
@@ -90,7 +89,7 @@ class Header extends React.Component {
         else {
             return (
                 <div>
-                    <a href="/register">Sign up</a>
+                    <a href="/register">Sign up or Login</a>
                 </div>
             )
         }
@@ -99,8 +98,6 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                {this.state.searchWidget ? <SearchWidget handler={this.showSearch} /> : null }
-
                 <BurgerNav user={this.state.user}/>
 
                 <nav className={'navbar ' + this.state.activeClass + ' ' + (location.pathname === '/' ? 'home' : 'content') }>
@@ -108,12 +105,6 @@ class Header extends React.Component {
                         <img className="logo" src="/assets/img/cafe_octane.png" />
                     </Link>
                     <ul className="navigation">
-                        <li>
-                            <a href="#" onClick={this.showSearch}>Event Search</a>
-                        </li>
-                        <li>
-                            <Link to={'/events/'}>Event organisers</Link>
-                        </li>
                         <li>
                             {this.isLoggedIn()}
                         </li>

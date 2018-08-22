@@ -32,14 +32,12 @@
 
     @include breakpoint(tablet) {
       width: 50%;
-      margin: 0 auto 250px auto;
+      margin: 0 auto 50px auto;
 
       input, select, button {
         width: 75%;
       }
     }
-
-
   }
 
   .stripe {

@@ -63,7 +63,9 @@ router.get('/geo/encode', (req, res) => {
 router.get('/events/geo/:limit/:page', (req, res) => {
     let octanedb = mdb.db('cafeoctane'),
         limit = req.params.limit,
-        page = --req.params.page
+        datefrom = req.params.datefrom,
+        dateto = req.params.dateto,
+        page = --req.params.page;
 
 
 
@@ -76,15 +78,34 @@ router.get('/events/geo/:limit/:page', (req, res) => {
     let resultsArray = [],
         tempArray = [];
 
-    octanedb.collection('events').find({}).sort({eventStart: 1})
-        .toArray((err,result) => {
-            const geo = new Geo(result);
+    if (datefrom && dateto) {
+        octanedb.collection('events').find({
+            created_at: {
+                $gte: datefrom,
+                $lt: dateto
+            }
+        }).sort({eventStart: 1})
+            .toArray((err,result) => {
+                const geo = new Geo(result);
+                tempArray.push(geo.nearBy(loc.lat,loc.lng,loc.radius));
+                resultsArray.push(tempArray[0].slice(page * limit, (page + 1) * limit));
+                resultsArray.push({ pages: Math.ceil((tempArray[0].length)  / limit), results: tempArray[0].length});
+                res.send(resultsArray);
+            })
+    }
+    else {
+        octanedb.collection('events').find({}).sort({eventStart: 1})
+            .toArray((err,result) => {
+                const geo = new Geo(result);
+                tempArray.push(geo.nearBy(loc.lat,loc.lng,loc.radius));
+                resultsArray.push(tempArray[0].slice(page * limit, (page + 1) * limit));
+                resultsArray.push({ pages: Math.ceil((tempArray[0].length)  / limit), results: tempArray[0].length});
+                res.send(resultsArray);
+            })
+    }
 
-            tempArray.push(geo.nearBy(loc.lat,loc.lng,loc.radius));
-            resultsArray.push(tempArray[0].slice(page * limit, (page + 1) * limit));
-            resultsArray.push({ pages: Math.ceil((tempArray[0].length)  / limit), results: tempArray[0].length});
-            res.send(resultsArray);
-        })
+
+
 });
 
 //Serves up trending events

@@ -16,14 +16,16 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
 const noop = () => {};
 class EventDetails extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             event: Object,
-            lat: '51.507351',
-            lng: '-0.127758',
+            lat: null,
+            lng: null,
             isMarkerShown: false,
             error: false
         };
+
+        this.handleEventSuccess = this.handleEventSuccess.bind(this);
     }
 
     handleEventSuccess(event) {
@@ -61,7 +63,6 @@ class EventDetails extends React.Component {
         )
     }
 
-
     dateDisplayCalendar = (date) =>  {
             let dateArr = Helpers.transformDate(date);
             return (
@@ -98,8 +99,6 @@ class EventDetails extends React.Component {
                 <div className="container">
             <div className="eventDetailsWrapper">
                 <div className="content">
-
-
                     <div dangerouslySetInnerHTML={{ __html: this.state.event.eventSummary }} />
                     <p>Organiser: {this.state.event.eventOrganiser}</p>
 
@@ -145,5 +144,4 @@ class EventDetails extends React.Component {
         )
     }
 }
-
 export default EventDetails

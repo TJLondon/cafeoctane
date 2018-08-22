@@ -1,15 +1,7 @@
 .searchWidget {
-  position: fixed;
-  top: 0;
   width: 100%;
-  background: white;
-  z-index:10;
   height: auto;
   border-bottom: 1px $primary-color solid;
-
-  &:not(:focus) {
-    /*display: none;*/
-  }
 
   .locationSearch {
     display: inline;
@@ -17,12 +9,11 @@
     .google-covert {
       position: absolute;
       background: white;
-      width: 33%;
+      width: 100%;
+      z-index:1
     }
-
   }
-
-  .rdr-DateRange {
+    .rdr-DateRange {
     position: absolute;
     top: 0;
     border: 1px $dark-grey solid;
@@ -31,9 +22,13 @@
 
   .inputWrap {
     display: inline-block;
-    padding: 2rem;
-    margin: 1rem;
+    padding: 0 2rem;
+    margin: 1rem 1rem 1rem 0;
     position: relative;
+    width: auto;
+    .location-box {
+      width: 340px;
+    }
 
     input, select {
       color: black;
@@ -45,23 +40,11 @@
       margin: 0 2rem 0 0;
     }
 
-    button {
-      background: $primary-color;
-      color: white;
-      border:0;
-      font-size: 1.7rem;
-      padding: 0.5rem 2rem;
-    }
+
 
     .rdr-DateRange {
       position: absolute;
       top: 160px;
     }
-  }
-
-  .exit {
-    position: absolute;
-    top: 15px;
-    right: 15px;
   }
 }

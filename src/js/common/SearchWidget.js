@@ -1,5 +1,6 @@
 import { DateRange } from 'react-date-range';
 import Helpers from '../common/Helpers';
+import moment from 'moment';
 import LocationSearch from '../common/LocationSearch';
 import React from 'react';
 import { withRouter } from "react-router-dom";
@@ -15,12 +16,10 @@ class SearchWidget extends React.Component {
         }
     }
 
-    handleSelect = (date) => {
-            this.setState({
-                datePickerStart: Helpers.transformDate(date.startDate._d),
-                datePickerEnd: Helpers.transformDate(date.endDate._d) });
-    };
 
+    componentDidMount() {
+
+    }
     locationHandler = (coords) => {
         if (coords) {
             this.setState({location: coords})
@@ -33,11 +32,10 @@ class SearchWidget extends React.Component {
 
     submitSearch = (e) => {
         e.preventDefault();
-        let query =
-            "?lng=" + this.state.location.coordinates.lng +
+        let query = "?lng=" + this.state.location.coordinates.lng +
             "&lat=" + this.state.location.coordinates.lat +
             "&radius=" + this.state.location.distance;
-        this.props.history.push("/events" + query);
+        this.props.handler(query);
     };
 
     render() {
@@ -46,27 +44,10 @@ class SearchWidget extends React.Component {
                 <form onSubmit={this.submitSearch}>
                 <div className="container">
                     <LocationSearch onLocationSearch={ this.locationHandler }  />
-
-                    <div className="inputWrap">
-                        {this.state.showDatePicker ? <DateRange calendars={1} onInit={this.handleSelect} onChange={this.handleSelect} /> : null }
-                        <label>From</label>
-                        <input onClick={this.dateSelect} value={this.state.datePickerStart} type="text"  />
-                    </div>
-
-                    <div className="inputWrap">
-                        <label>To</label>
-                        <input onClick={this.dateSelect} value={this.state.datePickerEnd} type="text"  />
-                    </div>
-
                     <div className="inputWrap">
                         <button value="search" onClick={this.submitSearch}>Search</button>
                     </div>
-
                 </div>
-
-                <a href="#" onClick={this.props.handler} className="exit">
-                    <i className="material-icons">close</i>
-                </a>
                 </form>
             </div>
         )

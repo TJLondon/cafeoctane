@@ -1,15 +1,18 @@
 import axios from 'axios';
+import { DateRange } from 'react-date-range';
 import EventPreview from './EventPreview';
 import Helpers from '../common/Helpers';
 import Layout from '../common/layout/Layout';
 import querySearch from "stringquery";
 import React from 'react';
+import SearchWidget from '../common/SearchWidget';
 
 const noop = () => {};
 export default class SearchResults extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            resultsperpage: 3,
             events: [],
             pages: 1,
             page: 1,
@@ -17,12 +20,16 @@ export default class SearchResults extends React.Component {
             bookmarks: null,
             results: 0,
             error: null,
-            loading: true
+            searchquery: null,
+            loading: true,
+            datePickerStart: null,
+            datePickerEnd: null
         };
 
         this.loadMore = this.loadMore.bind(this);
         this.handleUserSuccess = this.handleUserSuccess.bind(this);
         this.handleEventsSuccess = this.handleEventsSuccess.bind(this);
+        this.submitSearch = this.submitSearch.bind(this);
     }
 
     getUser = () => {
@@ -34,32 +41,34 @@ export default class SearchResults extends React.Component {
         }
     };
 
-    getEvents = () => {
+    getEvents = (query) => {
         let obj = querySearch(this.props.location.search),
             url = '/api/events'
-                + '/geo/3/' + this.state.page
-                + '?lng=' + obj.lng
-                + '&lat=' + obj.lat
-                + '&radius=' + obj.radius;
+                + '/geo/'+ this.state.resultsperpage + '/' + this.state.page;
+                if (!query) {
+                    query = '?lng=' + obj.lng
+                    + '&lat=' + obj.lat
+                    + '&radius=' + obj.radius;
+                }
+                this.setState({searchquery: query});
+
         return (
-            axios.get(url)
+            axios.get(url + query)
         )
     };
 
     componentDidMount() {
-            let handleUserSuccess = this.handleUserSuccess,
-                handleEventsSuccess = this.handleEventsSuccess;
-
+        let handleUserSuccess = this.handleUserSuccess,
+            handleEventsSuccess = this.handleEventsSuccess;
             axios.all([this.getUser(), this.getEvents()])
                 .then(axios.spread(function (user, events) {
                     handleEventsSuccess(events.data);
                     handleUserSuccess(user.data);
-
                 }))
                 .catch(error => {
                     this.handleEventsError(error);
-                });
-    }
+                })
+    };
 
     componentWillUnmount() {
         this.handleUserSuccess = noop;
@@ -83,7 +92,7 @@ export default class SearchResults extends React.Component {
             events: this.state.events.concat(events[0]),
             pages: events[1].pages,
             results: events[1].results,
-            loading: false });
+            loading: false});
     }
 
     handleEventsError = error => {
@@ -98,10 +107,57 @@ export default class SearchResults extends React.Component {
             })
     }
 
+    submitSearch = (search) => {
+        this.setState({
+            loading: true,
+            events: [],
+            pages: 1,
+            page: 1
+        }, () => {
+            this.getEvents(search)
+                .then(data => this.handleEventsSuccess(data.data));
+        });
+    };
+
+    calendarSwitch = () => {
+        console.log('switch')
+    };
+
+    handleCalendarSelect = (date) => {
+        this.setState({
+            datePickerStart: date.startDate.unix(),
+            datePickerEnd: date.endDate.unix()
+        });
+    }
+
+    handleCalendarSubmit = () => {
+        if (this.state.datePickerStart != null) {
+            let search = this.state.searchquery
+                + '&datefrom=' + this.state.datePickerStart
+                + '&dateto=' + this.state.datePickerEnd;
+            this.setState({
+                loading: true,
+                events: [],
+                pages: 1,
+                page: 1
+            }, () => {
+                this.getEvents(search)
+                    .then(data => this.handleEventsSuccess(data.data));
+            });
+        }
+    };
+
+
     CurrentView() {
         if (Object.keys(this.state.events).length > 0) {
             return (
                 <div>
+
+                    <div className="calendarContainer">
+                        <DateRange calendars={1} format={'default'} onInit={this.handleCalendarSelect} onChange={this.handleCalendarSelect}/>
+                        <button onClick={this.handleCalendarSubmit}>Update</button>
+                    </div>
+
                     <h2 className="resultsCount">{this.state.results} events found</h2>
                     <div className="article-list">
                         {Object.keys(this.state.events).map((eventId) =>
@@ -144,9 +200,14 @@ export default class SearchResults extends React.Component {
     render() {
         return (
             <Layout>
-                <div className="content">
-                    <div className="container">
-                        {this.CurrentView()}
+                <div className="searchresults">
+                    <div className="resultsHeader">
+                        <SearchWidget calendarswitch={this.calendarSwitch} handler={this.submitSearch} />
+                    </div>
+                    <div className="content">
+                        <div className="container">
+                            { this.CurrentView() }
+                        </div>
                     </div>
                 </div>
             </Layout>

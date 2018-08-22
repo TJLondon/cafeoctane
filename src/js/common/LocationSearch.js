@@ -37,10 +37,9 @@ class LocationSearch extends React.Component {
                                 apiKey={API_KEY}
                                 language={'en'}
                                 className="form-control"
-                                country={'country:in|country:uk'}
+                                country={'country:uk'}
                                 coordinates={true}
                                 onChange={this.onChange.bind(this)} />
-
                 </div>
 
                 <div className="inputWrap">
