@@ -15,6 +15,7 @@ class Bookmark extends React.Component {
     }
 
     componentDidMount() {
+        console.log(this.props.bookmarks);
         if (this.props.bookmarks && this.props.bookmarks.includes(this.props.eventId)) {
             this.setState({active: 'active'});
         }

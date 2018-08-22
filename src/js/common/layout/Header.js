@@ -1,37 +1,24 @@
-import axios from 'axios';
 import BurgerNav from '../navigation/BurgerNav';
 import { Link } from "react-router-dom";
 import React from 'react';
 import UserNav from '../navigation/UserNav';
+import Cookies from 'universal-cookie';
 
 const noop = () => {};
+const cookies = new Cookies();
 class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: null,
             error: null,
             activeClass: 'top',
-            userNav: false,
-            searchWidget: false
+            userNav: false
         };
-        this.showSearch = this.showSearch.bind(this);
+
         this.userNavToggle = this.userNavToggle.bind(this);
-        this.isLoggedIn = this.isLoggedIn.bind(this);
-        this.handleUserSuccess = this.handleUserSuccess.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
     }
 
-
-    handleUserSuccess(data) {
-        if (data[0].email) {
-            this.setState({user: data[0]})
-        }
-    }
-
-    handleUserError(error) {
-        this.setState(error)
-    }
 
     handleScroll() {
         let cssClass;
@@ -46,31 +33,12 @@ class Header extends React.Component {
     }
 
     componentDidMount() {
-        if (document.cookie.indexOf("usertoken") > 0) {
-            axios.get('/auth/user')
-            .then(res => this.handleUserSuccess(res.data))
-            .catch(error => this.handleUserError(error));
-        }
         this.handleScroll();
     }
 
     componentWillUnmount() {
-        this.showSearch = noop;
-        this.userNavToggle = noop;
-        this.isLoggedIn = noop;
-        this.handleUserSuccess = noop;
         this.handleScroll = noop;
     }
-
-    showSearch = (e) => {
-        e.preventDefault();
-        if (this.state.searchWidget) {
-            this.setState({searchWidget: false})
-        }
-        else {
-            this.setState({searchWidget: true})
-        }
-    };
 
     userNavToggle(e) {
         e.preventDefault();
@@ -78,10 +46,10 @@ class Header extends React.Component {
     }
 
      isLoggedIn() {
-        if (this.state.user) {
+        if (document.cookie.indexOf("usertoken") > 0) {
             return (
                 <div className="avatar">
-                    <a href="/profile" onClick={this.userNavToggle}><img width="50" src={this.state.user.avatar} /></a>
+                    <a href="/profile" onClick={this.userNavToggle}><img width="50" src={cookies.get('avatar')} /></a>
                     {this.state.userNav ? <UserNav />: null}
                 </div>
             )
@@ -98,7 +66,7 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <BurgerNav user={this.state.user}/>
+                <BurgerNav />
 
                 <nav className={'navbar ' + this.state.activeClass + ' ' + (location.pathname === '/' ? 'home' : 'content') }>
                     <Link to={'/'}>

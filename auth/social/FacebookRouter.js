@@ -19,17 +19,36 @@ FacebookRouter.get('/login/facebook', FacebookRoutes.authenticate());
 FacebookRouter.get('/facebook/callback', FacebookRoutes.callback());
 
 FacebookRouter.get('/verified',(req, res) => {
-    console.log('user',req.user);
     if (!req.cookies.usertoken && req.user) {
         let options = {
             maxAge: 7776000000, // 90 day expiry
             httpOnly: false,
             signed: true
         };
+        MongoClient.connect(mongodbUrl, function (err, db) {
+            let octanedb = db.db('cafeoctane');
+            let usersCollection = octanedb.collection('users');
+            //check if username is already assigned in our database
+            usersCollection.findOne(
+                {'token': req.user.toString()})
+                .then(function (user) {
+                    if (null != user) {
+                        res.cookie('usertoken', req.user, options);
+                        res.cookie('avatar', user.avatar, {maxAge:7776000000, httpOnly: false});
+                        res.redirect('/');
+                    }
+                    else {
+                        res.status(200).json('{"error": "unable to authenticate against local DB"}');
+                        res.redirect('/register');
+                    }
+                });
+        });
 
-        res.cookie('usertoken', req.user, options);
+
+
+
     }
-    res.redirect('/');
+
 })
 
 

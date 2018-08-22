@@ -22,6 +22,7 @@ export default class SearchResults extends React.Component {
             error: null,
             searchquery: null,
             loading: true,
+            calendar: '',
             datePickerStart: null,
             datePickerEnd: null
         };
@@ -62,12 +63,15 @@ export default class SearchResults extends React.Component {
             handleEventsSuccess = this.handleEventsSuccess;
             axios.all([this.getUser(), this.getEvents()])
                 .then(axios.spread(function (user, events) {
-                    handleEventsSuccess(events.data);
                     handleUserSuccess(user.data);
+                    handleEventsSuccess(events.data);
+
                 }))
                 .catch(error => {
                     this.handleEventsError(error);
                 })
+
+
     };
 
     componentWillUnmount() {
@@ -79,7 +83,7 @@ export default class SearchResults extends React.Component {
 
     handleUserSuccess(data) {
         if (data[0].email) {
-            this.setState({user: data[0], bookmarks: data[1]})
+            this.setState({user: data[0], bookmarks: data[1]});
         }
     }
 
@@ -147,18 +151,23 @@ export default class SearchResults extends React.Component {
         }
     };
 
+    toggleCalendar = (e) => {
+        e.preventDefault();
+        this.state.calendar === '' ? this.setState({calendar: 'calendar-active'}) : this.setState({calendar: ''})
+    };
+
 
     CurrentView() {
         if (Object.keys(this.state.events).length > 0) {
             return (
-                <div>
-
+                <div className={this.state.calendar}>
+                    <h2 className="resultsCount">{this.state.results} events found</h2>
                     <div className="calendarContainer">
                         <DateRange calendars={1} format={'default'} onInit={this.handleCalendarSelect} onChange={this.handleCalendarSelect}/>
                         <button onClick={this.handleCalendarSubmit}>Update</button>
                     </div>
 
-                    <h2 className="resultsCount">{this.state.results} events found</h2>
+
                     <div className="article-list">
                         {Object.keys(this.state.events).map((eventId) =>
                                     <EventPreview
@@ -203,6 +212,7 @@ export default class SearchResults extends React.Component {
                 <div className="searchresults">
                     <div className="resultsHeader">
                         <SearchWidget calendarswitch={this.calendarSwitch} handler={this.submitSearch} />
+                        <a href="#" onClick={this.toggleCalendar}>toggle</a>
                     </div>
                     <div className="content">
                         <div className="container">

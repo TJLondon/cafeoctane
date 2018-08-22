@@ -3,7 +3,7 @@ import Layout from '../common/layout/Layout';
 import React from 'react';
 import CarouselWidget from '../searchresults/CarouselWidget';
 
-const Home = () => {
+const Home = (props) => {
         return (
             <Layout>
                 <div className='home'>
