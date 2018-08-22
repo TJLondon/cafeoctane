@@ -1,14 +1,11 @@
 import axios from 'axios';
 import BurgerNav from '../navigation/BurgerNav';
-import Cookies from 'universal-cookie';
-import Helpers from '../../common/Helpers';
 import { Link } from "react-router-dom";
 import React from 'react';
 import SearchWidget from '../../common/SearchWidget';
 import UserNav from '../navigation/UserNav';
 
 const noop = () => {};
-const cookies = new Cookies();
 class Header extends React.Component {
     constructor(props) {
         super(props);
