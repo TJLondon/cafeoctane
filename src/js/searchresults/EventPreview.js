@@ -1,4 +1,3 @@
-import axios from "axios";
 import {Link, withRouter} from 'react-router-dom';
 import React from 'react';
 import Bookmark from "./Bookmark";
@@ -19,7 +18,6 @@ class EventPreview extends React.Component {
 
     }
     render() {
-
         return (
             <article>
                 <Bookmark
@@ -31,7 +29,7 @@ class EventPreview extends React.Component {
                         <span>{this.props.eventStart[0]}</span>
                         {this.props.eventStart[1]}
                     </div>
-                    <div className="thumb" style={this.imageStyle}></div>
+                    <div className="thumb" style={this.imageStyle}>&nbsp;</div>
                     <div className="grad"/>
                     <div className="article-copy">
                         <h3>
@@ -45,5 +43,5 @@ class EventPreview extends React.Component {
             </article>
         )
     }
-};
+}
 export default withRouter(EventPreview)

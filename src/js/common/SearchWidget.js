@@ -1,6 +1,4 @@
 import { DateRange } from 'react-date-range';
-import Helpers from '../common/Helpers';
-import moment from 'moment';
 import LocationSearch from '../common/LocationSearch';
 import React from 'react';
 import { withRouter } from "react-router-dom";
@@ -10,6 +8,7 @@ class SearchWidget extends React.Component {
         super(props);
         this.state = {
             location: '',
+            inputError: '',
             showDatePicker: false,
             datePickerStart: '',
             datePickerEnd: ''
@@ -20,22 +19,25 @@ class SearchWidget extends React.Component {
     componentDidMount() {
 
     }
+
+
     locationHandler = (coords) => {
         if (coords) {
             this.setState({location: coords})
         }
     };
 
-    dateSelect = () => {
-        this.setState({ showDatePicker: true });
-    };
-
     submitSearch = (e) => {
         e.preventDefault();
-        let query = "?lng=" + this.state.location.coordinates.lng +
-            "&lat=" + this.state.location.coordinates.lat +
-            "&radius=" + this.state.location.distance;
-        this.props.handler(query);
+        if (this.state.location === '') {
+            this.setState({inputError: 'error'})
+        }
+        else {
+            let query = "?lng=" + this.state.location.coordinates.lng +
+                "&lat=" + this.state.location.coordinates.lat +
+                "&radius=" + this.state.location.distance;
+            this.props.handler(query);
+        }
     };
 
     render() {

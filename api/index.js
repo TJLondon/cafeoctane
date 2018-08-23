@@ -63,11 +63,11 @@ router.get('/geo/encode', (req, res) => {
 router.get('/events/geo/:limit/:page', (req, res) => {
     let octanedb = mdb.db('cafeoctane'),
         limit = req.params.limit,
-        datefrom = req.params.datefrom,
-        dateto = req.params.dateto,
+        datefrom = req.query.datefrom,
+        dateto = req.query.dateto,
         page = --req.params.page;
 
-
+    console.log(datefrom);
 
     const loc = {
         lat: Number(req.query.lat),
@@ -79,8 +79,9 @@ router.get('/events/geo/:limit/:page', (req, res) => {
         tempArray = [];
 
     if (datefrom && dateto) {
+
         octanedb.collection('events').find({
-            created_at: {
+            eventStart: {
                 $gte: datefrom,
                 $lt: dateto
             }

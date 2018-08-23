@@ -11,7 +11,7 @@ div.content {
   }
 
   .box {
-    width: 40%;
+    width: auto;
     margin: 15rem auto;
     @include alpha-background-color(rgba(black, 0.9), white);
     height: auto;
@@ -40,6 +40,14 @@ div.content {
       &:hover {
         background: #454545;
       }
+    }
+
+    @include breakpoint(tablet) {
+      width: 60%;
+    }
+
+    @include breakpoint(laptop) {
+      width: 40%;
     }
   }
 
@@ -138,8 +146,7 @@ div.article-home {
   div.article-list {
     display: inline;
     article {
-      max-width: 100%;
-      width: 100%
+
     }
   }
 }

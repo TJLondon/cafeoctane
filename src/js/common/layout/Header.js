@@ -6,6 +6,7 @@ import Cookies from 'universal-cookie';
 
 const noop = () => {};
 const cookies = new Cookies();
+
 class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -19,16 +20,14 @@ class Header extends React.Component {
         this.handleScroll = this.handleScroll.bind(this);
     }
 
-
     handleScroll() {
         let cssClass;
-        window.addEventListener('scroll', (event) => {
-            event.preventDefault();
+        window.addEventListener('scroll', () => {
             window.scrollY > 20 ? cssClass = 'move' : cssClass = 'top';
             this.setState({
                 activeClass: cssClass
             })
-        });
+        }, {passive: true});
         window.scrollTo(0, 0);
     }
 
@@ -45,7 +44,7 @@ class Header extends React.Component {
         this.state.userNav ? this.setState({userNav: false}) : this.setState({userNav: true})
     }
 
-     isLoggedIn() {
+    isLoggedIn() {
         if (document.cookie.indexOf("usertoken") > 0) {
             return (
                 <div className="avatar">
@@ -67,7 +66,6 @@ class Header extends React.Component {
         return (
             <div>
                 <BurgerNav />
-
                 <nav className={'navbar ' + this.state.activeClass + ' ' + (location.pathname === '/' ? 'home' : 'content') }>
                     <Link to={'/'}>
                         <img className="logo" src="/assets/img/cafe_octane.png" />

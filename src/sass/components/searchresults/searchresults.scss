@@ -44,54 +44,91 @@
       color: $darker-grey;
       float: right;
     }
-
-    .calendar-cta {
-
-    }
+  }
+  .container {
+    position: relative;
   }
 }
 
-.calendarContainer {
+.calendarContainer, button.calendarToggle {
   display: none;
 }
 
-.calendar-active {
-  .calendarContainer {
-    float: right;
+@include breakpoint(laptop) {
+  button.calendarToggle {
+    background: $primary-color;
+    margin: 1rem;
     display: block;
+    position: absolute;
+    right: 25px;
+    top: -5px;
   }
+}
 
-  .article-list {
-    width: 60%;
-
-    .dateDisplay {
-      top: 25px;
-      left: 20px;
+.calendar-active {
+  @include breakpoint(laptop) {
+    button.calendarToggle {
+      background: $dark-grey
     }
 
-    article {
-      max-width: 100%;
-      width: 100%;
-      height: 100px;
-      margin-top:0;
-      margin-bottom:0;
-      border-bottom: 1px $darker-grey solid;
-      .thumb, .grad {
-        display: none;
-      }
+    .calendarContainer {
+      float: right;
+      display: block;
+      margin-right: 20px;
 
-      h3, p {
-        color: black;
-      }
-
-      .article-copy {
-        margin-left: 70px;
+      button {
+        float: right;
       }
     }
 
-  }
+    .article-list {
+      width: 60%;
 
-  .moreContainer {
-    width:60%;
+      .dateDisplay {
+        top: 25px;
+        left: 20px;
+      }
+
+      article {
+        max-width: 100%;
+        width: 100%;
+        height: 100px;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-bottom: 1px #cccccc solid;
+
+        .thumb, .grad {
+          display: none;
+        }
+
+        h3 {
+          color: black;
+        }
+
+        p {
+          color: #616161;
+        }
+
+        .article-copy {
+          margin-left: 70px;
+        }
+      }
+    }
+
+    .moreContainer {
+      width: 60%;
+    }
   }
+}
+
+.rdr-MonthAndYear span {
+  font-size: 2rem!important;
+}
+
+.rdr-Day.is-selected {
+  background: $primary-color!important;
+}
+
+.calendarContainer span {
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif!important;
 }
