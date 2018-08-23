@@ -10,12 +10,10 @@ class Bookmark extends React.Component {
             user: null,
             active: ''
         };
-
         this.bookmarkEvent = this.bookmarkEvent.bind(this);
     }
 
     componentDidMount() {
-        console.log(this.props.bookmarks);
         if (this.props.bookmarks && this.props.bookmarks.includes(this.props.eventId)) {
             this.setState({active: 'active'});
         }
@@ -31,7 +29,6 @@ class Bookmark extends React.Component {
 
     addBookmark() {
         if (this.state.active === 'active') {
-            console.log(this.remove(this.props.bookmarks));
             let updatedBookmarks = this.remove(this.props.bookmarks);
             this.setState({active: ''}, () => {
                 axios.post('user/bookmark/remove', {
@@ -39,7 +36,6 @@ class Bookmark extends React.Component {
                 }).then()
                     .catch(error => {console.log(error)})
             })
-
         }
         else {
             this.setState({active: 'active'}, () => {

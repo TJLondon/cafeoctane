@@ -138,9 +138,7 @@ class EventDetails extends React.Component {
                         {this.state.event && !this.state.error ? this.EventView() : null}
                         {this.state.error ? this.NotFound() : null}
                     </div>
-
             </Layout>
-
         )
     }
 }

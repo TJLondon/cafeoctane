@@ -4,6 +4,21 @@ import React from 'react';
 import CarouselWidget from '../searchresults/CarouselWidget';
 
 const Home = (props) => {
+
+        const RecentlyViewed = () => {
+            if (document.cookie.indexOf("usertoken") > 0) {
+                return (
+                    <div className="row text-left">
+                        <h3>Recently viewed</h3>
+                        <CarouselWidget limit={3} category="trending"/>
+                    </div>
+                )
+            }
+            else {
+                return ''
+            }
+        }
+
         return (
             <Layout>
                 <div className='home'>
@@ -25,10 +40,7 @@ const Home = (props) => {
                                 <h3>Upcoming</h3>
                                     <CarouselWidget limit={3} category="upcoming" />
                             </div>
-                            <div className="row text-left">
-                                <h3>Recently viewed</h3>
-                                    <CarouselWidget limit={3} category="trending" />
-                            </div>
+                            <RecentlyViewed />
                     </div>
 
                     <div className="stripe dark">
