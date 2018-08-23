@@ -7,23 +7,24 @@ class SearchWidget extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            location: '',
-            inputError: '',
-            showDatePicker: false,
-            datePickerStart: '',
-            datePickerEnd: ''
+            location: {
+                lng: '',
+                lat: '',
+                radius: ''
+            },
+            inputError: ''
         }
     }
 
-
-    componentDidMount() {
-
-    }
-
-
     locationHandler = (coords) => {
-        if (coords) {
-            this.setState({location: coords})
+        console.log(coords);
+        if (coords.coordinates) {
+            this.setState({
+                location: {
+                    lng: coords.coordinates['lng'],
+                    lat: coords.coordinates['lat'],
+                    radius: coords.distance
+                }})
         }
     };
 
@@ -33,10 +34,7 @@ class SearchWidget extends React.Component {
             this.setState({inputError: 'error'})
         }
         else {
-            let query = "?lng=" + this.state.location.coordinates.lng +
-                "&lat=" + this.state.location.coordinates.lat +
-                "&radius=" + this.state.location.distance;
-            this.props.handler(query);
+            this.props.handler(this.state.location);
         }
     };
 

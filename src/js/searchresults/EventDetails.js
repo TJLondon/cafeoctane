@@ -33,7 +33,9 @@ class EventDetails extends React.Component {
             event: event,
             lat: event.lat,
             lng: event.lng,
-            isMarkerShown: true });
+            isMarkerShown: true }, () => {
+            this.forceUpdate()
+        });
     }
 
     handleEventError(error) {
@@ -117,11 +119,12 @@ class EventDetails extends React.Component {
                             isMarkerShown={this.state.isMarkerShown}
                             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAq3Qk8Cni9iyrwM36azQCnXBWmL1sAm8s&v=3.exp"
                             loadingElement={<div style={{ height: `100%` }} />}
-                            containerElement={<div style={{ height: `300px` }} />}
+                            containerElement={<div style={{ height: `300px`, width: '300px' }} />}
                             mapElement={<div style={{ height: `100%` }} />}
                             latitude={this.state.lat}
                             longitude={this.state.lng}
                         />
+
                     </div>
                 </div>
 

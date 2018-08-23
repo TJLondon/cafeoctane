@@ -11,7 +11,7 @@ class LocationSearch extends React.Component {
             coordinates: null,
             distance: "25",
         };
-        //this.handleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     onChange(loc) {
