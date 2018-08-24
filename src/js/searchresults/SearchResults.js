@@ -24,11 +24,12 @@ export default class SearchResults extends React.Component {
             loading: true,
             calendar: '',
             filters: {
-                lng: '',
-                lat: '',
-                radius: '',
-                dateStart: '',
-                dateEnd: ''
+                lng: '-1.477870',
+                lat: '53.332780',
+                radius: '1000',
+                dateStart: moment().startOf('day').toISOString(),
+                dateEnd: moment().add(1, 'year').toISOString(),
+                category: ''
             }
         };
 
@@ -76,7 +77,7 @@ export default class SearchResults extends React.Component {
             query = '?';
 
         Object.entries(this.state.filters).map((id) => {
-            id[1] !== '' ? query += id[0] + '=' + id[1] + '&' : null;
+            id[1] != null ? query += id[0] + '=' + id[1] + '&' : null;
         });
 
         return (
@@ -86,19 +87,28 @@ export default class SearchResults extends React.Component {
 
     componentDidMount() {
         let handleUserSuccess = this.handleUserSuccess,
-            handleEventsSuccess = this.handleEventsSuccess,
-            obj = querySearch(this.props.location.search);
+            handleEventsSuccess = this.handleEventsSuccess;
 
-        this.setState({filters: {lng: obj.lng, lat: obj.lat, radius: obj.radius, dateStart: this.state.filters.dateStart, dateEnd: this.state.filters.dateEnd}}, () => {
-            axios.all([this.getUser(), this.getEvents()])
-                .then(axios.spread(function (user, events) {
-                    if ( user !== null) {handleUserSuccess(user.data) }
-                    if ( events !== null) {handleEventsSuccess(events.data) }
-                }))
-                .catch(error => {
-                    this.handleEventsError(error);
-                })
-        })
+        let obj = querySearch(this.props.location.search);
+        if (obj.lat == null) {
+            obj = {lat: this.state.filters.lat, lng: this.state.filters.lng, radius: this.state.filters.radius}
+        }
+        this.setState({filters:
+                {
+                    lng: obj.lng,
+                    lat: obj.lat,
+                    radius: obj.radius,
+                    dateStart: this.state.filters.dateStart,
+                    dateEnd: this.state.filters.dateEnd,
+                    category: this.props.match.params.category}}, () => {
+
+                axios.all([this.getUser(), this.getEvents()])
+                    .then(axios.spread(function (user, events) {
+                        user !== null ? handleUserSuccess(user.data) : null;
+                        events !== null ? handleEventsSuccess(events.data) : null;
+                    }))
+                    .catch(error => { this.handleEventsError(error);})
+        });
     };
 
     componentWillUnmount() {
@@ -116,6 +126,8 @@ export default class SearchResults extends React.Component {
             })
     }
 
+
+
     submitSearch = (results) => {
         this.setState({
             loading: true,
@@ -127,7 +139,8 @@ export default class SearchResults extends React.Component {
                 lat: results.lat,
                 radius: results.radius,
                 dateStart: this.state.filters.dateStart,
-                dateEnd: this.state.filters.dateEnd
+                dateEnd: this.state.filters.dateEnd,
+                category: this.state.filters.category
             }
         }, () => {
             this.getEvents()
@@ -142,7 +155,8 @@ export default class SearchResults extends React.Component {
                 lng: this.state.filters.lng,
                 radius: this.state.filters.radius,
                 dateStart: date.startDate.toISOString(),
-                dateEnd: date.endDate.toISOString()
+                dateEnd: date.endDate.toISOString(),
+                category: this.state.filters.category
             }
         });
     };

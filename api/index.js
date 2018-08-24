@@ -65,7 +65,15 @@ router.get('/events/geo/:limit/:page', (req, res) => {
         limit = req.params.limit,
         dateStart = req.query.dateStart,
         dateEnd = req.query.dateEnd,
-        page = --req.params.page;
+        category = req.query.category,
+        page = --req.params.page,
+
+        hasDate = false,
+        hasCateogry = false;
+
+        dateStart && dateEnd ? hasDate = true : hasDate = false;
+        category ? hasCateogry = true : hasCateogry = false;
+
 
     const loc = {
         lat: Number(req.query.lat),
@@ -76,12 +84,12 @@ router.get('/events/geo/:limit/:page', (req, res) => {
     let resultsArray = [],
         tempArray = [];
 
-    if (dateStart && dateEnd) {
+    if (!hasCateogry) {
         octanedb.collection('events').find({
-            eventStart: {
-                $gte: dateStart,
-                $lt: dateEnd
-            }
+                    eventStart: {
+                            $gte: new Date(dateStart),
+                            $lt: new Date(dateEnd)
+                    }
         }).sort({eventStart: 1})
             .toArray((err,result) => {
                 const geo = new Geo(result);
@@ -92,18 +100,25 @@ router.get('/events/geo/:limit/:page', (req, res) => {
             })
     }
     else {
-        octanedb.collection('events').find({}).sort({eventStart: 1})
-            .toArray((err,result) => {
-                const geo = new Geo(result);
-                tempArray.push(geo.nearBy(loc.lat,loc.lng,loc.radius));
-                resultsArray.push(tempArray[0].slice(page * limit, (page + 1) * limit));
-                resultsArray.push({ pages: Math.ceil((tempArray[0].length)  / limit), results: tempArray[0].length});
-                res.send(resultsArray);
-            })
+        octanedb.collection('eventType').findOne({eventTypeTitle: new RegExp(category.replace('-', ' '), "i")}, (err, eventType) => {
+            octanedb.collection('events').find(
+                {
+                    eventCategory: { "$in" : [eventType._id]},
+                    eventStart: {
+                        $gte: new Date(dateStart),
+                        $lt: new Date(dateEnd)
+                    }
+                }
+                ).sort({eventStart: 1})
+                .toArray((err,result) => {
+                    const geo = new Geo(result);
+                    tempArray.push(geo.nearBy(loc.lat,loc.lng,loc.radius));
+                    resultsArray.push(tempArray[0].slice(page * limit, (page + 1) * limit));
+                    resultsArray.push({ pages: Math.ceil((tempArray[0].length)  / limit), results: tempArray[0].length});
+                    res.send(resultsArray);
+                })
+        });
     }
-
-
-
 });
 
 //Serves up trending events
@@ -111,7 +126,12 @@ router.get('/events/trending/:limit', (req, res) => {
     let events = {};
     let octanedb = mdb.db('cafeoctane');
     octanedb.collection('events')
-        .find({ trending: true })
+        .find({
+            trending: true,
+            eventStart: {
+                $gte: new Date()
+            }
+        })
         .sort({eventStart: 1})
         .limit(parseInt(req.params.limit))
         .each((err, event) => {
@@ -129,7 +149,10 @@ router.get('/events/upcoming/:limit', (req, res) => {
     let events = {};
     let octanedb = mdb.db('cafeoctane');
     octanedb.collection('events')
-        .find({})
+        .find({
+            eventStart: {
+                $gte: new Date()
+            }})
         .sort({eventStart: 1})
         .limit(parseInt(req.params.limit))
         .each((err, event) => {
@@ -145,8 +168,8 @@ router.get('/events/upcoming/:limit', (req, res) => {
 
 //Serves up all events
 router.get('/events', (req, res) => {
-    let events = {};
-    let octanedb = mdb.db('cafeoctane');
+    let events = {},
+        octanedb = mdb.db('cafeoctane');
     octanedb.collection('events').find({}).sort({eventStart: 1})
         .each((err, event) => {
             assert.equal(null, err);
@@ -155,6 +178,20 @@ router.get('/events', (req, res) => {
                 return;
             }
             events[event._id] = event;
+        })
+});
+
+router.get('/categories', (req, res) => {
+    let categories = {},
+        octanedb = mdb.db('cafeoctane');
+    octanedb.collection('eventType').find({}).sort({eventTypeTitle: 1})
+        .each((err, category) => {
+            assert.equal(null, err);
+            if (!category) {
+                res.send(categories);
+                return;
+            }
+            categories[category._id] = category;
         })
 });
 

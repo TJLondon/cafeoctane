@@ -2,9 +2,9 @@ import HomeHeroSearch from './HomeHeroSearch';
 import Layout from '../common/layout/Layout';
 import React from 'react';
 import CarouselWidget from '../searchresults/CarouselWidget';
+import EventCategories from '../searchresults/EventCategories';
 
 const Home = (props) => {
-
         const RecentlyViewed = () => {
             if (document.cookie.indexOf("usertoken") > 0) {
                 return (
@@ -36,6 +36,14 @@ const Home = (props) => {
                             <h3>Trending</h3>
                                 <CarouselWidget limit={3} category="trending" />
                         </div>
+                    </div>
+                        <div className="row text-left stripe dark">
+                            <div className="container">
+                                <h3>Explore by event type</h3>
+                                <EventCategories />
+                            </div>
+                        </div>
+                    <div className="container">
                             <div className="row text-left">
                                 <h3>Upcoming</h3>
                                     <CarouselWidget limit={3} category="upcoming" />
@@ -43,8 +51,7 @@ const Home = (props) => {
                             <RecentlyViewed />
                     </div>
 
-                    <div className="stripe dark">
-                    </div>
+
 
                     <div className="stripe">
                     </div>

@@ -17,8 +17,9 @@ const Routing = () => (
         <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/events/' component={SearchResults} />
+            <Route exact path='/events/find/:category' component={SearchResults} />
             <Route exact path='/events/trending' component={SearchResults} />
-            <Route path='/events/:id' component={EventDetails} />
+            <Route path='/event/:title/:id' component={EventDetails} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/profile' component={UserProfile} />
             <Route exact path='/about' component={About} />

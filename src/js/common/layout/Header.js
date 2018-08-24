@@ -12,31 +12,18 @@ class Header extends React.Component {
         super(props);
         this.state = {
             error: null,
-            activeClass: 'top',
             userNav: false
         };
 
         this.userNavToggle = this.userNavToggle.bind(this);
-        this.handleScroll = this.handleScroll.bind(this);
-    }
-
-    handleScroll() {
-        let cssClass;
-        window.addEventListener('scroll', () => {
-            window.scrollY > 20 ? cssClass = 'move' : cssClass = 'top';
-            this.setState({
-                activeClass: cssClass
-            })
-        }, {passive: true});
-        window.scrollTo(0, 0);
     }
 
     componentDidMount() {
-        this.handleScroll();
+        window.scrollTo(0, 0);
     }
 
     componentWillUnmount() {
-        this.handleScroll = noop;
+
     }
 
     userNavToggle(e) {
@@ -66,7 +53,7 @@ class Header extends React.Component {
         return (
             <div>
                 <BurgerNav />
-                <nav className={'navbar ' + this.state.activeClass + ' ' + (location.pathname === '/' ? 'home' : 'content') }>
+                <nav className={'navbar top ' + (location.pathname === '/' ? 'home' : 'content') }>
                     <Link to={'/'}>
                         <img className="logo" src="/assets/img/cafe_octane.png" />
                     </Link>

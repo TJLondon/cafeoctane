@@ -26,6 +26,7 @@ class EventDetails extends React.Component {
         };
 
         this.handleEventSuccess = this.handleEventSuccess.bind(this);
+        this.EventView = this.EventView.bind(this);
     }
 
     handleEventSuccess(event) {
@@ -43,7 +44,7 @@ class EventDetails extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`/api/events/` +this.props.match.params.id)
+        axios.get(`/api/events/` + this.props.match.params.id)
             .then(res => this.handleEventSuccess(res.data))
             .catch(error => this.handleEventError(error))
     };
@@ -82,7 +83,7 @@ class EventDetails extends React.Component {
         )
     };
 
-    EventView() {
+    EventView = () => {
         return (
             <div>
             <div className="eventTitleWrapper">
@@ -119,7 +120,7 @@ class EventDetails extends React.Component {
                             isMarkerShown={this.state.isMarkerShown}
                             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAq3Qk8Cni9iyrwM36azQCnXBWmL1sAm8s&v=3.exp"
                             loadingElement={<div style={{ height: `100%` }} />}
-                            containerElement={<div style={{ height: `300px`, width: '300px' }} />}
+                            containerElement={<div style={{ height: `300px` }} />}
                             mapElement={<div style={{ height: `100%` }} />}
                             latitude={this.state.lat}
                             longitude={this.state.lng}
@@ -132,7 +133,7 @@ class EventDetails extends React.Component {
                 </div>
             </div>
         )
-    }
+    };
 
     render() {
         return (

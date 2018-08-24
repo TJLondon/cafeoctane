@@ -14,7 +14,8 @@ server.set('view engine', 'ejs');
 server.get([
     '/',
     '/events',
-    '/events/:id',
+    '/event/:title/:id',
+    '/events/find/:category',
     '/register',
     '/profile',
     '/about'

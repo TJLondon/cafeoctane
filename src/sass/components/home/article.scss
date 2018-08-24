@@ -53,7 +53,7 @@ div.content {
 
 }
 
-div.article-list, div.article-home {
+div.article-list, div.article-home, div.category-home {
   position: relative;
   width: 100%;
   height: auto;
@@ -105,12 +105,29 @@ div.article-list, div.article-home {
       width: calc(50% - 4rem);
       max-width: calc(50% - 4rem);
       float: left;
-
     }
 
     @include breakpoint(laptop) {
       width: calc(33.3% - 4rem);
       max-width: calc(33.3% - 4rem);
+    }
+
+    &.category-item {
+      width: calc(50% - 2rem);
+      float: left;
+      margin: 0 1rem 3rem 1rem;
+      height: 150px;
+      @include breakpoint(mobileonly) {
+        width: calc(50% - 2rem);
+
+      }
+      @include breakpoint(laptop) {
+        width: calc(25% - 2rem);
+      }
+
+      .grad {
+        background: linear-gradient(180deg,transparent 0,rgba(0,0,0,.3));
+      }
     }
 
     &:hover {
@@ -136,6 +153,10 @@ div.article-list, div.article-home {
 
 div.article-home {
   margin-top: 0;
+}
+
+div.category-home {
+  padding: 0 1rem;
 }
 
 @include breakpoint(mobileonly) {
