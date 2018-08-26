@@ -1,10 +1,12 @@
 import axios from 'axios';
-import EventPreview from './EventPreview';
-import Helpers from '../common/Helpers';
+import Cookies from 'universal-cookie';
+import EventPreview from '../EventPreview';
+import Helpers from '../../common/Helpers';
 import React from 'react';
 
-const noop = () => {}
-export default class CarouselWidget extends React.Component {
+const noop = () => {};
+const cookies = new Cookies();
+export default class RecentlyViewed extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,7 +33,7 @@ export default class CarouselWidget extends React.Component {
 
     getUser() {
         if (document.cookie.indexOf("usertoken") > 0) {
-            return (axios.get('/auth/user'))
+            return (axios.get('/user/get'))
         }
         else {
             return this.state.user
@@ -39,7 +41,9 @@ export default class CarouselWidget extends React.Component {
     };
 
     getEvents() {
-        return axios.get('api/events/' + this.props.category + '/' + this.props.limit);
+        return axios.post('/api/events/history/' + this.props.limit, {
+            events: cookies.get('history')
+        })
     }
 
     handleEventsSuccess = (events) => {

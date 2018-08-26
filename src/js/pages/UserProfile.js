@@ -41,7 +41,7 @@ class UserProfile extends React.Component {
 
     componentDidMount() {
         if (document.cookie.indexOf("usertoken") > 0) {
-            axios.get('/auth/user')
+            axios.get('/user/get')
                 .then(res => this.handleUserSuccess(res.data[0]))
                 .catch(error => this.handUserError(error));
         }

@@ -1,6 +1,6 @@
 import {Link, withRouter} from 'react-router-dom';
 import React from 'react';
-import Bookmark from "./Bookmark";
+import Bookmark from "./widgets/Bookmark";
 
 class EventPreview extends React.Component {
     constructor(props) {

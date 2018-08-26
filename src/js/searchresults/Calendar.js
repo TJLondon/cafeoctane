@@ -2,7 +2,7 @@
 import React from 'react';
 
 
-export default class CalendarWidget extends React.Component {
+export default class Calendar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

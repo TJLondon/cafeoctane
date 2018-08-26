@@ -1,23 +1,27 @@
 import HomeHeroSearch from './HomeHeroSearch';
 import Layout from '../common/layout/Layout';
 import React from 'react';
-import CarouselWidget from '../searchresults/CarouselWidget';
-import EventCategories from '../searchresults/EventCategories';
+import CarouselWidget from '../searchresults/widgets/CarouselWidget';
+import RecentlyViewed from '../searchresults/widgets/RecentlyViewed';
+import EventCategories from '../searchresults/widgets/EventCategories';
+import Cookies from 'universal-cookie';
 
+const cookies = new Cookies();
 const Home = (props) => {
-        const RecentlyViewed = () => {
-            if (document.cookie.indexOf("usertoken") > 0) {
+        const History = () => {
+            if (cookies.get('history')) {
                 return (
-                    <div className="row text-left">
-                        <h3>Recently viewed</h3>
-                        <CarouselWidget limit={3} category="trending"/>
-                    </div>
+                <div className="row text-left">
+                    <h3>Recently viewed</h3>
+                    <RecentlyViewed limit={3}/>
+                </div>
                 )
             }
             else {
-                return ''
+                return null
             }
-        }
+        };
+
 
         return (
             <Layout>
@@ -48,7 +52,8 @@ const Home = (props) => {
                                 <h3>Upcoming</h3>
                                     <CarouselWidget limit={3} category="upcoming" />
                             </div>
-                            <RecentlyViewed />
+
+                        <History />
                     </div>
 
 

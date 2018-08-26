@@ -4,6 +4,7 @@ import config from "../../config";
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import passport from "passport/lib/index";
+import FacebookRouter from "../social/FacebookRouter";
 
 const mongodbUrl = config.dbendpoint,
     userRouter = express.Router();
@@ -15,6 +16,62 @@ userRouter.use(passport.initialize());
 userRouter.use(passport.session());
 //Get current user data
 
+userRouter.get('/validate', (req, res) => {
+    console.log('validate');
+    console.log(req.user);
+    let userid = req.user.token;
+    if (!req.cookies.usertoken && userid) {
+        let options = {
+            maxAge: 7776000000, // 90 day expiry
+            httpOnly: false,
+            signed: true
+        };
+
+        res.cookie('usertoken', req.user.token, options);
+        res.cookie('avatar', req.user.avatar, {maxAge:7776000000, httpOnly: false});
+    }
+    res.redirect('/');
+});
+
+userRouter.get('/get',(req, res) => {
+    //Set them both to int to avoid undefined strings
+    let user = Number(req.user) || Number(req.signedCookies['usertoken']);
+    if (!req.cookies.usertoken && req.user) {
+        let options = {
+            maxAge: 7776000000, // 90 day expiry
+            httpOnly: false,
+            signed: true
+        };
+
+        res.cookie('usertoken', req.user, options);
+    }
+
+    MongoClient.connect(mongodbUrl, function (err, db) {
+        let octanedb = db.db('cafeoctane');
+        let userObj = [];
+        let usersCollection = octanedb.collection('users');
+        let bookmarksCollection = octanedb.collection('bookmarks');
+        //check if username is already assigned in our database
+        usersCollection.findOne(
+            {'token': user.toString()})
+            .then(function (user) {
+                if (null != user) {
+                    userObj.push(user);
+                    bookmarksCollection.findOne({'user_token': user.token.toString()})
+                        .then (function (bookmarks) {
+                            userObj.push(bookmarks.bookmarks);
+                            res.status(200).json(userObj);
+                        })
+                        .catch(error => {
+                            res.status(200).json(userObj)
+                        })
+                }
+                else {
+                    res.status(200).json('{"error": "unable to authenticate against local DB"}');
+                }
+            });
+    });
+});
 
 userRouter.get('/signout', (req,res) => {
     res.clearCookie("usertoken");

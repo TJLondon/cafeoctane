@@ -52,7 +52,7 @@ export default class SearchResults extends React.Component {
 
     getUser = () => {
         if (document.cookie.indexOf("usertoken") > 0) {
-            return (axios.get('/auth/user'))
+            return (axios.get('/user/get'))
         }
         else {
             return this.state.user

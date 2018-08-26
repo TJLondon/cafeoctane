@@ -12,20 +12,18 @@ const Footer = () => {
                     <div className="col-sm col-sm-4 text-left">
                         <ul>
                             <li><Link to={'/events'}>All events</Link></li>
-                            <li><Link to={'/events'}>Cars and Coffee</Link></li>
-                            <li><Link to={'/events'}>Motorsport</Link></li>
-                            <li><Link to={'/events'}>Car shows</Link></li>
-                            <li><Link to={'/events'}>Supercar meets</Link></li>
+                            <li><Link to={'/events/find/cars-and-coffee'}>Cars and Coffee</Link></li>
+                            <li><Link to={'/events/find/motorsport'}>Motorsport</Link></li>
+                            <li><Link to={'/events/find/car-shows'}>Car shows</Link></li>
                         </ul>
                     </div>
 
                     <div className="col-sm col-sm-4 text-left">
                         <ul>
-                            <li><Link to={'/events'}>All events</Link></li>
-                            <li><Link to={'/events'}>Cars and Coffee</Link></li>
-                            <li><Link to={'/events'}>Motorsport</Link></li>
-                            <li><Link to={'/events'}>Car shows</Link></li>
-                            <li><Link to={'/events'}>Supercar meets</Link></li>
+                            <li><Link to={'/events/events/supercar-meets'}>Supercar meets</Link></li>
+                            <li><Link to={'/events/find/american'}>American</Link></li>
+                            <li><Link to={'/events/find/japanese-and-imports'}>Japanese/Imports</Link></li>
+                            <li><Link to={'/events/find/track-days'}>Track Days</Link></li>
                         </ul>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import config from './config';
 import express from 'express';
 import apiRouter from './api';
 import FacebookRouter from './auth/social/FacebookRouter';
+import GoogleRouter from './auth/social/GoogleRouter';
 import UserRouter from './auth/users/UserRouter';
 import session from 'express-session';
 
@@ -28,7 +29,6 @@ server.get([
     //     })
     //     .catch(console.error)
 
-
     res.render('index', {
         content: ''
     });
@@ -42,7 +42,8 @@ server.use("/assets", express.static(__dirname + '/assets'));
 server.use(session({secret: "secret"}));
 //api
 server.use('/api', apiRouter); //events api
-server.use('/auth', FacebookRouter); //user authentication
+server.use('/auth/facebook', FacebookRouter); //user authentication
+server.use('/auth/google', GoogleRouter); //user authentication
 server.use('/user', UserRouter); //user actions
 
 

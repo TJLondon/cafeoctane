@@ -1,29 +1,29 @@
 import passport from 'passport';
-import {Strategy as FacebookStrategy} from 'passport-facebook';
+import GoogleStrategy from 'passport-google-oauth';
 import config from '../../config';
 import funct from '../users/functions';
 
-passport.use(new FacebookStrategy({
-        clientID: config.facebook.appid,
-        clientSecret: config.facebook.secret,
-        callbackURL: config.facebook.callback,
-        profileFields: ['id', 'emails', 'name', 'picture.type(large)']
+passport.use(new GoogleStrategy.OAuth2Strategy({
+        clientID: config.google.clientID,
+        clientSecret: config.google.clientSecret,
+        callbackURL: "http://localhost:8080/auth/google/callback", //change production
+        passReqToCallback: true
     },
-
-    (req, accessToken, refreshToken, profile, done) => {
+    function(req, accessToken, refreshToken, profile, done) {
         funct.registeruser(
-            profile._json.first_name,
-            profile._json.last_name,
-            profile._json.email,
+            profile._json.name.givenName,
+            profile._json.name.familyName,
+            profile._json.emails[0].value,
             profile._json.id,
-            profile._json.picture.data.url,
-            "facebook",
+            profile._json.image.url,
+            "Google",
             profile._json
         )
             .then(function (user) {
                 if (user) {
                     console.log("LOGGING IN AS: " + user.email);
                     //req.session.success = 'You are successfully logged in ' + user.email + '!';
+                    //next(null, user);
                     done(null, user);
                 }
                 if (!user) {
@@ -34,13 +34,9 @@ passport.use(new FacebookStrategy({
             })
             .fail(function (err){
                 console.log(err.body);
-            })
-            .catch(function(err) {
-                console.log(err);
             });
     }
-    )
-);
+));
 
 passport.serializeUser(function(user, done) {
     done(null, user);
@@ -50,16 +46,17 @@ passport.deserializeUser(function(user, done) {
     done(null, user);
 });
 
-let FacebookRoutes = {
+let GoogleRoutes = {
     authenticate: () => {
-        return passport.authenticate('facebook');
+        return passport.authenticate('google', {scope: ['https://www.googleapis.com/auth/userinfo.email']});
     },
     callback: () => {
-        return passport.authenticate('facebook', {
-            failureRedirect: '/register',
-            successRedirect: '/user/validate'
-    });
+        return passport.authenticate('google',
+            {
+                failureRedirect: '/register',
+                successRedirect: '/user/validate'
+            })
     }
 };
 
-export default FacebookRoutes;
+export default GoogleRoutes;

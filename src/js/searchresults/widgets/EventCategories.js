@@ -9,9 +9,9 @@ const CategoryPreview = (props) => {
     };
     return (
         <article className="category-item">
+            <Link to={'/events/find/' + props.link }>
             <div className="thumb" style={imageStyle}>&nbsp;</div>
             <div className="grad"/>
-            <Link to={'/events/find/' + props.link }>
                 <div className="article-copy">
                     <h4>{props.category}</h4>
                 </div>
@@ -19,8 +19,6 @@ const CategoryPreview = (props) => {
         </article>
     )
 };
-
-
 export default class EventCategories extends React.Component {
     constructor(props) {
         super(props);

@@ -5,9 +5,13 @@ import assert from 'assert';
 import config from '../config';
 import Geo from 'geo-nearby';
 import Geohash from 'ngeohash';
+import bodyParser from "body-parser";
 
 const router = express.Router();
 let mdb;
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
 
 MongoClient.connect(config.dbendpoint, function(err, db) {
     if (err) return console.log(err);
@@ -153,6 +157,29 @@ router.get('/events/upcoming/:limit', (req, res) => {
             eventStart: {
                 $gte: new Date()
             }})
+        .sort({eventStart: 1})
+        .limit(parseInt(req.params.limit))
+        .each((err, event) => {
+            assert.equal(null, err);
+            if (!event) {
+                res.send(events);
+                return;
+            }
+            events[event._id] = event;
+        });
+});
+
+//Serves up upcoming events
+router.post('/events/history/:limit', (req, res) => {
+    let ids = req.body.events.map(function (obj){ return ObjectId(obj)});
+    let events = {};
+    let octanedb = mdb.db('cafeoctane');
+    octanedb.collection('events')
+        .find(
+            {
+                _id: { $in: ids }
+            }
+        )
         .sort({eventStart: 1})
         .limit(parseInt(req.params.limit))
         .each((err, event) => {

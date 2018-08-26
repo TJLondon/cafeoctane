@@ -10,9 +10,9 @@ export default class Register extends React.Component {
                     <div className="box">
                         <h3>Let's sign you up</h3>
 
-                        <a className="facebookButton" href="/auth/login/facebook">Login with Facebook</a>
+                        <a className="facebookButton" href="/auth/facebook/login">Login with Facebook</a>
 
-                        <a className="googleButton" href="/auth/login/google">Login with Google</a>
+                        <a className="googleButton" href="/auth/google/login">Login with Google</a>
                     </div>
                 </div>
             </div>

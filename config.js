@@ -12,6 +12,10 @@ export default {
         secret: '2d61967ec1eaa82bb13ed6cfa60fe45c',
         callback: 'http://localhost:8080/auth/facebook/callback'
     },
+    google: {
+        clientID: '990606542806-1ogsd3icm6psuob8gsrfrp5653oprso0.apps.googleusercontent.com',
+        clientSecret: 'c8Dg_qOXjh_iGiR87_N1dB0s'
+    },
     get serverUrl() {
         return `http://${this.host}:${this.port}`;
 }

@@ -2,13 +2,8 @@ import config from '../../config';
 import { MongoClient } from 'mongodb';
 import Q from 'q';
 
-
-// MongoDB connection information
 const mongodbUrl = config.dbendpoint;
-
-//used in Facebook Signup strategy
-//profile._json.email, profile._json.id
-exports.facebookReg = (profile) => {
+exports.registeruser = (firstName, lastName, email, id, avatar, source, raw) => {
     const deferred = Q.defer();
     MongoClient.connect(mongodbUrl, function(err, db) {
         let mdb = db;
@@ -16,15 +11,15 @@ exports.facebookReg = (profile) => {
         let collection = octanedb.collection('users');
 
         //check if email exists
-        collection.findOne({'email' : profile.email})
+        collection.findOne({'email' : email})
             .then(function (result) {
                 if (null != result) {
                     console.log("USERNAME ALREADY EXISTS:", result.email);
 
                     //check if tokens match
-                    if (profile.id === result.token) {
+                    if (id === result.token) {
                         db.close();
-                        deferred.resolve(profile); // username exists
+                        deferred.resolve(result); // username exists
                     }
                     else {
                         console.log('error', result);
@@ -34,20 +29,22 @@ exports.facebookReg = (profile) => {
                 //If user doesn't exist, register them
                 else {
                     let user = {
-                        "first_name" : profile.first_name,
-                        "last_name" : profile.last_name,
-                        "email": profile.email,
-                        "token": profile.id,
-                        "avatar": profile.picture.data.url,
-                        "optinSuggested": false
+                        "first_name" : firstName,
+                        "last_name" : lastName,
+                        "email": email,
+                        "token": id,
+                        "avatar": avatar,
+                        "source": source,
+                        "optinSuggested": false,
+                        "raw" : raw
                     };
 
-                    console.log("CREATING USER:", profile.email);
+                    console.log("CREATING USER:", email);
 
                     collection.insert(user)
                         .then(function () {
                             db.close();
-                            deferred.resolve(profile);
+                            deferred.resolve(user);
                         });
                 }
             });

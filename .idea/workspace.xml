@@ -4,17 +4,26 @@
     <list default="true" id="8c26507e-84c7-4078-8f1e-cf618ffb43cb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/social/FacebookRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/auth/social/FacebookRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/social/facebookStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/auth/social/facebookStrategy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/users/UserRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/auth/users/UserRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/users/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/auth/users/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/common/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/common/layout/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/common/layout/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/common/layout/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/pages/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/pages/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/pages/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/searchresults/Bookmark.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/widgets/Bookmark.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/searchresults/CalendarWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/Calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/widgets/CarouselWidget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/searchresults/EventCategories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/widgets/EventCategories.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/searchresults/EventDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/EventDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/searchresults/EventPreview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/EventPreview.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/searchresults/SearchResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/SearchResults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/home/article.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/home/article.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sass/components/home/billboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/home/billboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/searchresults/searchresults.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/searchresults/searchresults.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,12 +59,12 @@
           <entry key="ejs" value="9" />
           <entry key="gitignore" value="3" />
           <entry key="html" value="6" />
-          <entry key="js" value="210" />
+          <entry key="js" value="236" />
           <entry key="json" value="11" />
           <entry key="jsx" value="4" />
           <entry key="log" value="1" />
           <entry key="md" value="1" />
-          <entry key="scss" value="80" />
+          <entry key="scss" value="83" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -64,9 +73,9 @@
           <entry key="HTML" value="6" />
           <entry key="JSON" value="13" />
           <entry key="JSX Harmony" value="4" />
-          <entry key="JavaScript" value="210" />
+          <entry key="JavaScript" value="236" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="SCSS" value="80" />
+          <entry key="SCSS" value="83" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -74,10 +83,10 @@
           <entry key="ejs" value="150" />
           <entry key="gitignore" value="31" />
           <entry key="html" value="9" />
-          <entry key="js" value="29937" />
+          <entry key="js" value="33582" />
           <entry key="json" value="6" />
           <entry key="jsx" value="1" />
-          <entry key="scss" value="6681" />
+          <entry key="scss" value="6701" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -86,9 +95,9 @@
           <entry key="HTML" value="9" />
           <entry key="JSON" value="6" />
           <entry key="JSX Harmony" value="1" />
-          <entry key="JavaScript" value="29937" />
+          <entry key="JavaScript" value="33582" />
           <entry key="PLAIN_TEXT" value="31" />
-          <entry key="SCSS" value="6681" />
+          <entry key="SCSS" value="6701" />
         </counts>
       </usages-collector>
     </session>
@@ -96,31 +105,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/searchresults/EventPreview.js">
+        <entry file="file://$PROJECT_DIR$/src/js/searchresults/widgets/CarouselWidget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+            <state relative-caret-position="289">
+              <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -129,31 +117,94 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sass/components/home/article.scss">
+        <entry file="file://$PROJECT_DIR$/src/js/searchresults/SearchResults.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="68" column="8" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/common/layout/Header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="242">
+              <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
               <folding>
-                <element signature="e#0#48#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sass/components/home/billboard.scss">
+        <entry file="file://$PROJECT_DIR$/auth/social/FacebookRouter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+            <state relative-caret-position="160">
+              <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth/social/GoogleRouter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth/social/facebookStrategy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth/social/GoogleStrategy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/pages/UserProfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="37" column="19" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth/users/UserRouter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-112">
+              <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth/users/functions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -169,12 +220,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fetc</find>
-      <find>fet</find>
-      <find>consol</find>
-      <find>eventDetailsWrapper</find>
-      <find>div.content</find>
-      <find>.eventDetailsWrapper</find>
       <find>article-he</find>
       <find>console.log</find>
       <find>bookm</find>
@@ -195,10 +240,16 @@
       <find>google</find>
       <find>articl</find>
       <find>stripe</find>
-      <find>h3</find>
       <find>findo</find>
       <find>iso</find>
+      <find>h3</find>
+      <find>bodyp</find>
+      <find>bodypar</find>
+      <find>post</find>
+      <find>limit</find>
+      <find>facebookre</find>
       <find>console</find>
+      <find>cons</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -227,14 +278,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sass/components/google-search/google-search.scss" />
-        <option value="$PROJECT_DIR$/src/sass/components/base/navigation.scss" />
-        <option value="$PROJECT_DIR$/auth/users/functions.js" />
-        <option value="$PROJECT_DIR$/src/sass/components/base/billboard.scss" />
-        <option value="$PROJECT_DIR$/auth/users/routes.js" />
         <option value="$PROJECT_DIR$/src/js/common/navigation/UserNav.js" />
         <option value="$PROJECT_DIR$/src/js/common/UserProfileHelper.js" />
-        <option value="$PROJECT_DIR$/auth/users/UserRouter.js" />
         <option value="$PROJECT_DIR$/src/js/common/Helpers.js" />
         <option value="$PROJECT_DIR$/src/sass/components/base/eventdetails.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/base/_base.scss" />
@@ -242,9 +287,6 @@
         <option value="$PROJECT_DIR$/src/sass/components/base/type.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/base/userprofile.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/layout/eventdetails.scss" />
-        <option value="$PROJECT_DIR$/auth/social/facebookStrategy.js" />
-        <option value="$PROJECT_DIR$/src/js/pages/Register.js" />
-        <option value="$PROJECT_DIR$/src/js/pages/UserProfile.js" />
         <option value="$PROJECT_DIR$/src/sass/components/base/article.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/home/home-main.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/home/home.scss" />
@@ -256,28 +298,37 @@
         <option value="$PROJECT_DIR$/src/js/searchresults/CalendarWidget.js" />
         <option value="$PROJECT_DIR$/src/sass/components/searchwidget/searchwidget.scss" />
         <option value="$PROJECT_DIR$/src/js/common/layout/Layout.js" />
-        <option value="$PROJECT_DIR$/auth/social/FacebookRouter.js" />
         <option value="$PROJECT_DIR$/src/js/common/navigation/BurgerNav.js" />
-        <option value="$PROJECT_DIR$/src/js/common/layout/Footer.js" />
         <option value="$PROJECT_DIR$/src/sass/components/navigation/navigation.scss" />
         <option value="$PROJECT_DIR$/src/js/searchresults/Bookmark.js" />
-        <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/src/js/common/LocationSearch.js" />
         <option value="$PROJECT_DIR$/src/js/common/SearchWidget.js" />
         <option value="$PROJECT_DIR$/src/sass/components/home/article.scss" />
-        <option value="$PROJECT_DIR$/src/js/home/Home.js" />
-        <option value="$PROJECT_DIR$/src/js/searchresults/EventDetails.js" />
-        <option value="$PROJECT_DIR$/src/js/searchresults/EventCategories.js" />
         <option value="$PROJECT_DIR$/api/dbqueries.js" />
         <option value="$PROJECT_DIR$/src/sass/components/searchresults/searchresults.scss" />
-        <option value="$PROJECT_DIR$/src/js/searchresults/SearchResults.js" />
         <option value="$PROJECT_DIR$/src/js/app.js" />
         <option value="$PROJECT_DIR$/src/js/searchresults/EventPreview.js" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js" />
-        <option value="$PROJECT_DIR$/api/index.js" />
         <option value="$PROJECT_DIR$/src/js/common/layout/Header.js" />
+        <option value="$PROJECT_DIR$/src/js/searchresults/EventCategories.js" />
+        <option value="$PROJECT_DIR$/api/index.js" />
+        <option value="$PROJECT_DIR$/src/js/home/Home.js" />
         <option value="$PROJECT_DIR$/src/sass/components/home/billboard.scss" />
+        <option value="$PROJECT_DIR$/src/js/searchresults/EventDetails.js" />
+        <option value="$PROJECT_DIR$/src/js/common/layout/Footer.js" />
+        <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/src/js/pages/Register.js" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/src/js/pages/UserProfile.js" />
+        <option value="$PROJECT_DIR$/auth/social/GoogleRouter.js" />
+        <option value="$PROJECT_DIR$/auth/users/UserRouter.js" />
+        <option value="$PROJECT_DIR$/src/js/searchresults/widgets/CarouselWidget.js" />
+        <option value="$PROJECT_DIR$/src/js/searchresults/widgets/RecentlyViewed.js" />
+        <option value="$PROJECT_DIR$/src/js/searchresults/SearchResults.js" />
+        <option value="$PROJECT_DIR$/auth/users/functions.js" />
+        <option value="$PROJECT_DIR$/auth/social/facebookStrategy.js" />
+        <option value="$PROJECT_DIR$/auth/social/GoogleStrategy.js" />
+        <option value="$PROJECT_DIR$/auth/social/FacebookRouter.js" />
       </list>
     </option>
   </component>
@@ -298,8 +349,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="71" />
-    <option name="width" value="1696" />
+    <option name="x" value="-25" />
+    <option name="y" value="53" />
+    <option name="width" value="1291" />
     <option name="height" value="1026" />
   </component>
   <component name="ProjectView">
@@ -329,6 +381,12 @@
               <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
               <item name="auth" type="462c0819:PsiDirectoryNode" />
               <item name="social" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
@@ -376,6 +434,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="searchresults" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="searchresults" type="462c0819:PsiDirectoryNode" />
+              <item name="widgets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
@@ -444,15 +510,15 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Tom Jordan\WebstormProjects\cafeoctane\assets" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tom Jordan\WebstormProjects\cafeoctane\src\js\searchresults\widgets" />
       <recent name="C:\git_tom\cafe_octane\cafeoctane\src\sass\components\home" />
       <recent name="C:\git_tom\cafe_octane\cafeoctane\src\sass\components\searchwidget" />
       <recent name="C:\git_tom\cafe_octane\cafeoctane\src\sass\components\billboard" />
       <recent name="C:\git_tom\cafe_octane\cafeoctane\src\sass\components\searchresults" />
-      <recent name="C:\git_tom\cafe_octane\cafeoctane\src\sass\components\footer" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tom Jordan\WebstormProjects\cafeoctane\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -511,12 +577,12 @@
       <workItem from="1534930705468" duration="15145000" />
       <workItem from="1534957938009" duration="8183000" />
       <workItem from="1535017632482" duration="13173000" />
-      <workItem from="1535042014736" duration="31613000" />
+      <workItem from="1535042014736" duration="60621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388796000" />
+    <option name="totallyTimeSpent" value="417804000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -579,38 +645,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.babelrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/components/google-search/google-search.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth/users/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -620,13 +658,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/common/UserProfileHelper.js" />
-    <entry file="file://$PROJECT_DIR$/auth/users/UserRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" column="6" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/common/navigation/UserNav.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -634,38 +665,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth/social/facebookStrategy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/components/userprofile/userprofile.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/pages/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/components/home/home-main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/components/home/home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -697,7 +700,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/searchresults/CalendarWidget.js">
+    <entry file="file://$PROJECT_DIR$/src/js/searchresults/Calendar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="19" selection-end-column="6" />
@@ -729,13 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth/social/FacebookRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -775,13 +771,6 @@
         <state relative-caret-position="-1287" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/pages/UserProfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -789,27 +778,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/searchresults/Bookmark.js">
+    <entry file="file://$PROJECT_DIR$/src/js/searchresults/widgets/Bookmark.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
           <caret line="57" column="36" lean-forward="true" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/common/layout/Footer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -840,13 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/components/home/article.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="68" column="8" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/components/searchresults/searchresults.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
@@ -871,16 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/searchresults/EventDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/searchresults/EventPreview.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -891,20 +846,139 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/components/home/article.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="68" column="8" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/searchresults/widgets/EventCategories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="168" column="10" lean-forward="true" selection-start-line="168" selection-start-column="10" selection-end-line="168" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/home/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+        <state relative-caret-position="256">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/searchresults/EventCategories.js">
+    <entry file="file://$PROJECT_DIR$/src/sass/components/home/home.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="55" column="87" selection-start-line="55" selection-start-column="70" selection-end-line="55" selection-end-column="87" />
+        <state relative-caret-position="16">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/components/home/home-main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/components/home/billboard.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/searchresults/EventDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/common/layout/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/common/layout/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/pages/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/pages/UserProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/searchresults/widgets/CarouselWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/searchresults/widgets/RecentlyViewed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -913,49 +987,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/searchresults/SearchResults.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="118" selection-end-column="5" />
+        <state relative-caret-position="242">
+          <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/searchresults/CarouselWidget.js">
+    <entry file="file://$PROJECT_DIR$/auth/users/UserRouter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="67" column="40" lean-forward="true" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/common/layout/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="-112">
+          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
           <folding>
-            <element signature="e#0#48#0" expanded="true" />
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/components/home/billboard.scss">
+    <entry file="file://$PROJECT_DIR$/auth/users/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        <state relative-caret-position="64">
+          <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/social/GoogleStrategy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/social/facebookStrategy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/social/GoogleRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/social/FacebookRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
