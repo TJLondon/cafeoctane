@@ -1,0 +1,51 @@
+.cookieBanner {
+  position:fixed;
+  width: 100%;
+  min-height: 30px;
+  height: auto;
+  background: $primary-color;
+  bottom: 0;
+  z-index:3;
+  color: white;
+
+  .container {
+    position: relative;
+  }
+
+  p {
+    font-size: 1.4rem;
+    padding-right: 20px;
+    margin: 5px 0 0 0;
+
+    a {
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+  a.closeBanner {
+    float: right;
+    color: white;
+    position: absolute;
+    top: 3px;
+    right:0;
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  @include breakpoint(mobileonly) {
+    margin: 0 20px 20px 20px;
+    width: auto;
+    padding-bottom: 4px;
+    p {
+      font-size: 1.6rem;
+    }
+
+    a.closeBanner {
+      right: 5px;
+    }
+  }
+
+}

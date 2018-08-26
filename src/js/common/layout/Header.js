@@ -1,4 +1,5 @@
 import BurgerNav from '../navigation/BurgerNav';
+import CookieBanner from './CookieBanner';
 import { Link } from "react-router-dom";
 import React from 'react';
 import UserNav from '../navigation/UserNav';
@@ -63,6 +64,7 @@ class Header extends React.Component {
                         </li>
                     </ul>
                 </nav>
+                <CookieBanner />
             </div>
         )
     }

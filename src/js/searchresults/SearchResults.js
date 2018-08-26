@@ -126,8 +126,6 @@ export default class SearchResults extends React.Component {
             })
     }
 
-
-
     submitSearch = (results) => {
         this.setState({
             loading: true,
