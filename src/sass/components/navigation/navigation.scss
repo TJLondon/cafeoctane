@@ -6,17 +6,18 @@ nav.navbar {
   background: black;
   width: 100%;
   transition: all .50s;
-  height: 75px;
+  height: 65px;
   border-radius: 0;
 
   &.home {
     background: transparent;
+    position: absolute;
   }
 
   &.move {
     @include alpha-background-color(rgba(black, 0.6), white);
     .logo {
-      width: 180px;
+      width: 170px;
       margin-top: 2rem;
     }
   }

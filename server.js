@@ -19,6 +19,7 @@ server.get([
     '/events/find/:category',
     '/register',
     '/profile',
+    '/bookmarks',
     '/about'
 ], (req,res) => {
     // serverRender()

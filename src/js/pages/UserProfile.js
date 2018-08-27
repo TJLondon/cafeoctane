@@ -35,7 +35,7 @@ class UserProfile extends React.Component {
 
     handUserError = (error) => {
         this.setState({view: 'error'}, () => {
-            console.log(error);
+                console.log(error);
         });
     };
 

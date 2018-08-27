@@ -51,7 +51,7 @@ export default class EventCategories extends React.Component {
                     <CategoryPreview
                         key={Id}
                         category={this.state.categories[Id].eventTypeTitle}
-                        link={this.state.categories[Id].eventTypeTitle.replace(' ','-').toLowerCase()} />
+                        link={this.state.categories[Id].eventTypeTitle.replace(/\s+/g, '-').toLowerCase()} />
                         )}
                     </div>
                 )

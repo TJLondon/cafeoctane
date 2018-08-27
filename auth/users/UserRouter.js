@@ -1,10 +1,10 @@
 import express from 'express';
-import {MongoClient} from "mongodb";
+import {MongoClient, ObjectId} from "mongodb";
 import config from "../../config";
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import passport from "passport/lib/index";
-import FacebookRouter from "../social/FacebookRouter";
+import assert from 'assert';
 
 const mongodbUrl = config.dbendpoint,
     userRouter = express.Router();
@@ -17,8 +17,6 @@ userRouter.use(passport.session());
 //Get current user data
 
 userRouter.get('/validate', (req, res) => {
-    console.log('validate');
-    console.log(req.user);
     let userid = req.user.token;
     if (!req.cookies.usertoken && userid) {
         let options = {
@@ -27,24 +25,15 @@ userRouter.get('/validate', (req, res) => {
             signed: true
         };
 
-        res.cookie('usertoken', req.user.token, options);
-        res.cookie('avatar', req.user.avatar, {maxAge:7776000000, httpOnly: false});
+        res.cookie('usertoken', userid, options);
+        res.cookie('avatar', req.user.avatar, {maxAge: 7776000000, httpOnly: false});
     }
     res.redirect('/');
 });
 
 userRouter.get('/get',(req, res) => {
     //Set them both to int to avoid undefined strings
-    let user = Number(req.user) || Number(req.signedCookies['usertoken']);
-    if (!req.cookies.usertoken && req.user) {
-        let options = {
-            maxAge: 7776000000, // 90 day expiry
-            httpOnly: false,
-            signed: true
-        };
-
-        res.cookie('usertoken', req.user, options);
-    }
+    let user = Number(req.signedCookies['usertoken']);
 
     MongoClient.connect(mongodbUrl, function (err, db) {
         let octanedb = db.db('cafeoctane');
@@ -81,7 +70,7 @@ userRouter.get('/signout', (req,res) => {
 });
 
 userRouter.post('/update', (req,res) => {
-    let user = Number(req.user) || Number(req.signedCookies['usertoken']);
+    let user = Number(req.user.token) || Number(req.signedCookies['usertoken']);
     MongoClient.connect(mongodbUrl, function (err, db) {
         let octanedb = db.db('cafeoctane');
         let collection = octanedb.collection('users');
@@ -103,7 +92,7 @@ userRouter.post('/update', (req,res) => {
 });
 
 userRouter.post('/bookmark/add', (req,res) => {
-    let user = Number(req.user) || Number(req.signedCookies['usertoken']);
+    let user = Number(req.signedCookies['usertoken']);
     MongoClient.connect(mongodbUrl, function (err, db) {
         let octanedb = db.db('cafeoctane');
         let collection = octanedb.collection('bookmarks');
@@ -123,7 +112,7 @@ userRouter.post('/bookmark/add', (req,res) => {
 });
 
 userRouter.post('/bookmark/remove', (req,res) => {
-    let user = Number(req.user) || Number(req.signedCookies['usertoken']);
+    let user = Number(req.signedCookies['usertoken']);
     MongoClient.connect(mongodbUrl, function (err, db) {
         let octanedb = db.db('cafeoctane');
         let collection = octanedb.collection('bookmarks');
@@ -144,7 +133,8 @@ userRouter.post('/bookmark/remove', (req,res) => {
 
 
 userRouter.get('/bookmarks', (req,res) => {
-    let user = Number(req.user) || Number(req.signedCookies['usertoken']);
+    let user = Number(req.signedCookies['usertoken']);
+    let events = {};
 
     MongoClient.connect(mongodbUrl, function (err, db) {
         let octanedb = db.db('cafeoctane');
@@ -152,7 +142,23 @@ userRouter.get('/bookmarks', (req,res) => {
         collection.findOne({'user_token': user.toString()})
             .then(function (bookmarks) {
                 if (null != bookmarks) {
-                    res.status(200).json(bookmarks);
+
+                    let ids = bookmarks.bookmarks.map(function (obj){ return ObjectId(obj)});
+                    octanedb.collection('events')
+                        .find(
+                            {
+                                _id: { $in: ids }
+                            }
+                        )
+                        .sort({eventStart: 1})
+                        .each((err, event) => {
+                            assert.equal(null, err);
+                            if (!event) {
+                                res.send(events);
+                                return;
+                            }
+                            events[event._id] = event;
+                        });
                 }
                 else {
                     res.status(200).json('{"error": "unable to authenticate against local DB"}');
