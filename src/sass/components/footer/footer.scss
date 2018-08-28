@@ -42,6 +42,24 @@ footer {
     }
   }
 
+  .social {
+    ul {
+      li {
+        text-align: right;
+        font-size: 3rem;
+        a {
+          margin: 0 10px;
+          color: white;
+
+          &:hover {
+            text-decoration: none;
+            coior: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
   .copyright {
     text-align: left;
     color: $dark-grey;
