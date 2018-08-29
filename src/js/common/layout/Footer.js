@@ -29,7 +29,7 @@ const Footer = () => {
 
                     <div className="col-sm col-sm-3 text-left social">
                         <ul>
-                            <li><a href="#" class="fa fa-facebook"></a>&nbsp;<a href="#" class="fa fa-instagram"></a>&nbsp;<a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" className="fa fa-facebook"></a>&nbsp;<a href="#" className="fa fa-instagram"></a>&nbsp;<a href="#" className="fa fa-twitter"></a></li>
                         </ul>
                     </div>
 

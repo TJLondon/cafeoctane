@@ -43,8 +43,10 @@ class Header extends React.Component {
         }
         else {
             return (
-                <div>
-                    <a href="/register">Sign up or Login</a>
+                <div><ul>
+                        <li><a href="#">Organisers</a></li>
+                        <li><a href="/register">Sign up <i className="material-icons">person</i> </a></li>
+                    </ul>
                 </div>
             )
         }

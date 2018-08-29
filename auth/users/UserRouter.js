@@ -24,7 +24,8 @@ userRouter.get('/validate', (req, res) => {
             httpOnly: false,
             signed: true
         };
-
+console.log('sign in');
+        console.log(userid);
         res.cookie('usertoken', userid, options);
         res.cookie('avatar', req.user.avatar, {maxAge: 7776000000, httpOnly: false});
     }
@@ -33,8 +34,8 @@ userRouter.get('/validate', (req, res) => {
 
 userRouter.get('/get',(req, res) => {
     //Set them both to int to avoid undefined strings
-    let user = Number(req.signedCookies['usertoken']);
-
+    let user = req.signedCookies['usertoken'];
+console.log(user);
     MongoClient.connect(mongodbUrl, function (err, db) {
         let octanedb = db.db('cafeoctane');
         let userObj = [];
@@ -70,7 +71,7 @@ userRouter.get('/signout', (req,res) => {
 });
 
 userRouter.post('/update', (req,res) => {
-    let user = Number(req.user.token) || Number(req.signedCookies['usertoken']);
+    let user = req.user.token || Number(req.signedCookies['usertoken']);
     MongoClient.connect(mongodbUrl, function (err, db) {
         let octanedb = db.db('cafeoctane');
         let collection = octanedb.collection('users');
@@ -92,7 +93,7 @@ userRouter.post('/update', (req,res) => {
 });
 
 userRouter.post('/bookmark/add', (req,res) => {
-    let user = Number(req.signedCookies['usertoken']);
+    let user = req.signedCookies['usertoken'];
     MongoClient.connect(mongodbUrl, function (err, db) {
         let octanedb = db.db('cafeoctane');
         let collection = octanedb.collection('bookmarks');
@@ -112,7 +113,7 @@ userRouter.post('/bookmark/add', (req,res) => {
 });
 
 userRouter.post('/bookmark/remove', (req,res) => {
-    let user = Number(req.signedCookies['usertoken']);
+    let user = req.signedCookies['usertoken'];
     MongoClient.connect(mongodbUrl, function (err, db) {
         let octanedb = db.db('cafeoctane');
         let collection = octanedb.collection('bookmarks');
@@ -133,7 +134,7 @@ userRouter.post('/bookmark/remove', (req,res) => {
 
 
 userRouter.get('/bookmarks', (req,res) => {
-    let user = Number(req.signedCookies['usertoken']);
+    let user = req.signedCookies['usertoken'];
     let events = {};
 
     MongoClient.connect(mongodbUrl, function (err, db) {
