@@ -5,6 +5,7 @@
   "main": "js/app.js",
   "scripts": {
     "start": "nodemon --exec babel-node server.js --ignore public",
+    "production": "babel-node server.js public",
     "dev": "webpack -md --watch",
     "build": "webpack --mode production"
   },
