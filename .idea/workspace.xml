@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c26507e-84c7-4078-8f1e-cf618ffb43cb" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sass/components/bookmarks/bookmarks.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/users/UserRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/auth/users/UserRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/common/layout/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/common/layout/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/common/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/common/layout/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/pages/Bookmarks..js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/pages/Bookmarks..js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/searchresults/EventDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/EventDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/searchresults/EventPreview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/EventPreview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/searchresults/SearchResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/SearchResults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/searchresults/widgets/Bookmark.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/widgets/Bookmark.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/searchresults/widgets/CarouselWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/widgets/CarouselWidget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/searchresults/widgets/RecentlyViewed.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/searchresults/widgets/RecentlyViewed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/components.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/components.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/footer/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/footer/footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/home/article.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/home/article.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/navigation/navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/navigation/navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/searchresults/searchresults.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/searchresults/searchresults.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/components/searchwidget/searchwidget.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/components/searchwidget/searchwidget.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/header.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,9 +36,9 @@
         <counts>
           <entry key="LICENSE" value="1" />
           <entry key="babelrc" value="2" />
-          <entry key="config" value="1" />
+          <entry key="config" value="2" />
           <entry key="ejs" value="11" />
-          <entry key="gitignore" value="4" />
+          <entry key="gitignore" value="5" />
           <entry key="html" value="7" />
           <entry key="js" value="286" />
           <entry key="json" value="12" />
@@ -76,15 +57,16 @@
           <entry key="JSON" value="14" />
           <entry key="JSX Harmony" value="4" />
           <entry key="JavaScript" value="286" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="PLAIN_TEXT" value="11" />
           <entry key="SCSS" value="100" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="config" value="10" />
           <entry key="ejs" value="162" />
-          <entry key="gitignore" value="55" />
+          <entry key="gitignore" value="58" />
           <entry key="html" value="9" />
           <entry key="js" value="36233" />
           <entry key="json" value="19" />
@@ -99,7 +81,7 @@
           <entry key="JSON" value="19" />
           <entry key="JSX Harmony" value="1" />
           <entry key="JavaScript" value="36233" />
-          <entry key="PLAIN_TEXT" value="55" />
+          <entry key="PLAIN_TEXT" value="68" />
           <entry key="SCSS" value="8562" />
         </counts>
       </usages-collector>
@@ -111,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/src/js/searchresults/SearchResults.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="204" column="92" lean-forward="true" selection-start-line="204" selection-start-column="92" selection-end-line="204" selection-end-column="92" />
+              <caret line="204" column="92" selection-start-line="204" selection-start-column="92" selection-end-line="204" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -120,31 +102,7 @@
         <entry file="file://$PROJECT_DIR$/src/sass/components/navigation/navigation.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="32">
-              <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/searchresults/widgets/CarouselWidget.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="81" column="76" lean-forward="true" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="76" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/searchresults/EventPreview.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -153,16 +111,25 @@
         <entry file="file://$PROJECT_DIR$/src/js/searchresults/widgets/RecentlyViewed.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
-              <caret line="83" column="64" lean-forward="true" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
+              <caret line="83" column="64" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sass/components/searchwidget/searchwidget.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="458">
-              <caret line="61" column="21" lean-forward="true" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+              <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -180,7 +147,7 @@
         <entry file="file://$PROJECT_DIR$/src/sass/components/footer/footer.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
-              <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -195,10 +162,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.ebextensions/yourconfig.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sass/components/searchresults/searchresults.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="419">
-              <caret line="113" column="24" lean-forward="true" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+              <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -272,7 +248,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sass/base/type.scss" />
         <option value="$PROJECT_DIR$/src/js/home/HomeHeroSearch.js" />
         <option value="$PROJECT_DIR$/src/js/searchresults/CalendarWidget.js" />
         <option value="$PROJECT_DIR$/src/js/common/layout/Layout.js" />
@@ -302,7 +277,6 @@
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/.ebextensions/01_yourconfig.config" />
         <option value="$PROJECT_DIR$/api/dbqueries.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/js/common/layout/Header.js" />
         <option value="$PROJECT_DIR$/src/js/home/Home.js" />
@@ -323,6 +297,8 @@
         <option value="$PROJECT_DIR$/src/sass/components/footer/footer.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/navigation/navigation.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/searchwidget/searchwidget.scss" />
+        <option value="$PROJECT_DIR$/.ebextensions/yourconfig.config" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -343,8 +319,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-25" />
-    <option name="y" value="53" />
+    <option name="x" value="649" />
+    <option name="y" value="65" />
     <option name="width" value="1291" />
     <option name="height" value="1026" />
   </component>
@@ -361,145 +337,6 @@
               <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
               <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name=".ebextensions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name=".elasticbeanstalk" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="social" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="searchresults" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="searchresults" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cafeoctane" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cafeoctane" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -509,7 +346,7 @@
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../co_beanstalk" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -585,12 +422,12 @@
       <workItem from="1535452948878" duration="2489000" />
       <workItem from="1535480628747" duration="2587000" />
       <workItem from="1535573696066" duration="10962000" />
-      <workItem from="1535830280629" duration="11171000" />
+      <workItem from="1535830280629" duration="11534000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="457628000" />
+    <option name="totallyTimeSpent" value="457991000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -627,6 +464,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.config" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -798,13 +638,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bash.exe.stackdump" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -826,13 +659,6 @@
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.ebextensions/yourconfig.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="12" selection-end-line="3" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -972,7 +798,7 @@
     <entry file="file://$PROJECT_DIR$/src/js/searchresults/widgets/CarouselWidget.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
-          <caret line="81" column="76" lean-forward="true" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="76" />
+          <caret line="81" column="76" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="76" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -982,21 +808,21 @@
     <entry file="file://$PROJECT_DIR$/src/js/searchresults/widgets/RecentlyViewed.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="83" column="64" lean-forward="true" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
+          <caret line="83" column="64" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/searchresults/SearchResults.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="204" column="92" lean-forward="true" selection-start-line="204" selection-start-column="92" selection-end-line="204" selection-end-column="92" />
+          <caret line="204" column="92" selection-start-line="204" selection-start-column="92" selection-end-line="204" selection-end-column="92" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/components/searchresults/searchresults.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
-          <caret line="113" column="24" lean-forward="true" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+          <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1010,14 +836,14 @@
     <entry file="file://$PROJECT_DIR$/src/sass/components/footer/footer.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/components/navigation/navigation.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
-          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1031,7 +857,21 @@
     <entry file="file://$PROJECT_DIR$/src/sass/components/searchwidget/searchwidget.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
-          <caret line="61" column="21" lean-forward="true" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.ebextensions/yourconfig.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
         </state>
       </provider>
     </entry>
