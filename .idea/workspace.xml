@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c26507e-84c7-4078-8f1e-cf618ffb43cb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,7 +40,7 @@
           <entry key="gitignore" value="5" />
           <entry key="html" value="7" />
           <entry key="js" value="286" />
-          <entry key="json" value="12" />
+          <entry key="json" value="13" />
           <entry key="jsx" value="4" />
           <entry key="log" value="1" />
           <entry key="md" value="1" />
@@ -54,7 +53,7 @@
         <counts>
           <entry key="EJS" value="11" />
           <entry key="HTML" value="7" />
-          <entry key="JSON" value="14" />
+          <entry key="JSON" value="15" />
           <entry key="JSX Harmony" value="4" />
           <entry key="JavaScript" value="286" />
           <entry key="PLAIN_TEXT" value="11" />
@@ -69,7 +68,7 @@
           <entry key="gitignore" value="58" />
           <entry key="html" value="9" />
           <entry key="js" value="36233" />
-          <entry key="json" value="19" />
+          <entry key="json" value="20" />
           <entry key="jsx" value="1" />
           <entry key="scss" value="8562" />
         </counts>
@@ -78,7 +77,7 @@
         <counts>
           <entry key="EJS" value="162" />
           <entry key="HTML" value="9" />
-          <entry key="JSON" value="19" />
+          <entry key="JSON" value="20" />
           <entry key="JSX Harmony" value="1" />
           <entry key="JavaScript" value="36233" />
           <entry key="PLAIN_TEXT" value="68" />
@@ -108,19 +107,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/searchresults/widgets/RecentlyViewed.js">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="83" column="64" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
+            <state relative-caret-position="48">
+              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+            <state relative-caret-position="464">
+              <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -277,7 +276,6 @@
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/.ebextensions/01_yourconfig.config" />
         <option value="$PROJECT_DIR$/api/dbqueries.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/js/common/layout/Header.js" />
         <option value="$PROJECT_DIR$/src/js/home/Home.js" />
         <option value="$PROJECT_DIR$/src/js/searchresults/widgets/CarouselWidget.js" />
@@ -299,6 +297,7 @@
         <option value="$PROJECT_DIR$/src/sass/components/searchwidget/searchwidget.scss" />
         <option value="$PROJECT_DIR$/.ebextensions/yourconfig.config" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -422,12 +421,12 @@
       <workItem from="1535452948878" duration="2489000" />
       <workItem from="1535480628747" duration="2587000" />
       <workItem from="1535573696066" duration="10962000" />
-      <workItem from="1535830280629" duration="11534000" />
+      <workItem from="1535830280629" duration="11950000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="457991000" />
+    <option name="totallyTimeSpent" value="458407000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -442,7 +441,7 @@
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984472" visible="true" weight="0.24486572" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984472" visible="true" weight="0.24486572" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5015528" side_tool="true" weight="0.2501322" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -455,7 +454,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32972974" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" weight="0.3298647" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32972974" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.486731" visible="true" weight="0.24" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.486731" visible="true" weight="0.24" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.513269" side_tool="true" weight="0.24130191" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -689,13 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/common/layout/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -871,7 +863,14 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
-          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
         </state>
       </provider>
     </entry>
