@@ -37,6 +37,9 @@ class EventPreview extends React.Component {
                         </h4>
                         <p>
                             {this.props.eventStart[0]} {this.props.eventStart[1]} {this.props.eventStart[2]}
+
+                            <span>{this.props.eventCounty}</span>
+
                         </p>
                     </div>
                 </Link>

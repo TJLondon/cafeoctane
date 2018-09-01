@@ -56,6 +56,7 @@ class Bookmark extends React.Component {
     render() {
         return (
             <a href="/register" onClick={this.bookmarkEvent} className={'bookmark ' + this.state.active}>
+                { !this.state.active ? <span className="tip">Save for later?</span> : null }
                 <i className="material-icons">bookmark_border</i>
             </a>
         )

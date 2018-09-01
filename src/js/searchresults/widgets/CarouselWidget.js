@@ -79,6 +79,7 @@ export default class CarouselWidget extends React.Component {
                         bookmarks={this.state.bookmarks}
                         eventId={this.state.events[eventId]._id}
                         eventTitle={this.state.events[eventId].eventTitle}
+                        eventCounty={this.state.events[eventId].eventCounty}
                         eventStart={Helpers.transformDate(this.state.events[eventId].eventStart)}
                     />
                 )}

@@ -111,6 +111,8 @@
 
         .article-copy {
           margin-left: 70px;
+          padding: 10px;
+          width: calc(100% - 70px)
         }
       }
     }

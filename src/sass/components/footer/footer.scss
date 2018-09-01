@@ -9,8 +9,10 @@ footer {
     .copyright {
       float: left;
       left:0;
-      bottom: 10px;
+      bottom: -60px;
       color: gray;
+      position: absolute;
+      font-size: 1.4rem
     }
 
     ul {

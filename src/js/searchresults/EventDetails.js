@@ -129,8 +129,6 @@ class EventDetails extends React.Component {
                                 <p>Organiser: {this.state.event.eventOrganiser}</p>
 
                                 <p><strong>Price:</strong> {this.state.event.eventPrice}</p>
-
-                                <p>Id: {this.state.event._id}</p>
                             </div>
 
                             <div className="moreDetailsPane">

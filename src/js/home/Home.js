@@ -52,13 +52,7 @@ const Home = (props) => {
                                 <h3>Upcoming</h3>
                                     <CarouselWidget limit={3} category="upcoming" />
                             </div>
-
                         <History />
-                    </div>
-
-
-
-                    <div className="stripe">
                     </div>
                 </div>
             </Layout>

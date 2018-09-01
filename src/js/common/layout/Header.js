@@ -43,10 +43,8 @@ class Header extends React.Component {
         }
         else {
             return (
-                <div><ul>
-                        <li><a href="#">Organisers</a></li>
-                        <li><a href="/register">Sign up <i className="material-icons">person</i> </a></li>
-                    </ul>
+                <div>
+                    <a href="/register" className="icon">Sign up <i className="material-icons">person</i> </a>
                 </div>
             )
         }
@@ -61,6 +59,7 @@ class Header extends React.Component {
                         <img className="logo" src="/assets/img/cafe_octane.png" />
                     </Link>
                     <ul className="navigation">
+                        <li><a href="#">Organisers</a></li>
                         <li>
                             {this.isLoggedIn()}
                         </li>

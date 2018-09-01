@@ -37,7 +37,7 @@ const Footer = () => {
                 </div>
                 <div className="row col-sm col-sm-12">
                     <p className="copyright text-left">
-                        &copy; Cafe Octane 2018 | <a href="http://www.tom-jordan.co.uk">Tom Jordan</a>
+                        &copy; Cafe Octane 2018 | <a href="http://www.tom-jordan.co.uk" target="_blank">Tom Jordan</a> | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms</a>
                     </p>
                 </div>
             </div>

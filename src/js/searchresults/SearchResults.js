@@ -202,6 +202,7 @@ export default class SearchResults extends React.Component {
                                         user={this.state.user}
                                         bookmarks={this.state.bookmarks}
                                         eventId={this.state.events[eventId]._id}
+                                        eventCounty={this.state.events[eventId].eventCounty}
                                         eventTitle={this.state.events[eventId].eventTitle}
                                         eventStart={Helpers.transformDate( this.state.events[eventId].eventStart) }
                                     />

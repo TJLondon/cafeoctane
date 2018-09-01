@@ -81,10 +81,27 @@ div.article-list, div.article-home, div.category-home {
         z-index: 1;
         color: $primary-red;
 
+        .tip {
+          visibility: hidden;
+          background: black;
+          color: white;
+          position: absolute;
+          top:-35px;
+          right: 0;
+          width: 100px;
+          padding: 5px;
+          border-radius: 6px;
+          text-align: center;
+        }
+
         &:hover, &.active {
           background: $primary-color;
           color: white;
         }
+
+        &:hover .tip {
+            visibility: visible;
+          }
       }
 
     .dateDisplay {
@@ -128,6 +145,12 @@ div.article-list, div.article-home, div.category-home {
       .grad {
         background: linear-gradient(180deg,transparent 0,rgba(0,0,0,.3));
       }
+
+      &:hover {
+        .grad {
+          background: linear-gradient(180deg,transparent 0,rgba(0,0,0,.9));
+        }
+      }
     }
 
     &:hover {
@@ -148,7 +171,13 @@ div.article-list, div.article-home, div.category-home {
       position: absolute;
       bottom: 0;
       color: white;
-      padding: 10px;
+      padding: 10px 10px 0 10px;
+      width: 100%;
+
+      span {
+        text-align: right;
+        float: right;
+      }
     }
   }
 }

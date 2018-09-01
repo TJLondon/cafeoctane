@@ -35,7 +35,7 @@ console.log('sign in');
 userRouter.get('/get',(req, res) => {
     //Set them both to int to avoid undefined strings
     let user = req.signedCookies['usertoken'];
-console.log(user);
+
     MongoClient.connect(mongodbUrl, function (err, db) {
         let octanedb = db.db('cafeoctane');
         let userObj = [];

@@ -10,26 +10,38 @@ class Bookmarks extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            view: 'error',
+            view: 'loading',
             user: null,
-            bookmarks: null,
-            optinSuggested: false
+            bookmarks: []
         };
-            this.handleUserSuccess = this.handleUserSuccess.bind(this);
+            this.handleSuccess = this.handleSuccess.bind(this);
     }
 
-
-    handleUserSuccess = (data) => {
-        if (data) {
-            this.setState({
-                bookmarks: data,
-                user: '',
-                view: 'bookmarks'
-            })
+    getUser() {
+        if (document.cookie.indexOf("usertoken") > 0) {
+            return (axios.get('/user/get'))
+        }
+        else {
+            return this.state.user
         }
     };
 
-    handUserError = (error) => {
+
+    handleSuccess = (data) => {
+        if (data) {
+            this.getUser()
+                .then(res => {
+                    this.setState({
+                        bookmarks: data,
+                        user: res.data,
+                        view: 'bookmarks'
+                    })
+                })
+
+        }
+    };
+
+    handleError = (error) => {
         this.setState({view: 'error'}, () => {
             console.log(error);
         });
@@ -38,8 +50,8 @@ class Bookmarks extends React.Component {
     componentDidMount() {
         if (document.cookie.indexOf("usertoken") > 0) {
             axios.get('/user/bookmarks')
-                .then(res => this.handleUserSuccess(res.data))
-                .catch(error => this.handUserError(error));
+                .then(res => this.handleSuccess(res.data))
+                .catch(error => this.handleError(error));
         }
         else {
             this.props.history.push('/register')
@@ -47,8 +59,8 @@ class Bookmarks extends React.Component {
     }
 
     componentWillUnmount() {
-        this.handleUserSuccess = noop;
-        this.handUserError = noop;
+        this.handleSuccess = noop;
+        this.handleError = noop;
     }
 
     Error() {
@@ -63,34 +75,60 @@ class Bookmarks extends React.Component {
         )
     }
 
-    Updated() {
+
+    Loading() {
         return (
-            <div className="success">
-                <i className="material-icons">check</i>
-                <p>Your details have been updated</p>
+            <div className="loading">
+                <i className="material-icons loading">local_car_wash</i>
             </div>
         )
     }
 
     BookmarksPanel() {
-        return (
-            <div className="box">
-                <h3>Bookmarks</h3>
-                {Object.keys(this.state.bookmarks).map((bookmarkId) =>
-                        <div>
-                            {this.state.bookmarks[bookmarkId].eventTitle}
-                        </div>
+        let bookmarks = [];
+        Object.keys(this.state.bookmarks).map((bookmarkId) => {
+            bookmarks.push(this.state.bookmarks[bookmarkId]._id)
+        });
 
-                )}
-            </div>
-        )
+        if (Object.keys(this.state.bookmarks).length > 0) {
+            return (
+                <div className="box">
+                    <h3>Bookmarks</h3>
+
+                    <div className="article-list">
+                        {Object.keys(this.state.bookmarks).map((bookmarkId) =>
+                            <EventPreview
+                                key={bookmarkId}
+                                user={this.state.user}
+                                bookmarks={bookmarks}
+                                eventId={this.state.bookmarks[bookmarkId]._id}
+                                eventTitle={this.state.bookmarks[bookmarkId].eventTitle}
+                                eventCounty={this.state.bookmarks[bookmarkId].eventCounty}
+                                eventStart={Helpers.transformDate(this.state.bookmarks[bookmarkId].eventStart)}
+                            />
+                        )}
+                    </div>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className="box">
+                    <h3>Bookmarks</h3>
+                    <p>
+                        You don't have any active events saved right now.
+                    </p>
+                </div>
+            )
+        }
     }
 
     render() {
         return (
             <Layout>
-                <div className="userprofile content">
+                <div className="bookmarks content">
                     <div className="container">
+                        {this.state.view === 'loading' ? this.Loading() : null}
                         {this.state.view === 'error' ? this.Error() : null}
                         {this.state.view === 'bookmarks' ? this.BookmarksPanel() : null}
                     </div>

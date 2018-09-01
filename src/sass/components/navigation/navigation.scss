@@ -1,6 +1,6 @@
 @import 'cookiebanner';
 nav.navbar {
-  z-index: 2;
+  z-index: 5;
   position: fixed;
   top: 0;
   background: black;
@@ -31,9 +31,22 @@ nav.navbar {
     float: right;
 
     li {
+      margin-right: 15px;
       a {
-        color: azure;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-weight: normal;
+        position: relative;
+        &.icon {
+          padding: 0 15px 0 0;
+          i {
+            position:absolute;
+            top:-4px;
+            right: -30px;
+          }
+        }
       }
+
     }
   }
   .navigation {
@@ -48,7 +61,7 @@ nav.navbar {
         transition: all .50s;
         a {
           font-size: 1.5rem;
-          font-weight: 600;
+          //font-weight: 600;
         }
 
         .avatar {
