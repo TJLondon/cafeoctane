@@ -10,12 +10,12 @@ export default {
     facebook: {
         appid: 240560926764008,
         secret: '2d61967ec1eaa82bb13ed6cfa60fe45c',
-        callback: env.HOST + '/auth/facebook/callback'
+        callback: 'https://www.cafeoctane.com/auth/facebook/callback'
     },
     google: {
         clientID: '990606542806-1ogsd3icm6psuob8gsrfrp5653oprso0.apps.googleusercontent.com',
         clientSecret: 'c8Dg_qOXjh_iGiR87_N1dB0s',
-        callback: env.HOST + '/auth/google/callback'
+        callback: 'https://www.cafeoctane.com/auth/google/callback'
     },
     get serverUrl() {
         return `http://${this.host}:${this.port}`;

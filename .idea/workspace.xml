@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c26507e-84c7-4078-8f1e-cf618ffb43cb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/auth/social/GoogleStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/auth/social/GoogleStrategy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -40,7 +39,7 @@
           <entry key="ejs" value="11" />
           <entry key="gitignore" value="5" />
           <entry key="html" value="7" />
-          <entry key="js" value="301" />
+          <entry key="js" value="302" />
           <entry key="json" value="13" />
           <entry key="jsx" value="4" />
           <entry key="log" value="1" />
@@ -56,7 +55,7 @@
           <entry key="HTML" value="7" />
           <entry key="JSON" value="15" />
           <entry key="JSX Harmony" value="4" />
-          <entry key="JavaScript" value="301" />
+          <entry key="JavaScript" value="302" />
           <entry key="PLAIN_TEXT" value="11" />
           <entry key="SCSS" value="106" />
           <entry key="YAML" value="1" />
@@ -68,7 +67,7 @@
           <entry key="ejs" value="162" />
           <entry key="gitignore" value="58" />
           <entry key="html" value="9" />
-          <entry key="js" value="36730" />
+          <entry key="js" value="36758" />
           <entry key="json" value="34" />
           <entry key="jsx" value="1" />
           <entry key="scss" value="8817" />
@@ -80,7 +79,7 @@
           <entry key="HTML" value="9" />
           <entry key="JSON" value="34" />
           <entry key="JSX Harmony" value="1" />
-          <entry key="JavaScript" value="36730" />
+          <entry key="JavaScript" value="36758" />
           <entry key="PLAIN_TEXT" value="68" />
           <entry key="SCSS" value="8817" />
         </counts>
@@ -119,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/auth/social/facebookStrategy.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+            <state relative-caret-position="112">
+              <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -143,8 +142,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="51" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="51" />
+            <state relative-caret-position="96">
+              <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -158,7 +157,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auth/social/GoogleStrategy.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="112">
@@ -171,19 +170,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sass/components/searchresults/searchresults.scss">
+        <entry file="file://$PROJECT_DIR$/auth/social/FacebookRouter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="224">
+              <caret line="14" column="43" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sass/components/footer/footer.scss">
+        <entry file="file://$PROJECT_DIR$/src/sass/components/searchresults/searchresults.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+            <state relative-caret-position="467">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -307,8 +309,8 @@
         <option value="$PROJECT_DIR$/src/sass/components/home/article.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/navigation/navigation.scss" />
         <option value="$PROJECT_DIR$/src/sass/components/searchresults/searchresults.scss" />
-        <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/auth/social/GoogleStrategy.js" />
+        <option value="$PROJECT_DIR$/config.js" />
       </list>
     </option>
   </component>
@@ -448,12 +450,12 @@
       <workItem from="1535452948878" duration="2489000" />
       <workItem from="1535480628747" duration="2587000" />
       <workItem from="1535573696066" duration="10962000" />
-      <workItem from="1535830280629" duration="18897000" />
+      <workItem from="1535830280629" duration="19621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="465354000" />
+    <option name="totallyTimeSpent" value="466078000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -599,16 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth/social/FacebookRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -876,16 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth/social/facebookStrategy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auth/social/GoogleRouter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -895,8 +877,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="51" />
+        <state relative-caret-position="96">
+          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -904,6 +886,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="7" column="49" lean-forward="true" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/social/FacebookRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/social/facebookStrategy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
