@@ -1,0 +1,82 @@
+.billboard {
+  margin: 10rem 0 0 0;
+  text-align: center;
+  h1, h2 {
+    color: white;
+    font-weight: 300;
+  }
+
+  .row {
+    margin: 15px 0;
+  }
+
+  form {
+    width: 100%;
+    padding: 2rem 0;
+    margin: 0 0 5rem 0;
+    height: 300px;
+    //@include breakpoint(tablet) {
+      @include alpha-background-color(rgba(black, 0.5), white);
+    //}
+    .inputWrap {
+      margin: 2rem 0;
+    }
+    label {
+      color: $primary-color;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    input, select {
+      color: black;
+      font-size: 1.5rem;
+      padding: 1rem;
+      width: 100%;
+    }
+
+    @include breakpoint(tablet) {
+      width: 50%;
+      margin: 0 auto 50px auto;
+      input, select, button {
+        width: 75%;
+      }
+    }
+  }
+
+  .stripe {
+    width: 100%;
+    background: white;
+    height: auto;
+
+
+    &.dark {
+      background: #0f1721;
+
+      h3 {
+        color: white;
+      }
+    }
+  }
+
+
+
+  h1 {
+    font-size: 7rem;
+  }
+
+  h3 {
+    margin: 2rem;
+    font-weight: 700
+  }
+
+  h4 {
+    font-size: 2.4rem;
+  }
+
+  @include breakpoint(mobileonly) {
+    h1 {font-size: 3rem}
+  }
+
+
+}

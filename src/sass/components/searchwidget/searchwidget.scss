@@ -1,0 +1,72 @@
+.searchWidget {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px $primary-color solid;
+
+  .locationSearch {
+    display: inline;
+
+    .google-covert {
+      position: absolute;
+      background: white;
+      width: 340px;
+      z-index:3;
+
+      ul {
+        li {
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+    .rdr-DateRange {
+    position: absolute;
+    top: 0;
+    border: 1px $dark-grey solid;
+  }
+
+
+  .inputWrap {
+    display: inline-block;
+    padding: 0 2rem;
+    margin: 1rem 1rem 1rem 0;
+    position: relative;
+    width: auto;
+    .location-box {
+      width: 340px;
+    }
+
+    input, select {
+      color: black;
+      font-size: 1.4rem;
+      padding: 0.5rem;
+    }
+
+    label {
+      margin: 0 2rem 0 0;
+    }
+
+
+
+    .rdr-DateRange {
+      position: absolute;
+      top: 160px;
+    }
+  }
+
+
+  @include breakpoint(mobileonly) {
+    .inputWrap {
+      width: 100%;
+
+      .location-box {
+        width: 100%;
+        border-top: 1px #cccccc solid;
+      }
+
+      .google-covert {
+        width: 90%;
+      }
+    }
+  }
+}

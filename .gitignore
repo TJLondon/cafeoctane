@@ -1,1 +1,9 @@
-dist/
+node_modules
+dist
+.gitignore
+.idea/*
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

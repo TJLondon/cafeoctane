@@ -1,0 +1,106 @@
+.eventTitleWrapper {
+  background: white;
+  height:auto;
+  border-bottom: 1px $primary-color solid;
+
+  h2 {
+    font-weight: bold;
+  }
+
+  .dateDisplay {
+    width: 56px;
+    height: 53px;
+    background: $background-color;
+    font-size: 1.6rem;
+    margin-left: 15px;
+  }
+
+  .article-header {
+    height: auto;
+    overflow: hidden;
+
+    p {
+      margin-bottom: 0;
+      color: #616161;
+      font-size: 1.4rem;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  .container {
+    padding-top: 10px;
+  }
+  @include breakpoint(tablet) {
+    .container {
+      padding: 25px 0 7px 0;
+    }
+  }
+}
+.eventDetailsWrapper {
+
+  ::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  position: relative;
+  color: black;
+
+  p {
+    font-size: 1.7rem;
+  }
+
+  div.content {
+    max-width: 100%;
+    margin-top: 20px;
+    @include breakpoint(tablet) {
+      margin-top: 20px;
+      max-width: 55%;
+    }
+  }
+}
+
+
+.moreDetailsPane {
+  background: white;
+  width: 100%;
+  padding: 2rem;
+  float: left;
+
+  @include breakpoint(tablet) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 360px;
+    border: 1px #ccc solid;
+    padding: 2rem;
+  }
+
+  a {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    background: $primary-color;
+    color: white;
+    float: left;
+
+    &:hover {
+      text-decoration: none;
+      background: #7f7f7f;
+    }
+  }
+
+  .googleMap {
+    margin: 2rem 0 0 0;
+    float: left;
+    width: 100%;
+    a {
+      background: transparent;
+    }
+  }
+}

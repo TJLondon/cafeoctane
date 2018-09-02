@@ -1,13 +1,22 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
     template: "./src/index.html",
     filename: "./index.html"
 });
 
+
+
 module.exports = {
     entry: {
-        main: './src/js/index.js'
+        main: './src/js/app.js'
+    },
+    output: {
+        path:  __dirname + '/public',
+        filename: 'bundle.js'
     },
     module: {
         rules: [
@@ -19,11 +28,26 @@ module.exports = {
                 }
             },
             {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
+            {
                         test:/\.(s*)css$/,
                         use:['style-loader','css-loader', 'sass-loader']
 
             }
         ]
     },
-    plugins: [htmlWebpackPlugin]
+
+    plugins: [
+        htmlWebpackPlugin,
+        new UglifyJsPlugin(),
+        new CompressionPlugin({
+            asset: "[path].gz[query]",
+            algorithm: "gzip",
+            test: /\.js$|\.css$|\.html$/,
+            threshold: 10240,
+            minRatio: 0.8
+        })
+    ]
 };

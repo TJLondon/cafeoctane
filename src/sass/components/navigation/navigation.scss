@@ -1,0 +1,202 @@
+@import 'cookiebanner';
+nav.navbar {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  background: black;
+  width: 100%;
+  transition: all .50s;
+  height: 65px;
+  border-radius: 0;
+
+  &.home {
+    background: transparent;
+    position: absolute;
+  }
+
+  &.move {
+    @include alpha-background-color(rgba(black, 0.6), white);
+    .logo {
+      width: 170px;
+      margin-top: 2rem;
+    }
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  ul {
+    list-style-type: none;
+    float: right;
+
+    li {
+      margin-right: 15px;
+      a {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-weight: normal;
+        position: relative;
+        &.icon {
+          padding: 0 15px 0 0;
+          i {
+            position:absolute;
+            top:-4px;
+            right: -30px;
+          }
+        }
+      }
+
+    }
+  }
+  .navigation {
+    display: none;
+    @include breakpoint(laptop) {
+      display: block;
+      list-style-type: none;
+      margin: 0 2rem 0 0;
+      li {
+        float: left;
+        padding: 3rem 1rem 0 1rem;
+        transition: all .50s;
+        a {
+          font-size: 1.5rem;
+          //font-weight: 600;
+        }
+
+        .avatar {
+          margin-left: 2rem;
+          position: relative;
+          img {
+            border-radius: 50%;
+            margin-top: -15px;
+          }
+
+          ul {
+            background: white;
+            position: absolute;
+            right: 0;
+            width: 150px;
+            text-align: center;
+            padding:0;
+            top: 53px;
+            border: 1px black solid;
+            li {
+              width: 100%;
+              padding:0;
+              margin:1rem 0;
+              a {
+                color: black;
+                font-wight: normal;
+
+                &.logout {
+                  color: $primary-color;
+                }
+              }
+
+
+            }
+
+
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  width: 180px;
+  margin: 1.3rem 2rem;
+  transition: all .50s;
+}
+
+@include breakpoint(laptop) {
+  .logo {
+    width: 220px;
+    margin: 2rem;
+  }
+
+  nav.navbar {
+    height: 85px;
+
+    @include breakpoint(mobileonly) {
+     height: 75px;
+    }
+
+    &.move {
+      height: 75px;
+      ul {
+        li {
+          padding-top: 2.5rem;
+        }
+      }
+
+    }
+  }
+
+  .burgerWrap {
+    display: none;
+  }
+}
+
+.bm-burger-button {
+  button {
+    background: red;
+  }
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 22px;
+  top: 18px;
+}
+
+.bm-burger-bars {
+  background: $primary-color;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-menu {
+  background: #616161;
+  h2 {
+    margin: 5rem 1.625rem 1.625rem 1.625rem;
+    color: white;
+    font-size: 3rem;
+    font-weight: 300;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      border-bottom: 1px $dark-grey solid;
+      margin: 0;
+
+      a {
+        color: white;
+        display: inline-block;
+        font-size: 2.1rem;
+        padding: 1.5625rem 1.5625rem 1.5625rem 1.625rem;
+        font-weight: 300;
+        width: 100%;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: $primary-color;
+        }
+
+        .material-icons {
+          float: right;
+          margin: 4px 0 0 0;
+        }
+      }
+    }
+  }
+}
