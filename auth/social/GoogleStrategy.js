@@ -6,7 +6,7 @@ import funct from '../users/functions';
 passport.use(new GoogleStrategy.OAuth2Strategy({
         clientID: config.google.clientID,
         clientSecret: config.google.clientSecret,
-        callbackURL: "http://localhost:8080/auth/google/callback", //change production
+        callbackURL: config.google.callback, //change production
         passReqToCallback: true
     },
     function(req, accessToken, refreshToken, profile, done) {
