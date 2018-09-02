@@ -12,6 +12,12 @@ server.set('view engine', 'ejs');
 
 // import serverRender from './serverRender';
 
+server.get('*.js', function (req, res, next) {
+    req.url = req.url + '.gz';
+    res.set('Content-Encoding', 'gzip');
+    next();
+});
+
 server.get([
     '/',
     '/events',

@@ -6,17 +6,17 @@ class EventPreview extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            error: null
+            error: null,
+            bgImage: '/assets/img/event_thumb.jpg'
         };
     }
-
     imageStyle = {
-        backgroundImage: 'url(/assets/img/event_thumb.jpg)'
+            backgroundImage: 'url(/assets/img/events/5b6ef70515320a00169cdb08_goodwood.jpg)'
     };
-
     componentDidMount() {
 
     }
+
     render() {
         return (
             <article>
