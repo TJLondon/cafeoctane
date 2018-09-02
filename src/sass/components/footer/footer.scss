@@ -6,21 +6,26 @@ footer {
   font-size: 1.7rem;
 
   @include breakpoint(tablet) {
-    .copyright {
+    ul.copyright {
       float: left;
-      left:0;
-      bottom: -60px;
       color: gray;
-      position: absolute;
-      font-size: 1.4rem
+      font-size: 1.4rem;
+      padding-top: 25px;
+        li {
+          margin: 0.6rem 2rem 0 0.6rem;
+          display: inline;
+          a {
+            color: $primary-color !important;
+            text-decoration: underline;
+          }
+        }
     }
 
     ul {
-
       margin: 2rem 0;
       font-size: 1.4rem;
       li {
-        margin: 0.6rem 0;
+
 
       }
     }
@@ -49,6 +54,13 @@ footer {
       li {
         text-align: right;
         font-size: 3rem;
+
+        @include breakpoint(mobileonly) {
+          text-align: left;
+          a {
+            margin-left: 0;
+          }
+        }
         a {
           margin: 0 10px;
           color: white;

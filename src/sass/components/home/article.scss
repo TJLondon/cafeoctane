@@ -2,6 +2,11 @@ div.content {
   height: auto;
   background-color: $background-color;
   margin-top: 75px;
+
+  @include breakpoint(mobileonly) {
+    margin-top: 65px;
+  }
+
   &.billboard {
     margin-top: 0;
   }

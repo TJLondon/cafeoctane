@@ -7,9 +7,11 @@ import './../sass/main.scss';
 import SearchResults from './searchresults/SearchResults';
 import EventDetails from './searchresults/EventDetails';
 import About from './pages/About';
-import Register from './pages/Register';
-import UserProfile from './pages/UserProfile';
-import Bookmarks from './pages/Bookmarks.';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Register from './user/Register';
+import UserProfile from './user/UserProfile';
+import Bookmarks from './user/Bookmarks.';
 
 const app = document.getElementById('app');
 
@@ -25,6 +27,8 @@ const Routing = () => (
             <Route exact path='/profile' component={UserProfile} />
             <Route exact path='/bookmarks' component={Bookmarks} />
             <Route exact path='/about' component={About} />
+            <Route exact path='/privacy' component={Privacy} />
+            <Route exact path='/terms' component={Terms} />
         </Switch>
     </main>
 );

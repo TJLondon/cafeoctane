@@ -20,7 +20,9 @@ server.get([
     '/register',
     '/profile',
     '/bookmarks',
-    '/about'
+    '/about',
+    '/terms',
+    '/privacy'
 ], (req,res) => {
     // serverRender()
     //     .then(content => {

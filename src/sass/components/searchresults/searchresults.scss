@@ -37,8 +37,12 @@
 
 .searchresults {
   .resultsHeader {
-    min-height: 80px;
+    min-height: 65px;
     margin:80px 0 0 0;
+
+    @include breakpoint(mobileonly) {
+      margin-top: 65px;
+    }
 
     .resultsCount {
       color: $darker-grey;

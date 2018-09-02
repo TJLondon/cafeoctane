@@ -120,6 +120,11 @@ nav.navbar {
 
   nav.navbar {
     height: 85px;
+
+    @include breakpoint(mobileonly) {
+     height: 75px;
+    }
+
     &.move {
       height: 75px;
       ul {

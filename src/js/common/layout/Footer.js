@@ -29,20 +29,19 @@ const Footer = () => {
 
                     <div className="col-sm col-sm-3 text-left social">
                         <ul>
-                            <li><a href="#" className="fa fa-facebook"></a>&nbsp;<a href="#" className="fa fa-instagram"></a>&nbsp;<a href="#" className="fa fa-twitter"></a></li>
+                            <li><a href="#" className="fa fa-facebook"></a>&nbsp;<a href="https://www.instagram.com/cafeoctane/" target="_blank" className="fa fa-instagram"></a>&nbsp;<a href="#" className="fa fa-twitter"></a></li>
                         </ul>
                     </div>
-
-
                 </div>
                 <div className="row col-sm col-sm-12">
-                    <p className="copyright text-left">
-                        &copy; Cafe Octane 2018 | <a href="http://www.tom-jordan.co.uk" target="_blank">Tom Jordan</a> | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms</a>
-                    </p>
+                    <ul className="copyright text-left">
+                        <li>&copy; Cafe Octane 2018 </li>
+                        <li>by <a href="http://www.tom-jordan.co.uk" target="_blank">Tom Jordan</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms</a></li>
+                    </ul>
                 </div>
             </div>
-
-
         </footer>
     )
 };
