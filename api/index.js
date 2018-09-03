@@ -77,8 +77,10 @@ router.get('/geo/encode', (req, res) => {
                     res.send('Updated ' + count + ' records');
                 }
                 if (event) {
-                    if (event.lat && event.lng && event.g === '') {
+                    console.log(event.g);
+                    if (event.lat && event.lng && event.g === undefined) {
                         let ghash = Geohash.encode_int(event.lat, event.lng, null);
+
                         octanedb.collection('events').update(
                             {_id: event._id},
                             {
@@ -146,24 +148,29 @@ router.get('/events/geo/:limit/:page', (req, res) => {
             })
     }
     else {
-        octanedb.collection('eventType').findOne({eventTypeTitle: new RegExp(category.replace('-', ' '), "i")}, (err, eventType) => {
-            octanedb.collection('events').find(
-                {
-                    eventCategory: { "$in" : [eventType._id]},
-                    eventStart: {
-                        $gte: new Date(dateStart),
-                        $lt: new Date(dateEnd)
+        octanedb.collection('eventType').findOne({
+            eventTypeTitle:  {
+                $regex: new RegExp(category.replace(/-/g,' '), "i")
+            }
+        })
+            .then(eventType => {
+                octanedb.collection('events').find(
+                    {
+                        eventCategory: { "$in" : [eventType._id]},
+                        eventStart: {
+                            $gte: new Date(dateStart),
+                            $lt: new Date(dateEnd)
+                        }
                     }
-                }
                 ).sort({eventStart: 1})
-                .toArray((err,result) => {
-                    const geo = new Geo(result);
-                    tempArray.push(geo.nearBy(loc.lat,loc.lng,loc.radius));
-                    resultsArray.push(tempArray[0].slice(page * limit, (page + 1) * limit));
-                    resultsArray.push({ pages: Math.ceil((tempArray[0].length)  / limit), results: tempArray[0].length});
-                    res.send(resultsArray);
-                })
-        });
+                    .toArray((err,result) => {
+                        const geo = new Geo(result);
+                        tempArray.push(geo.nearBy(loc.lat,loc.lng,loc.radius));
+                        resultsArray.push(tempArray[0].slice(page * limit, (page + 1) * limit));
+                        resultsArray.push({ pages: Math.ceil((tempArray[0].length)  / limit), results: tempArray[0].length});
+                        res.send(resultsArray);
+                    })
+            })
     }
 });
 

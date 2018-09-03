@@ -43,7 +43,8 @@ userRouter.get('/get',(req, res) => {
         let bookmarksCollection = octanedb.collection('bookmarks');
         //check if username is already assigned in our database
         usersCollection.findOne(
-            {'token': user.toString()})
+            {'token': user.toString()},
+            { first_name: 1, last_name: 1, email: 1, optinSuggested: 1, avatar: 1 })
             .then(function (user) {
                 if (null != user) {
                     userObj.push(user);
