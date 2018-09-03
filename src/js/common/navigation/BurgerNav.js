@@ -34,9 +34,10 @@ class BurgerNav extends React.Component {
                 <ul>
                     <li><Link to={'/'}>Home <i className="material-icons">keyboard_arrow_right</i></Link></li>
                     <li><Link to={'/events'}>Event Search <i className="material-icons">keyboard_arrow_right</i></Link></li>
-                    <li><Link to={'/organisers'}>Event Organisers <i className="material-icons">keyboard_arrow_right</i></Link></li>
+                    <li><a target="_blank" href='https://cafeoctane.typeform.com/to/UFhEcw'>Event Organisers <i className="material-icons">keyboard_arrow_right</i></a></li>
 
                     {document.cookie.indexOf("usertoken") > 0 ? <li><a href="/profile">Profile <i className="material-icons">keyboard_arrow_right</i></a></li> : null}
+                    {document.cookie.indexOf("usertoken") > 0 ? <li><a href="/bookmarks">Your Bookmarks <i className="material-icons">keyboard_arrow_right</i></a></li> : null}
                     {document.cookie.indexOf("usertoken") > 0 ? <li><a href="/user/signout" className="logout">Logout</a></li> : null}
                     {document.cookie.indexOf("usertoken") < 0 ? <li><Link to={'/register'}>Login or Signup <i className="material-icons">keyboard_arrow_right</i></Link></li> : null}
 
@@ -47,7 +48,6 @@ class BurgerNav extends React.Component {
                 <h2>Contact</h2>
                 <ul className="contactInfo">
                     <li><a href="mailto:contact@cafeoctane.com">contact@cafeoctane.com <i className="material-icons">email</i></a></li>
-                    <li><a href="tel:0800 808 808">0800 808 808 <i className="material-icons">call</i></a></li>
                 </ul>
 
             </Menu>

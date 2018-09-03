@@ -123,6 +123,9 @@ class EventDetails extends React.Component {
                         </div>
                     </div>
                     <div className="container">
+
+
+
                         <div className="eventDetailsWrapper">
                             <div className="content">
                                 <div dangerouslySetInnerHTML={{__html: this.state.event.eventSummary}}/>
@@ -134,10 +137,9 @@ class EventDetails extends React.Component {
                             </div>
 
                             <div className="moreDetailsPane">
-                                <p>Ticket Price:<br />
-                                    {this.state.event.eventPrice}</p>
-                                <p>Organised by: <br />{this.state.event.eventOrganiser}</p>
-                                <p>Location: <br /> {this.state.event.eventAddress}</p>
+                                <p>Price: {this.state.event.eventPrice}</p>
+                                <p>Organised by: {this.state.event.eventOrganiser}</p>
+
 
                                 <a href={this.state.event.eventURL} target="_blank">Find out more</a>
                                 <div className="googleMap">
@@ -151,6 +153,7 @@ class EventDetails extends React.Component {
                                         longitude={this.state.lng}
                                     />
                                 </div>
+                                <p>Location: <br /> {this.state.event.eventAddress}</p>
                             </div>
 
                         </div>

@@ -11,19 +11,19 @@ const Footer = () => {
                     </div>
                     <div className="col-sm col-sm-3 text-left">
                         <ul>
-                            <li><Link to={'/events'}>All events</Link></li>
-                            <li><Link to={'/events/find/cars-and-coffee'}>Cars and Coffee</Link></li>
-                            <li><Link to={'/events/find/motorsport'}>Motorsport</Link></li>
-                            <li><Link to={'/events/find/car-shows'}>Car shows</Link></li>
+                            <li><a href='/events'>All events</a></li>
+                            <li><a href='/events/find/cars-and-coffee'>Cars and Coffee</a></li>
+                            <li><a href='/events/find/motorsport'>Motorsport</a></li>
+                            <li><a href="/events/find/car-shows">Car shows</a></li>
                         </ul>
                     </div>
 
                     <div className="col-sm col-sm-3 text-right">
                         <ul>
-                            <li><Link to={'/events/events/supercar-meets'}>Supercar meets</Link></li>
-                            <li><Link to={'/events/find/american'}>American</Link></li>
-                            <li><Link to={'/events/find/japanese-and-imports'}>Japanese/Imports</Link></li>
-                            <li><Link to={'/events/find/track-days'}>Track Days</Link></li>
+                            <li><a href='/events/find/supercar-meets'>Supercar meets</a></li>
+                            <li><a href='/events/find/american'>American</a></li>
+                            <li><a href='/events/find/japanese-and-imports'>Japanese/Imports</a></li>
+                            <li><a href='/events/find/track-days'>Track Days</a></li>
                         </ul>
                     </div>
 

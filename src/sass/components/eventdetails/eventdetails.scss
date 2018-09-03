@@ -63,7 +63,7 @@
     }
 
     p.disclaimer {
-      margin: 5rem 0 0 0;
+      margin: 5rem 0 5rem 0;
       font-size: 1.3rem;
       color: black;
     }
@@ -76,7 +76,7 @@
   width: 100%;
   padding: 2rem;
   float: left;
-  text-align: center;
+  text-align: left;
 
   @include breakpoint(tablet) {
     position: absolute;
