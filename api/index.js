@@ -75,9 +75,7 @@ router.get('/geo/encode', (req, res) => {
 
                 if (!event) {
                     res.send('Updated ' + count + ' records');
-                    return
                 }
-
                 if (event) {
                     if (event.lat && event.lng && event.g === '') {
                         let ghash = Geohash.encode_int(event.lat, event.lng, null);
