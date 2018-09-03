@@ -22,7 +22,7 @@ class CookieBanner extends React.Component {
                 <div className={'cookieBanner ' + this.state.bannerClass}>
                     <div className="container">
                         <p>We're using cookies to improve your Cafe Octane experience. You can review our <a
-                            href="/cookies">Cookie Policy</a> for more details, otherwise
+                            href="/privacy">Cookie Policy</a> for more details, otherwise
                             we'll assume you're ok with this.</p>
                         <a href="#" onClick={this.handleClick} className="closeBanner"><i
                             className="material-icons">close</i></a>

@@ -59,7 +59,7 @@ class Header extends React.Component {
                         <img className="logo" src="/assets/img/cafe_octane.png" />
                     </Link>
                     <ul className="navigation">
-                        <li><a href="#">Organisers</a></li>
+                        <li><a target="_blank" href="https://cafeoctane.typeform.com/to/UFhEcw">Organisers</a></li>
                         <li>
                             {this.isLoggedIn()}
                         </li>

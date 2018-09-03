@@ -41,26 +41,70 @@ router.get('/', (req, res) => {
 
 //converts latitude and longitude to geohash
 router.get('/geo/encode', (req, res) => {
-   let lng = req.query.lng,
-       lat = req.query.lat;
+   // let lng = req.query.lng,
+   //     lat = req.query.lat;
+   //
+   // if (!lng || !lat) {
+   //     res.send('expecting lng lat');
+   // }
+   //
+   // const ghash = Geohash.encode_int(lat, lng, null);
+   // const response = {
+   //     input : {
+   //         lat: req.query.lat,
+   //         lng: req.query.lng
+   //     },
+   //     output : {
+   //         hash : ghash,
+   //         lat : Geohash.decode_int(ghash).latitude.toString(),
+   //         lng : Geohash.decode_int(ghash).longitude.toString()
+   //     }
+   // };
+   // res.send(response);
 
-   if (!lng || !lat) {
-       res.send('expecting lng lat');
-   }
 
-   const ghash = Geohash.encode_int(lat, lng, null);
-   const response = {
-       input : {
-           lat: req.query.lat,
-           lng: req.query.lng
-       },
-       output : {
-           hash : ghash,
-           lat : Geohash.decode_int(ghash).latitude.toString(),
-           lng : Geohash.decode_int(ghash).longitude.toString()
-       }
-   };
-   res.send(response);
+   ///
+    let octanedb = mdb.db('cafeoctane'),
+        count = 0;
+    try {
+        octanedb.collection('events')
+            .find()
+            .sort({eventStart: 1})
+            .each((err, event) => {
+                assert.equal(null, err);
+
+                if (!event) {
+                    res.send('Updated ' + count + ' records');
+                    return
+                }
+
+                if (event) {
+                    if (event.lat && event.lng && event.g === '') {
+                        let ghash = Geohash.encode_int(event.lat, event.lng, null);
+                        octanedb.collection('events').update(
+                            {_id: event._id},
+                            {
+                                $set:
+                                    {
+                                        g: ghash.toString(),
+                                    }
+                            }
+                        )
+                            .then(() => {
+                                count = count + 1;
+                            })
+                            .catch((e) => {
+                                res.send('error', e)
+                            })
+                    }
+                }
+
+            })
+    }
+    catch (e) {
+        res.send(e);
+    }
+
 });
 
 //serves up events based on radius from location

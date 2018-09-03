@@ -29,7 +29,9 @@ const Footer = () => {
 
                     <div className="col-sm col-sm-3 text-left social">
                         <ul>
-                            <li><a href="#" className="fa fa-facebook"></a>&nbsp;<a href="https://www.instagram.com/cafeoctane/" target="_blank" className="fa fa-instagram"></a>&nbsp;<a href="#" className="fa fa-twitter"></a></li>
+                            <li><a href="https://www.facebook.com/Cafe-Octane-235678193766150" target="_blank" className="fa fa-facebook"></a>&nbsp;<a href="https://www.instagram.com/cafeoctane/" target="_blank" className="fa fa-instagram"></a>
+                                {/*&nbsp;<a href="#" className="fa fa-twitter"></a>*/}
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -38,7 +40,7 @@ const Footer = () => {
                         <li>&copy; Cafe Octane 2018 </li>
                         <li>by <a href="http://www.tom-jordan.co.uk" target="_blank">Tom Jordan</a></li>
                         <li><a href="/privacy">Privacy Policy</a></li>
-                        <li><a href="/terms">Terms</a></li>
+                        {/*<li><a href="/terms">Terms</a></li>*/}
                     </ul>
                 </div>
             </div>

@@ -5,9 +5,9 @@
   "main": "js/app.js",
   "scripts": {
     "start": "nodemon --exec babel-node server.js --ignore public",
-    "dev": "webpack -md --watch",
+    "dev": "webpack -md --watch --config webpack.dev.js",
     "production": "babel-node server.js public",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --config webpack.production.js",
     "package": "git archive -v -o cafeoctane@1.0.0.zip --format=zip HEAD"
   },
   "keywords": [],

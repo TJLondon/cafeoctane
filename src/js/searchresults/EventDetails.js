@@ -126,14 +126,18 @@ class EventDetails extends React.Component {
                         <div className="eventDetailsWrapper">
                             <div className="content">
                                 <div dangerouslySetInnerHTML={{__html: this.state.event.eventSummary}}/>
-                                <p>Organiser: {this.state.event.eventOrganiser}</p>
 
-                                <p><strong>Price:</strong> {this.state.event.eventPrice}</p>
+                                <p className="disclaimer">
+                                    While every effort is made to ensure accuracy, please do check with the event organiser before attending as we cannot guarantee
+                                    the information listed is current.
+                                </p>
                             </div>
 
                             <div className="moreDetailsPane">
-                                <p>Organised by <strong>{this.state.event.eventOrganiser}</strong></p>
-                                <p>Location <strong>{this.state.event.eventAddress}</strong></p>
+                                <p>Ticket Price:<br />
+                                    {this.state.event.eventPrice}</p>
+                                <p>Organised by: <br />{this.state.event.eventOrganiser}</p>
+                                <p>Location: <br /> {this.state.event.eventAddress}</p>
 
                                 <a href={this.state.event.eventURL} target="_blank">Find out more</a>
                                 <div className="googleMap">

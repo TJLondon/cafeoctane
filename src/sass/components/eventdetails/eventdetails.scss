@@ -61,6 +61,12 @@
       margin-top: 20px;
       max-width: 55%;
     }
+
+    p.disclaimer {
+      margin: 5rem 0 0 0;
+      font-size: 1.3rem;
+      color: black;
+    }
   }
 }
 
@@ -70,6 +76,7 @@
   width: 100%;
   padding: 2rem;
   float: left;
+  text-align: center;
 
   @include breakpoint(tablet) {
     position: absolute;

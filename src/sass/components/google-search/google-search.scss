@@ -10,7 +10,12 @@
   .google-covert {
     position:relative;
     margin: 0 auto;
-    width: 75%;
+    width: 100%;
+
+    @include breakpoint(phablet) {
+      width: 75%;
+    }
+
     ul {
       background-color: white;
       margin: 0 auto;
