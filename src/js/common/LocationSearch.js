@@ -51,6 +51,7 @@ class LocationSearch extends React.Component {
                                 <option value={50}>50 miles</option>
                                 <option value={100}>100 miles</option>
                                 <option value={250}>250 miles</option>
+                                <option value={1000}>National</option>
                             </select>
                     </div>
                 </div>
