@@ -31,7 +31,7 @@ class HomeHeroSearch extends React.Component {
                 <div className="container">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <form className="search" onSubmit={this.submitSearch} >
-                                <LocationSearch onLocationSearch={ this.locationHandler }  />
+                                <LocationSearch onLocationSearch={ this.locationHandler.bind(this) }  />
                             <button disabled={!this.state.location.coordinates}>SEARCH</button>
                         </form>
                     </div>

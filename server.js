@@ -4,6 +4,7 @@ import apiRouter from './api';
 import FacebookRouter from './auth/social/FacebookRouter';
 import GoogleRouter from './auth/social/GoogleRouter';
 import UserRouter from './auth/users/UserRouter';
+import LocationRouter from './api/locationService';
 import session from 'express-session';
 
 const server = express();
@@ -56,6 +57,7 @@ server.use('/api', apiRouter); //events api
 server.use('/auth/facebook', FacebookRouter); //user authentication
 server.use('/auth/google', GoogleRouter); //user authentication
 server.use('/user', UserRouter); //user actions
+server.use('/api/location', LocationRouter); //LocationRouter actions
 
 
 server.listen(config.port, config.host, () => {

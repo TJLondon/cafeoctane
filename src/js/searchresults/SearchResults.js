@@ -93,7 +93,8 @@ export default class SearchResults extends React.Component {
         if (obj.lat == null) {
             obj = {lat: this.state.filters.lat, lng: this.state.filters.lng, radius: this.state.filters.radius}
         }
-        this.setState({filters:
+        this.setState({
+            filters:
                 {
                     lng: obj.lng,
                     lat: obj.lat,
