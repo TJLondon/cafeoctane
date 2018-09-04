@@ -99,14 +99,22 @@ div.article-list, div.article-home, div.category-home {
           text-align: center;
         }
 
-        &:hover, &.active {
+        &.active {
           background: $primary-color;
           color: white;
         }
 
-        &:hover .tip {
+        @include breakpoint(tablet) {
+          &:hover {
+            background: $primary-color;
+            color: white;
+          }
+          &:hover .tip {
             visibility: visible;
           }
+        }
+
+
       }
 
     .dateDisplay {

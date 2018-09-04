@@ -66,13 +66,14 @@ userRouter.get('/get',(req, res) => {
 
 userRouter.get('/signout', (req,res) => {
     res.clearCookie("usertoken");
+    res.clearCookie("avatar");
     req.session.destroy(function (err) {
         res.redirect('/');
     });
 });
 
 userRouter.post('/update', (req,res) => {
-    let user = req.user.token || Number(req.signedCookies['usertoken']);
+    let user = req.signedCookies['usertoken'];
     MongoClient.connect(mongodbUrl, function (err, db) {
         let octanedb = db.db('cafeoctane');
         let collection = octanedb.collection('users');
@@ -131,8 +132,6 @@ userRouter.post('/bookmark/remove', (req,res) => {
             })
     });
 });
-
-
 
 userRouter.get('/bookmarks', (req,res) => {
     let user = req.signedCookies['usertoken'];
