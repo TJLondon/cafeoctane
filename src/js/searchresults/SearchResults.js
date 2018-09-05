@@ -7,6 +7,7 @@ import moment from 'moment';
 import querySearch from "stringquery";
 import React from 'react';
 import SearchWidget from '../common/SearchWidget';
+require('es6-promise').polyfill();
 
 const noop = () => {};
 export default class SearchResults extends React.Component {

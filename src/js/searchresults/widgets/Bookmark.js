@@ -1,6 +1,7 @@
-import {Link, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import React from 'react';
 import axios from "axios";
+require('es6-promise').polyfill();
 
 class Bookmark extends React.Component {
     constructor(props) {

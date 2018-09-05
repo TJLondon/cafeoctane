@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -11,9 +12,7 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 
 
 module.exports = {
-    entry: {
-        main: './src/js/app.js'
-    },
+    entry: ["@babel/polyfill", "./src/js/app.js"],
     output: {
         path:  __dirname + '/public',
         filename: 'bundle.js'
@@ -41,6 +40,11 @@ module.exports = {
 
     plugins: [
         htmlWebpackPlugin,
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            },
+        }),
         new UglifyJsPlugin(),
         new CompressionPlugin({
             asset: "[path].gz[query]",

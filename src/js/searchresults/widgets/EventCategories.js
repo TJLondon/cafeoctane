@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import React from 'react';
+require('es6-promise').polyfill();
 
 const CategoryPreview = (props) => {
 

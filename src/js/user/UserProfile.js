@@ -2,6 +2,7 @@ import axios from "axios";
 import Layout from '../common/layout/Layout';
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+require('es6-promise').polyfill();
 
 const noop = () => {}
 class UserProfile extends React.Component {

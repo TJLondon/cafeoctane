@@ -8,9 +8,8 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 
 
 module.exports = {
-    entry: {
-        main: './src/js/app.js'
-    },
+    entry: ["@babel/polyfill", "./src/js/app.js"]
+    ,
     output: {
         path:  __dirname + '/public',
         filename: 'bundle.js'
