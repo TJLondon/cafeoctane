@@ -7,7 +7,7 @@
     "start": "nodemon --exec babel-node server.js --ignore public",
     "dev": "webpack -md --watch --config webpack.dev.js",
     "production": "babel-node server.js public",
-    "build": "webpack --mode -p --config webpack.production.js",
+    "build": "webpack --mode production --config webpack.production.js",
     "package": "git archive -v -o cafeoctane@1.0.0.zip --format=zip HEAD"
   },
   "keywords": [],
