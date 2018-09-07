@@ -256,7 +256,7 @@ div.home {
 div.content {
   height: auto;
   background-color: #efefef;
-  margin-top: 65px; }
+  margin-top: 70px; }
   @media (max-width: 37.5em) {
     div.content {
       margin-top: 65px; } }
