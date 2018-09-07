@@ -13,9 +13,6 @@ class EventPreview extends React.Component {
     imageStyle = {
             backgroundImage: 'url(/assets/img/events/5b6ef70515320a00169cdb08_goodwood.jpg)'
     };
-    componentDidMount() {
-
-    }
 
     render() {
         return (

@@ -38,3 +38,5 @@ ReactDOM.render(
         <Routing />
     </BrowserRouter>,
     app);
+
+export default Routing

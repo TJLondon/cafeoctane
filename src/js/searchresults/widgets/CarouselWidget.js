@@ -3,7 +3,7 @@ import EventPreview from '../EventPreview';
 import Helpers from '../../common/Helpers';
 import React from 'react';
 
-const noop = () => {}
+const noop = () => {};
 export default class CarouselWidget extends React.Component {
     constructor(props) {
         super(props);

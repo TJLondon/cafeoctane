@@ -36,7 +36,7 @@ export default class EventCategories extends React.Component {
     };
 
     handleError = (error) => {
-
+        console.log(error);
     };
 
     componentDidMount() {
@@ -57,5 +57,4 @@ export default class EventCategories extends React.Component {
                     </div>
                 )
     }
-
 };

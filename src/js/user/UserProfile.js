@@ -20,7 +20,6 @@ class UserProfile extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-
     handleUserSuccess = (data) => {
         if (data.email) {
             this.setState({
@@ -83,7 +82,6 @@ class UserProfile extends React.Component {
         event.preventDefault();
     }
 
-
     Error() {
         return (
             <div className="box">
@@ -136,10 +134,7 @@ class UserProfile extends React.Component {
                 <div>
                     <button>Save changes</button>
                 </div>
-
-
             </form>
-
         </div>
         )
     }
@@ -156,9 +151,6 @@ class UserProfile extends React.Component {
             </Layout>
         )
     }
-
-
-
 }
 
 export default withRouter(UserProfile)

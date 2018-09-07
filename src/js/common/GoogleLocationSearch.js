@@ -11,7 +11,7 @@ export default class GoogleLocationSearch extends React.Component {
             collection: null,
             coordinates: null,
             collectionShow: false,
-            distance: "1000",
+            distance: "25",
             currentLocation: '',
             currentCoordinates: {}
         };

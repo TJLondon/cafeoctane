@@ -185,7 +185,6 @@ export default class SearchResults extends React.Component {
                 <div className={this.state.calendar}>
                     <button className="calendarToggle" onClick={this.toggleCalendar}>Calendar</button>
                     <h2 className="resultsCount">{this.state.results} events found</h2>
-
                     <div className="calendarContainer">
                         <DateRange
                             calendars={1}
@@ -195,7 +194,6 @@ export default class SearchResults extends React.Component {
                         />
                         <button onClick={this.handleCalendarSubmit}>Update</button>
                     </div>
-
 
                     <div className="article-list">
                         {Object.keys(this.state.events).map((eventId) =>

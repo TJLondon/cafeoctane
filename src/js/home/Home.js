@@ -22,7 +22,6 @@ const Home = (props) => {
             }
         };
 
-
         return (
             <Layout>
                 <div className='home'>
@@ -57,6 +56,6 @@ const Home = (props) => {
                 </div>
             </Layout>
         )
-}
+};
 
 export default Home

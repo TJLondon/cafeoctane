@@ -17,7 +17,6 @@ class CookieBanner extends React.Component {
     };
 
     view() {
-        if (!cookies.get('anonymous')) {
             return (
                 <div className={'cookieBanner ' + this.state.bannerClass}>
                     <div className="container">
@@ -30,19 +29,15 @@ class CookieBanner extends React.Component {
 
                 </div>
             )
-        }
-        else {
-            return null
-        }
     }
 
     render() {
         return (
             <div>
-                {this.view()}
+                {!cookies.get('anonymous') ? this.view() : null}
             </div>
         )
     }
-};
+}
 
 export default CookieBanner

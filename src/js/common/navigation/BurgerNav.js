@@ -25,32 +25,43 @@ class BurgerNav extends React.Component {
 
     isMenuOpen = (state) => {
         return this.state.isOpen;
+    };
+
+    userNav() {
+        if (typeof window !== 'undefined' && document.cookie.indexOf("usertoken")) {
+            return (
+                <div>
+                <li><a href="/profile">Profile <i className="material-icons">keyboard_arrow_right</i></a></li>
+                <li><a href="/bookmarks">Your Bookmarks <i className="material-icons">keyboard_arrow_right</i></a></li>
+                <li><a href="/user/signout" className="logout">Logout</a></li>
+                </div>
+            )
+        }
+        else {
+            return (
+                <li><Link to={'/register'}>Login or Signup <i className="material-icons">keyboard_arrow_right</i></Link></li>
+            )
+        }
     }
 
     render () {
         return (
             <div className="burgerWrap">
-            <Menu right onStateChange={ this.isMenuOpen }>
-                <ul>
-                    <li><Link to={'/'}>Home <i className="material-icons">keyboard_arrow_right</i></Link></li>
-                    <li><Link to={'/events'}>Event Search <i className="material-icons">keyboard_arrow_right</i></Link></li>
-                    <li><a target="_blank" href='https://cafeoctane.typeform.com/to/UFhEcw'>Event Organisers <i className="material-icons">keyboard_arrow_right</i></a></li>
+                <Menu right onStateChange={ this.isMenuOpen }>
+                    <ul>
+                        <li><a href={'/'}>Home <i className="material-icons">keyboard_arrow_right</i></a></li>
+                        <li><a href={'/events'}>Event Search <i className="material-icons">keyboard_arrow_right</i></a></li>
+                        <li><a target="_blank" href='https://cafeoctane.typeform.com/to/UFhEcw'>Event Organisers <i className="material-icons">keyboard_arrow_right</i></a></li>
 
-                    {document.cookie.indexOf("usertoken") > 0 ? <li><a href="/profile">Profile <i className="material-icons">keyboard_arrow_right</i></a></li> : null}
-                    {document.cookie.indexOf("usertoken") > 0 ? <li><a href="/bookmarks">Your Bookmarks <i className="material-icons">keyboard_arrow_right</i></a></li> : null}
-                    {document.cookie.indexOf("usertoken") > 0 ? <li><a href="/user/signout" className="logout">Logout</a></li> : null}
-                    {document.cookie.indexOf("usertoken") < 0 ? <li><Link to={'/register'}>Login or Signup <i className="material-icons">keyboard_arrow_right</i></Link></li> : null}
+                        {this.userNav()}
+                        <li><a href={'/about'}>About <i className="material-icons">keyboard_arrow_right</i></a></li>
+                    </ul>
 
-
-                    <li><Link to={'/about'}>About <i className="material-icons">keyboard_arrow_right</i></Link></li>
-                </ul>
-
-                <h2>Contact</h2>
-                <ul className="contactInfo">
-                    <li><a href="mailto:contact@cafeoctane.com">contact@cafeoctane.com <i className="material-icons">email</i></a></li>
-                </ul>
-
-            </Menu>
+                    <h2>Contact</h2>
+                    <ul className="contactInfo">
+                        <li><a href="mailto:contact@cafeoctane.com">contact@cafeoctane.com <i className="material-icons">email</i></a></li>
+                    </ul>
+                </Menu>
             </div>
         );
     }

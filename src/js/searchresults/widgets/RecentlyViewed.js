@@ -20,7 +20,6 @@ export default class RecentlyViewed extends React.Component {
         this.handleUserSuccess = this.handleUserSuccess.bind(this);
     }
 
-
     handleUserSuccess(data) {
         if (data[0].email) {
             this.setState({user: data[0], bookmarks: data[1]});

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserNav = (props) => {
+const UserNav = () => {
     return (
         <ul>
             <li><a href="/profile">Profile</a></li>

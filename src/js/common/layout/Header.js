@@ -5,7 +5,6 @@ import React from 'react';
 import UserNav from '../navigation/UserNav';
 import Cookies from 'universal-cookie';
 
-const noop = () => {};
 const cookies = new Cookies();
 
 class Header extends React.Component {
@@ -23,17 +22,13 @@ class Header extends React.Component {
         window.scrollTo(0, 0);
     }
 
-    componentWillUnmount() {
-
-    }
-
     userNavToggle(e) {
         e.preventDefault();
         this.state.userNav ? this.setState({userNav: false}) : this.setState({userNav: true})
     }
 
     isLoggedIn() {
-        if (document.cookie.indexOf("usertoken") > 0) {
+        if (typeof window !== 'undefined' && document.cookie.indexOf("usertoken") > 0) {
             return (
                 <div className="avatar">
                     <a href="/profile" onClick={this.userNavToggle}><img width="50" src={cookies.get('avatar')} /></a>
@@ -50,11 +45,22 @@ class Header extends React.Component {
         }
     }
 
+    currentView() {
+        let cssClass;
+        if (typeof window !== 'undefined') {
+            location.pathname === '/' ? cssClass = 'home' : cssClass = 'content';
+        }
+        else {
+            cssClass = 'home'
+        }
+        return cssClass;
+    }
+
     render() {
         return (
             <div>
                 <BurgerNav />
-                <nav className={'navbar top ' + (location.pathname === '/' ? 'home' : 'content') }>
+                    <nav className={'navbar top ' + this.currentView() }>
                     <Link to={'/'}>
                         <img className="logo" src="/assets/img/cafe_octane.png" />
                     </Link>

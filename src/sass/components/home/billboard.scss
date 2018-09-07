@@ -35,6 +35,14 @@
     }
 
     @include breakpoint(phablet) {
+      width: 80%;
+      margin: 0 auto 50px auto;
+      input, select, button {
+        width: 75%;
+      }
+    }
+
+    @include breakpoint(laptop) {
       width: 50%;
       margin: 0 auto 50px auto;
       input, select, button {

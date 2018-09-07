@@ -26,7 +26,6 @@ class Bookmarks extends React.Component {
         }
     };
 
-
     handleSuccess = (data) => {
         if (data) {
             this.getUser()
@@ -37,7 +36,6 @@ class Bookmarks extends React.Component {
                         view: 'bookmarks'
                     })
                 })
-
         }
     };
 
@@ -136,9 +134,6 @@ class Bookmarks extends React.Component {
             </Layout>
         )
     }
-
-
-
 }
 
 export default withRouter(Bookmarks)

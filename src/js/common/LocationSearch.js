@@ -1,11 +1,9 @@
 import GoogleLocationSearch from '../common/GoogleLocationSearch';
 import React from 'react';
 
-const API_KEY = 'AIzaSyCBQPdAc6XhD7cHv_HKopDeT1tMdJhAaCM';
-
 class LocationSearch extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             place: null,
             coordinates: null,
