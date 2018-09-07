@@ -134,7 +134,7 @@ router.get('/events/geo/:limit/:page', (req, res) => {
 
     if (!hasCateogry) {
         octanedb.collection('events').find({
-                    eventStart: {
+            eventEnd: {
                             $gte: new Date(dateStart),
                             $lt: new Date(dateEnd)
                     }
@@ -181,7 +181,7 @@ router.get('/events/trending/:limit', (req, res) => {
     octanedb.collection('events')
         .find({
             trending: true,
-            eventStart: {
+            eventEnd: {
                 $gte: new Date()
             }
         })
@@ -203,7 +203,7 @@ router.get('/events/upcoming/:limit', (req, res) => {
     let octanedb = mdb.db('cafeoctane');
     octanedb.collection('events')
         .find({
-            eventStart: {
+            eventEnd: {
                 $gte: new Date()
             }})
         .sort({eventStart: 1})

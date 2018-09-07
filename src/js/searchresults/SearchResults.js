@@ -14,7 +14,7 @@ export default class SearchResults extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            resultsperpage: 3,
+            resultsperpage: 6,
             events: [],
             pages: 1,
             page: 1,

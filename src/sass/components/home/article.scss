@@ -1,7 +1,7 @@
 div.content {
   height: auto;
   background-color: $background-color;
-  margin-top: 65px;
+  margin-top: 70px;
 
   @include breakpoint(mobileonly) {
     margin-top: 65px;
