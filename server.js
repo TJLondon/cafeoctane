@@ -8,6 +8,7 @@ import GoogleRouter from './auth/social/GoogleRouter';
 import UserRouter from './auth/users/UserRouter';
 import LocationRouter from './api/locationService';
 import Home from './src/js/home/Home';
+import EventDetails from './src/js/searchresults/EventDetails';
 import session from 'express-session';
 import { StaticRouter } from "react-router-dom";
 import SitemapRouter from './sitemap';
@@ -51,7 +52,18 @@ function HTMLTemplate(reactDom) {
 }
 
 server.get([
-    '/',
+    '/'
+], (req,res) => {
+    const context = { };
+    const jsx = ( <StaticRouter context={ context } location={ req.url }>
+        <Home />
+    </StaticRouter> );
+    const reactDom = renderToString(jsx);
+    res.writeHead( 200, { "Content-Type": "text/html" } );
+    res.end( HTMLTemplate( reactDom ) );
+});
+
+server.get([
     '/events',
     '/event/:title/:id',
     '/events/find/:category',
@@ -64,12 +76,15 @@ server.get([
 ], (req,res) => {
     const context = { };
     const jsx = ( <StaticRouter context={ context } location={ req.url }>
-        <Home />
+        <EventDetails />
     </StaticRouter> );
     const reactDom = renderToString(jsx);
     res.writeHead( 200, { "Content-Type": "text/html" } );
     res.end( HTMLTemplate( reactDom ) );
 });
+
+
+
 
 server.use(express.static('public'));
 server.use('/assets', express.static(__dirname + '/assets'));

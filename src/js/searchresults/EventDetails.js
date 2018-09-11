@@ -42,7 +42,6 @@ class EventDetails extends React.Component {
     }
 
     handleEventSuccess(event) {
-        if (event.length > 0) {
             this.setState({
                 event: event,
                 lat: event.lat,
@@ -54,10 +53,6 @@ class EventDetails extends React.Component {
                 this.AddToHistory();
                 document.title = event.eventTitle + " | Cafe Octane";
             });
-        }
-        else {
-            this.handleEventError(true)
-        }
     }
 
     handleEventError(error) {
