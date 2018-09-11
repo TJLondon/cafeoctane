@@ -28,7 +28,7 @@ const Footer = () => {
 
                     <div className="col-sm col-sm-3 text-left social">
                         <ul>
-                            <li><a href="https://www.facebook.com/Cafe-Octane-235678193766150" target="_blank" className="fa fa-facebook"></a>&nbsp;<a href="https://www.instagram.com/cafeoctane/" target="_blank" className="fa fa-instagram"></a>
+                            <li><a href="https://www.facebook.com/Cafe-Octane-235678193766150" target="_blank" className="fa fa-facebook"></a>&nbsp;<a href="https://www.instagram.com/captainrogerover/" target="_blank" className="fa fa-instagram"></a>
                                 {/*&nbsp;<a href="#" className="fa fa-twitter"></a>*/}
                             </li>
                         </ul>

@@ -10,6 +10,7 @@ import LocationRouter from './api/locationService';
 import Home from './src/js/home/Home';
 import session from 'express-session';
 import { StaticRouter } from "react-router-dom";
+import SitemapRouter from './sitemap';
 
 const server = express();
 
@@ -28,8 +29,7 @@ function HTMLTemplate(reactDom) {
 <head>
     <title>Cafe Octane - UK Car Events Near You</title>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
-    <meta name="description" content="Find epic car shows, vehicle meets, track days and motorsport events throughout the UK">
+    <meta name="description" content="Search for epic car shows, vehicle meets, track days and motorsport events throughout the UK and continental Europe">
     <meta name="keywords" content="car shows, cars and coffee, supercar, meets, meetings, automotive, classic cars, fast cars, sports cars, car competition, drag racing, belnheim palace, goodwood festival, Essex, Kent, Sussex, Suffolk, Norfolk, Yorkshire, Cornwall, Dorset, London">
     <meta name="author" content="Tom Jordan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -49,32 +49,6 @@ function HTMLTemplate(reactDom) {
 </body>
 </html>`
 }
-
-// server.get([
-//     '/',
-//     '/events',
-//     '/event/:title/:id',
-//     '/events/find/:category',
-//     '/register',
-//     '/profile',
-//     '/bookmarks',
-//     '/about',
-//     '/terms',
-//     '/privacy'
-// ], (req,res) => {
-//     // serverRender()
-//     //     .then(content => {
-//     //         res.render('index', {
-//     //             content
-//     //         });
-//     //     })
-//     //     .catch(console.error)
-//
-//     res.render('index', {
-//         content: ''
-//     });
-//
-// });
 
 server.get([
     '/',
@@ -98,14 +72,17 @@ server.get([
 });
 
 server.use(express.static('public'));
-server.use("/assets", express.static(__dirname + '/assets'));
+server.use('/assets', express.static(__dirname + '/assets'));
 server.use(session({secret: "secret"}));
+
 //api
 server.use('/api', apiRouter); //events api
 server.use('/auth/facebook', FacebookRouter); //user authentication
 server.use('/auth/google', GoogleRouter); //user authentication
 server.use('/user', UserRouter); //user actions
 server.use('/api/location', LocationRouter); //LocationRouter actions
+
+server.use('/sitemap', SitemapRouter);
 
 server.listen(config.port, config.host, () => {
     console.info('Express is listening on port' + config.port);

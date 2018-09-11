@@ -108,6 +108,7 @@ export default class SearchResults extends React.Component {
                     .then(axios.spread(function (user, events) {
                         user !== null ? handleUserSuccess(user.data) : null;
                         events !== null ? handleEventsSuccess(events.data) : null;
+                        document.title = "Search results | Cafe Octane";
                     }))
                     .catch(error => { this.handleEventsError(error);})
         });

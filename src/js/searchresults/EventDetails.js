@@ -50,6 +50,7 @@ class EventDetails extends React.Component {
             isMarkerShown: true }, () => {
             this.forceUpdate();
             this.AddToHistory();
+            document.title = event.eventTitle + " | Cafe Octane";
         });
     }
 
@@ -58,6 +59,7 @@ class EventDetails extends React.Component {
     }
 
     componentDidMount() {
+
         axios.get(`/api/events/` + this.props.match.params.id)
             .then(res => this.handleEventSuccess(res.data))
             .catch(error => this.handleEventError(error))
@@ -134,10 +136,19 @@ class EventDetails extends React.Component {
                             </div>
 
                             <div className="moreDetailsPane">
-                                <p>Price: {this.state.event.eventPrice}</p>
-                                <p>Organised by: {this.state.event.eventOrganiser}</p>
 
-                                <a href={this.state.event.eventURL} target="_blank">Find out more</a>
+                                <div class="item">
+                                    <i className="material-icons">location_on</i>
+                                    <p className="location"><span>{this.state.event.eventAddress}</span></p>
+                                </div>
+
+                                <div className="item">
+                                    <i className="material-icons">money</i>
+                                    <p>{this.state.event.eventPrice}</p>
+                                </div>
+
+                                {/*<p>Organised by: {this.state.event.eventOrganiser}</p>*/}
+
                                 <div className="googleMap">
                                     <MapComponent
                                         isMarkerShown={this.state.isMarkerShown}
@@ -149,7 +160,8 @@ class EventDetails extends React.Component {
                                         longitude={this.state.lng}
                                     />
                                 </div>
-                                <p>Location: <br /> {this.state.event.eventAddress}</p>
+                                <a href={this.state.event.eventURL} target="_blank">Find out more</a>
+
                             </div>
 
                         </div>

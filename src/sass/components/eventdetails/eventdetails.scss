@@ -46,7 +46,6 @@
     display: block;
     clear: both;
   }
-
   position: relative;
   color: black;
 
@@ -54,10 +53,28 @@
     font-size: 1.7rem;
   }
 
+  div.item {
+    color: #454545;
+    i {
+      display: inline;
+      float: left;
+      margin: 0 20px 0 0;
+    }
+    p {
+      display: inline;
+      float: left;
+    }
+  }
+
   div.content {
     max-width: 100%;
     margin-top: 20px;
     @include breakpoint(tablet) {
+      margin-top: 20px;
+      max-width: 45%;
+    }
+
+    @include breakpoint(laptop) {
       margin-top: 20px;
       max-width: 55%;
     }
@@ -77,13 +94,16 @@
   padding: 2rem;
   float: left;
   text-align: left;
+  -webkit-box-shadow: 0px 3px 31px 0px rgba(82,81,81,1);
+  -moz-box-shadow: 0px 3px 31px 0px rgba(82,81,81,1);
+  box-shadow: 0px 3px 31px 0px rgba(82,81,81,1);
 
   @include breakpoint(tablet) {
     position: absolute;
     top: 0;
     right: 0;
     width: 360px;
-    border: 1px #ccc solid;
+    //border: 1px #ccc solid;
     padding: 2rem;
   }
 

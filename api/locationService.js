@@ -1,7 +1,9 @@
 import express from 'express';
+import config from '../config';
+
 const LocationRouter = express.Router();
 const googleMapsClient = require('@google/maps').createClient({
-    key: 'AIzaSyCBQPdAc6XhD7cHv_HKopDeT1tMdJhAaCM'
+    key: config.google.locationKey
 });
 
 LocationRouter.get('/autocomplete', (req, res) => {
