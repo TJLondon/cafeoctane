@@ -1,12 +1,13 @@
 const env = process.env;
-
 export const nodeEnv = env.NODE_ENV || 'development';
 
 export default {
     port: env.PORT || 8080,
     host: env.HOST || '0.0.0.0',
-    dbendpoint: 'mongodb://cafeoctane:BlackB3ard!@ds247001.mlab.com:47001/cafeoctane', //MLAD hosted
+    dbendpoint: 'mongodb://cafeoctane:BlackB3ard!@ds247001.mlab.com:47001/cafeoctane', //MLAB hosted
     //dbendpoint: 'mongodb://localhost:27017/cafeoctane', // local MongoDB service
+
+    //social
     facebook: {
         appid: 240560926764008,
         secret: '2d61967ec1eaa82bb13ed6cfa60fe45c',
@@ -15,8 +16,10 @@ export default {
     google: {
         clientID: '990606542806-1ogsd3icm6psuob8gsrfrp5653oprso0.apps.googleusercontent.com',
         clientSecret: 'c8Dg_qOXjh_iGiR87_N1dB0s',
-        callback: 'https://www.cafeoctane.com/auth/google/callback'
+        callback: 'https://www.cafeoctane.com/auth/google/callback',
+        locationKey: 'AIzaSyCBQPdAc6XhD7cHv_HKopDeT1tMdJhAaCM'
     },
+
     get serverUrl() {
         return `http://${this.host}:${this.port}`;
 }
