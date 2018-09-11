@@ -54,7 +54,7 @@ class BurgerNav extends React.Component {
                         <li><a target="_blank" href='https://cafeoctane.typeform.com/to/UFhEcw'>Event Organisers <i className="material-icons">keyboard_arrow_right</i></a></li>
 
                         {this.userNav()}
-                        <li><a href={'/about'}>About <i className="material-icons">keyboard_arrow_right</i></a></li>
+                        {/*<li><a href={'/about'}>About <i className="material-icons">keyboard_arrow_right</i></a></li>*/}
                     </ul>
 
                     <h2>Contact</h2>

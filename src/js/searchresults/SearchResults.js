@@ -119,6 +119,7 @@ export default class SearchResults extends React.Component {
         this.handleUserError = noop;
         this.handleEventsSuccess = noop;
         this.handleEventsError = noop;
+        document.title = "Cafe Octane | UK Car Events Near You";
     }
 
     loadMore() {

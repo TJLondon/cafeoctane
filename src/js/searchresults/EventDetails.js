@@ -42,16 +42,22 @@ class EventDetails extends React.Component {
     }
 
     handleEventSuccess(event) {
-        this.setState({
-            event: event,
-            lat: event.lat,
-            lng: event.lng,
-            loading: false,
-            isMarkerShown: true }, () => {
-            this.forceUpdate();
-            this.AddToHistory();
-            document.title = event.eventTitle + " | Cafe Octane";
-        });
+        if (event.length > 0) {
+            this.setState({
+                event: event,
+                lat: event.lat,
+                lng: event.lng,
+                loading: false,
+                isMarkerShown: true
+            }, () => {
+                this.forceUpdate();
+                this.AddToHistory();
+                document.title = event.eventTitle + " | Cafe Octane";
+            });
+        }
+        else {
+            this.handleEventError(true)
+        }
     }
 
     handleEventError(error) {
@@ -59,26 +65,28 @@ class EventDetails extends React.Component {
     }
 
     componentDidMount() {
-
         axios.get(`/api/events/` + this.props.match.params.id)
             .then(res => this.handleEventSuccess(res.data))
-            .catch(error => this.handleEventError(error))
+            .catch(error => this.handleEventError(true))
     };
 
     componentWillUnmount() {
         this.handleEventSuccess = noop();
         this.handleEventError = noop();
+        document.title = "Cafe Octane | UK Car Events Near You";
     }
 
-    static NotFound() {
+    NotFound() {
         return (
-        <div className="eventDetailsWrapper">
-            <div className="content">
-                <h2>Event not found</h2>
-                <p>This event may have been removed or expired.</p>
-                <p>Try <a href="/">searching</a> again</p>
+            <div className="container">
+                <div className="eventDetailsWrapper">
+                    <div className="content">
+                        <h2>Event not found</h2>
+                        <p>This event may have been removed or expired.</p>
+                        <p>Try <a href="/">searching again</a></p>
+                    </div>
+                </div>
             </div>
-        </div>
         )
     }
 

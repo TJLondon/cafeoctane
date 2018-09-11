@@ -21,6 +21,12 @@ MongoClient.connect(config.dbendpoint, function(err, db) {
 });
 
 
+const handleError = (e) => {
+    console.log(e);
+    return '[]';
+};
+
+
 router.get('/', (req, res) => {
     let options = {
         root: __dirname,
@@ -273,14 +279,15 @@ router.get('/categories', (req, res) => {
 
 //Serves event details by event ID
 router.get('/events/:eventid', (req, res) => {
-    let octanedb = mdb.db('cafeoctane');
-    let oid = new ObjectId(req.params.eventid);
-    octanedb.collection('events')
-        .findOne({ _id : oid }, (err, document) => {
-            res.send(document);
-            }
-        )
+        let octanedb = mdb.db('cafeoctane');
+        let oid = new ObjectId(req.params.eventid);
+        octanedb.collection('events')
+            .findOne({_id: oid}, (err, document) => {
+                    res.send(document);
+                }
+            )
 });
+
 
 //Organisers
 router.get('/organisers/:organiserid', (req, res) => {
