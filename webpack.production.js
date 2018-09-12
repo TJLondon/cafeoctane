@@ -1,9 +1,8 @@
-var webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const webpack = require('webpack');
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
     template: "./src/index.html",
@@ -42,11 +41,6 @@ module.exports = {
 
     plugins: [
         htmlWebpackPlugin,
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production')
-            },
-        }),
         new UglifyJsPlugin(),
         new CompressionPlugin({
             asset: "[path].gz[query]",
@@ -58,6 +52,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
+        }),
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify('production')
+            }
         })
     ]
 };

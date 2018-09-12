@@ -1,16 +1,17 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
-    template: "./src/index.html",
-    filename: "./index.html",
+    template: './src/index.html',
+    filename: './index.html',
     minify: true
 });
 
 
 
 module.exports = {
-    entry: ["@babel/polyfill", "./src/js/app.js"]
+    entry: ['@babel/polyfill', './src/js/app.js']
     ,
     output: {
         path:  __dirname + '/public',
@@ -41,6 +42,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
+        }),
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify('production')
+            }
         })
     ]
 };
