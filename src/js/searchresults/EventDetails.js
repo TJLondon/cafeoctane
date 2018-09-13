@@ -140,7 +140,7 @@ class EventDetails extends React.Component {
 
                             <div className="moreDetailsPane">
 
-                                <div class="item">
+                                <div className="item">
                                     <i className="material-icons">location_on</i>
                                     <p className="location"><span>{this.state.event.eventAddress}</span></p>
                                 </div>

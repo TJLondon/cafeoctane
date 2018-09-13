@@ -14,9 +14,10 @@ import { StaticRouter } from "react-router-dom";
 import SitemapRouter from './sitemap';
 
 const server = express();
+var compression = require('compression');
 
 server.set('view engine', 'ejs');
-
+server.use(session({secret: "secret"}));
 if (config.host !== '0.0.0.0') {
     server.get('*.js', function (req, res, next) {
         req.url = req.url + '.gz';
@@ -83,21 +84,18 @@ server.get([
     res.end( HTMLTemplate( reactDom ) );
 });
 
-
-
-
-server.use(express.static('public'));
-server.use('/assets', express.static(__dirname + '/assets'));
-server.use(session({secret: "secret"}));
-
 //api
 server.use('/api', apiRouter); //events api
 server.use('/auth/facebook', FacebookRouter); //user authentication
 server.use('/auth/google', GoogleRouter); //user authentication
 server.use('/user', UserRouter); //user actions
 server.use('/api/location', LocationRouter); //LocationRouter actions
-
 server.use('/sitemap', SitemapRouter);
+
+//compress static
+server.use(compression());
+server.use(express.static('public'));
+server.use('/assets', express.static(__dirname + '/assets'));
 
 server.listen(config.port, config.host, () => {
     console.info('Express is listening on port' + config.port);
