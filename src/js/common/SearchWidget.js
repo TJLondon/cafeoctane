@@ -7,13 +7,15 @@ class SearchWidget extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            searchVisibility: false,
             location: {
                 lng: '',
                 lat: '',
                 radius: ''
             },
+            place: this.props.place,
             inputError: ''
-        }
+        };
     }
 
     locationHandler = (coords) => {
@@ -43,9 +45,10 @@ class SearchWidget extends React.Component {
             <div className="searchWidget">
                 <form onSubmit={this.submitSearch}>
                 <div className="container">
-                    <LocationSearch onLocationSearch={ this.locationHandler }  />
+                    {/*<span onClick={this.toggleSearch}>{this.state.place}</span>*/}
+                    <LocationSearch place={this.state.place} onLocationSearch={ this.locationHandler }/>
                     <div className="inputWrap">
-                        <button value="search" onClick={this.submitSearch}>Search</button>
+                        <button value="search" onClick={this.submitSearch}>Search </button>
                     </div>
                 </div>
                 </form>

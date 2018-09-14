@@ -24,6 +24,7 @@ export default class SearchResults extends React.Component {
             error: null,
             loading: true,
             calendar: '',
+            place: 'London, UK',
             filters: {
                 lng: '-1.477870',
                 lat: '53.332780',
@@ -92,9 +93,14 @@ export default class SearchResults extends React.Component {
 
         let obj = querySearch(this.props.location.search);
         if (obj.lat == null) {
-            obj = {lat: this.state.filters.lat, lng: this.state.filters.lng, radius: this.state.filters.radius}
+            obj = {
+                place: this.state.place,
+                lat: this.state.filters.lat,
+                lng: this.state.filters.lng,
+                radius: this.state.filters.radius}
         }
         this.setState({
+            place: obj.place,
             filters:
                 {
                     lng: obj.lng,
@@ -241,7 +247,7 @@ export default class SearchResults extends React.Component {
             <Layout>
                 <div className="searchresults">
                     <div className="resultsHeader">
-                        <SearchWidget handler={this.submitSearch} />
+                        <SearchWidget place={this.state.place} handler={this.submitSearch} />
                     </div>
                     <div className="content">
                         <div className="container">

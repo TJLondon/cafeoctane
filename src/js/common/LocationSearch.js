@@ -5,7 +5,7 @@ class LocationSearch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            place: null,
+            place: this.props.place,
             coordinates: null,
             distance: "25",
         };
@@ -31,7 +31,7 @@ class LocationSearch extends React.Component {
             <div className="locationSearch">
                 <div className="inputWrap">
                     <label>Location</label>
-                    <GoogleLocationSearch className="form-control" country={'country:uk'} onChange={this.onChange.bind(this)} />
+                    <GoogleLocationSearch className="form-control" country={'country:uk'} place={this.state.place} onChange={this.onChange.bind(this)} />
                 </div>
 
                 <div className="inputWrap">

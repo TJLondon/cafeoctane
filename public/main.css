@@ -785,6 +785,11 @@ nav.navbar {
   width: 100%;
   height: auto;
   border-bottom: 1px #d76a28 solid; }
+  .searchWidget span {
+    color: #d76a28;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    cursor: pointer; }
   .searchWidget .locationSearch {
     display: inline; }
     .searchWidget .locationSearch .google-covert {

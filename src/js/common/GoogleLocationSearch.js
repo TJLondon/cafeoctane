@@ -7,7 +7,7 @@ export default class GoogleLocationSearch extends React.Component {
         super(props);
         this.state = {
             loading: false,
-            place: '',
+            place: this.props.place,
             collection: null,
             coordinates: null,
             collectionShow: false,

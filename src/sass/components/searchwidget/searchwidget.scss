@@ -3,6 +3,13 @@
   height: auto;
   border-bottom: 1px $primary-color solid;
 
+  span {
+    color: $primary-color;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    cursor: pointer;
+  }
+
   .locationSearch {
     display: inline;
 

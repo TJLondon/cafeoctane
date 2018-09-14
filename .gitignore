@@ -2,7 +2,7 @@ node_modules
 dist
 .gitignore
 .idea/*
-.idea/workspace.xml
+.idea/*.xml
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
